@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-coverage": "jest --coverage --watchAll=false"
+    "test-coverage": "jest --coverage --watchAll=false --env=jsdom"
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +54,6 @@
     "typescript": "^4.7.2"
   },
   "jest": {
-    "testEnvironment": "jsdom",
     "collectCoverageFrom": [
       "src/**/*.tsx",
       "src/**/*.ts",
