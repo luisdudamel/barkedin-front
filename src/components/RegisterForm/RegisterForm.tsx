@@ -9,20 +9,52 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import axios from "axios";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import userCredentials from "../../Interfaces/userCredentials";
 
 const RegisterForm = (): JSX.Element => {
   const formInitialState: userCredentials = {
+    name: "",
     username: "",
     password: "",
-    email: "",
   };
   const [formData, setFormData] = useState<userCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
+  useEffect(() => {
+    if (
+      formData.username !== "" &&
+      formData.password !== "" &&
+      formData.name !== ""
+    ) {
+      setButtonDisabled(false);
+      return;
+    }
+
+    setButtonDisabled(true);
+  }, [formData.name, formData.password, formData.username]);
+
+  const resetData = () => {
+    setFormData(formInitialState);
+  };
+
+  const submitRegisterForm = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+    try {
+      await axios.post<userCredentials>(
+        `${process.env.REACT_APP_API_URL_DEV}users/register`,
+        formData
+      );
+    } catch {}
+    resetData();
   };
 
   return (
@@ -81,19 +113,37 @@ const RegisterForm = (): JSX.Element => {
               alignItems: "center",
               border: "none",
             }}
+            onSubmit={submitRegisterForm}
           >
             <TextField
+              value={formData.name}
+              hiddenLabel
               margin="normal"
               required
-              hiddenLabel
-              label="Username"
-              id="username"
-              name="username"
+              type="name"
+              label="Name"
+              id="name"
+              name="name"
               autoComplete="off"
               autoFocus
               onChange={changeData}
             />
             <TextField
+              value={formData.username}
+              hiddenLabel
+              margin="normal"
+              required
+              name="username"
+              label="Username"
+              placeholder="Username"
+              type="username"
+              id="username"
+              autoComplete="off"
+              onChange={changeData}
+            />
+            <TextField
+              value={formData.password}
+              hiddenLabel
               margin="normal"
               required
               name="password"
@@ -103,16 +153,6 @@ const RegisterForm = (): JSX.Element => {
               autoComplete="current-password"
               onChange={changeData}
             />
-            <TextField
-              margin="normal"
-              required
-              name="email"
-              label="Email"
-              type="email"
-              id="email"
-              autoComplete="off"
-              onChange={changeData}
-            />
 
             <Button
               type="submit"
@@ -120,6 +160,7 @@ const RegisterForm = (): JSX.Element => {
               variant="contained"
               size="small"
               sx={{ mt: 3, mb: 2 }}
+              disabled={buttonDisabled}
             >
               Register
             </Button>
