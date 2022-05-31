@@ -11,15 +11,15 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import UserCredentials from "../../interfaces/UserCredentials";
+import UserCredential from "../../interfaces/UserCredential";
 
 const RegisterForm = (): JSX.Element => {
-  const formInitialState: UserCredentials = {
+  const formInitialState: UserCredential = {
     name: "",
     username: "",
     password: "",
   };
-  const [formData, setFormData] = useState<UserCredentials>(formInitialState);
+  const [formData, setFormData] = useState<UserCredential>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +48,7 @@ const RegisterForm = (): JSX.Element => {
   ) => {
     event.preventDefault();
     try {
-      await axios.post<UserCredentials>(
+      await axios.post<UserCredential>(
         `${process.env.REACT_APP_API_URL_DEV}users/register`,
         formData
       );
