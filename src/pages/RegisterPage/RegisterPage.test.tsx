@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import TestRenderer from "react-test-renderer";
 import theme from "../../theme";
 import RegisterPage from "./RegisterPage";
-import RegisterPageStyled from "./RegisterPageStyled";
 
 describe("Given a RegisterPage component page", () => {
   describe("When it's invoked", () => {
