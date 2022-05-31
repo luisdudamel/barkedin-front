@@ -46,7 +46,62 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
       <form
         className="MuiBox-root css-1y9cz7a"
         noValidate={true}
+        onSubmit={[Function]}
       >
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="name"
+            id="name-label"
+          >
+            Name
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={true}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="name"
+              name="name"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="name"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Name
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
         <div
           className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
@@ -72,7 +127,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             <input
               aria-invalid={false}
               autoComplete="off"
-              autoFocus={true}
+              autoFocus={false}
               className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
               disabled={false}
               id="username"
@@ -81,8 +136,10 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              placeholder="Username"
               required={true}
-              type="text"
+              type="username"
+              value=""
             />
             <fieldset
               aria-hidden={true}
@@ -119,14 +176,14 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             </span>
           </label>
           <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
             onClick={[Function]}
           >
             <input
               aria-invalid={false}
               autoComplete="current-password"
               autoFocus={false}
-              className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
               disabled={false}
               id="password"
               name="password"
@@ -136,6 +193,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
               onFocus={[Function]}
               required={true}
               type="password"
+              value=""
             />
             <fieldset
               aria-hidden={true}
@@ -153,62 +211,9 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             </fieldset>
           </div>
         </div>
-        <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
-        >
-          <label
-            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-            htmlFor="email"
-            id="email-label"
-          >
-            Email
-            <span
-              aria-hidden={true}
-              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
-            >
-               
-              *
-            </span>
-          </label>
-          <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
-          >
-            <input
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={false}
-              className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-              disabled={false}
-              id="email"
-              name="email"
-              onAnimationStart={[Function]}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              required={true}
-              type="email"
-            />
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                className="css-1ftyaf0"
-              >
-                <span>
-                  Email
-                   
-                  *
-                </span>
-              </legend>
-            </fieldset>
-          </div>
-        </div>
         <button
-          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root  css-593tnw-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled  css-593tnw-MuiButtonBase-root-MuiButton-root"
+          disabled={true}
           onBlur={[Function]}
           onContextMenu={[Function]}
           onDragLeave={[Function]}
@@ -221,7 +226,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="submit"
         >
           Register
