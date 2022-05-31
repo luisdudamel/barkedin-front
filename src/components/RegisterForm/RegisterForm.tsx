@@ -10,17 +10,16 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
-import userCredentials from "../../Interfaces/userCredentials";
+import React, { useState, useEffect } from "react";
+import UserCredentials from "../../interfaces/UserCredentials";
 
 const RegisterForm = (): JSX.Element => {
-  const formInitialState: userCredentials = {
+  const formInitialState: UserCredentials = {
     name: "",
     username: "",
     password: "",
   };
-  const [formData, setFormData] = useState<userCredentials>(formInitialState);
+  const [formData, setFormData] = useState<UserCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +48,7 @@ const RegisterForm = (): JSX.Element => {
   ) => {
     event.preventDefault();
     try {
-      await axios.post<userCredentials>(
+      await axios.post<UserCredentials>(
         `${process.env.REACT_APP_API_URL_DEV}users/register`,
         formData
       );
