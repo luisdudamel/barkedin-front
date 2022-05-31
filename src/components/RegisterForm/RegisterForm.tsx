@@ -9,8 +9,22 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import React, { useState } from "react";
+import userCredentials from "../../Interfaces/userCredentials";
 
 const RegisterForm = (): JSX.Element => {
+  const formInitialState: userCredentials = {
+    username: "",
+    password: "",
+    email: "",
+  };
+  const [formData, setFormData] = useState<userCredentials>(formInitialState);
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
+
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
   return (
     <>
       <Container component="main" maxWidth="xs">
@@ -77,6 +91,7 @@ const RegisterForm = (): JSX.Element => {
               name="username"
               autoComplete="off"
               autoFocus
+              onChange={changeData}
             />
             <TextField
               margin="normal"
@@ -86,6 +101,7 @@ const RegisterForm = (): JSX.Element => {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={changeData}
             />
             <TextField
               margin="normal"
@@ -95,6 +111,7 @@ const RegisterForm = (): JSX.Element => {
               type="email"
               id="email"
               autoComplete="off"
+              onChange={changeData}
             />
 
             <Button
