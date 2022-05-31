@@ -1,8 +1,13 @@
-import { Button } from "@mui/material";
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 function App() {
-  return <Button variant="contained">Adasd</Button>;
+  return (
+    <Routes>
+      <Route path="/register" element={<RegisterForm />} />
+    </Routes>
+  );
 }
 
 export default App;
