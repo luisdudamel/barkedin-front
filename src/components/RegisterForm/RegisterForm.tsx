@@ -1,24 +1,18 @@
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import {
   Avatar,
   Box,
   Button,
-  Checkbox,
   Container,
   CssBaseline,
-  FormControlLabel,
   Grid,
   Link,
   TextField,
-  ThemeProvider,
   Typography,
 } from "@mui/material";
 
-import theme from "../../theme";
-
-const RegisterForm = () => {
+const RegisterForm = (): JSX.Element => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -27,63 +21,96 @@ const RegisterForm = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            border: "none",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <div className="avatars-container">
+            <Avatar
+              src="../../images/doberman.png"
+              sx={{
+                m: 1,
+                height: "100px",
+                width: "100px",
+              }}
+            ></Avatar>
+            <Avatar
+              src="../../images/dog.png"
+              sx={{
+                m: 1,
+                height: "100px",
+                width: "100px",
+              }}
+            ></Avatar>
+            <Avatar
+              src="../../images/greyhound.png"
+              sx={{
+                m: 1,
+                height: "100px",
+                width: "100px",
+              }}
+            ></Avatar>
+          </div>
           <Typography component="h1" variant="h5">
-            Sign in
+            Welcome to BarkedIn
           </Typography>
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            noValidate
+            sx={{
+              mt: 1,
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              border: "none",
+            }}
+          >
             <TextField
               margin="normal"
               required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              hiddenLabel
+              label="Username"
+              id="username"
+              name="username"
+              autoComplete="off"
               autoFocus
+              sx={{
+                bgcolor: "white",
+              }}
             />
             <TextField
               margin="normal"
               required
-              fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
+              sx={{
+                bgcolor: "white",
+              }}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+
             <Button
               type="submit"
               fullWidth
               variant="contained"
+              size="small"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"Don't have an account? Click here"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    </>
   );
 };
 
