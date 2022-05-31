@@ -87,6 +87,15 @@ const RegisterForm = (): JSX.Element => {
               id="password"
               autoComplete="current-password"
             />
+            <TextField
+              margin="normal"
+              required
+              name="email"
+              label="Email"
+              type="email"
+              id="email"
+              autoComplete="off"
+            />
 
             <Button
               type="submit"
@@ -95,12 +104,12 @@ const RegisterForm = (): JSX.Element => {
               size="small"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Register
             </Button>
             <Grid container>
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"Don't have an account? Click here"}
+                  {"Already have an account? Log in here"}
                 </Link>
               </Grid>
             </Grid>
