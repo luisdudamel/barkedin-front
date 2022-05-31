@@ -50,15 +50,18 @@ const RegisterForm = (): JSX.Element => {
               }}
             ></Avatar>
           </div>
-          <Typography component="h1" variant="h5">
-            Welcome to BarkedIn
+          <Typography
+            component="h1"
+            variant="h5"
+            sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
+          >
+            Welcome to BarkedIn!
           </Typography>
           <Box
             component="form"
             noValidate
             sx={{
               mt: 1,
-              marginTop: 8,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -74,9 +77,6 @@ const RegisterForm = (): JSX.Element => {
               name="username"
               autoComplete="off"
               autoFocus
-              sx={{
-                bgcolor: "white",
-              }}
             />
             <TextField
               margin="normal"
@@ -86,9 +86,6 @@ const RegisterForm = (): JSX.Element => {
               type="password"
               id="password"
               autoComplete="current-password"
-              sx={{
-                bgcolor: "white",
-              }}
             />
 
             <Button
