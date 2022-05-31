@@ -84,6 +84,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
               onFocus={[Function]}
               required={true}
               type="name"
+              value=""
             />
             <fieldset
               aria-hidden={true}
@@ -138,6 +139,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
               placeholder="Username"
               required={true}
               type="username"
+              value=""
             />
             <fieldset
               aria-hidden={true}
@@ -191,6 +193,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
               onFocus={[Function]}
               required={true}
               type="password"
+              value=""
             />
             <fieldset
               aria-hidden={true}
