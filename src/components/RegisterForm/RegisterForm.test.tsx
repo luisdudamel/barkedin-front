@@ -18,10 +18,8 @@ describe("Given a RegisterForm component", () => {
 
       const nameInput = screen.getByRole("textbox", { name: "Name" });
       userEvent.type(nameInput, "asdasdasd");
-
       const usernameInput = screen.getByRole("textbox", { name: "Username" });
       userEvent.type(usernameInput, "asdasdasd");
-
       const passwordInput = screen.getByLabelText(/password/i);
       userEvent.type(passwordInput, "asdasdasd");
 
