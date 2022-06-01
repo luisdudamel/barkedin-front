@@ -5,16 +5,16 @@ import {
   Container,
   CssBaseline,
   Grid,
-  Link,
   TextField,
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch } from "../../redux/hooks";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
-const RegisterForm = (): JSX.Element => {
+const LoginForm = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const formInitialState: LoginCredentials = {
     username: "",
@@ -144,9 +144,9 @@ const RegisterForm = (): JSX.Element => {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Already have an account? Log in here"}
-                </Link>
+                <NavLink to="/register" style={{ textDecoration: "none" }}>
+                  Not a member? Register here
+                </NavLink>
               </Grid>
             </Grid>
           </Box>
@@ -156,4 +156,4 @@ const RegisterForm = (): JSX.Element => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
