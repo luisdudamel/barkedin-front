@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a LoginPage component page When it's invoked Then it should always match this snapshot 1`] = `
+<div
+  className="sc-bczRLJ hqXxVU"
+>
+  <main
+    className="MuiContainer-root MuiContainer-maxWidthXs css-nzinn5-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-htzt7r"
+    >
+      <div
+        className="avatars-container"
+      >
+        <div
+          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+        >
+          <img
+            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+            src="../../images/doberman.png"
+          />
+        </div>
+        <div
+          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+        >
+          <img
+            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+            src="../../images/dog.png"
+          />
+        </div>
+        <div
+          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+        >
+          <img
+            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+            src="../../images/greyhound.png"
+          />
+        </div>
+      </div>
+      <h1
+        className="MuiTypography-root MuiTypography-h5 css-1uviv7h-MuiTypography-root"
+      >
+        Welcome to BarkedIn!
+      </h1>
+      <form
+        className="MuiBox-root css-1y9cz7a"
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="username"
+            id="username-label"
+          >
+            Username
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="username"
+              name="username"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Username"
+              required={true}
+              type="username"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Username
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="password"
+            id="password-label"
+          >
+            Password
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="current-password"
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="password"
+              name="password"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="password"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Password
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <button
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled  css-593tnw-MuiButtonBase-root-MuiButton-root"
+          disabled={true}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={-1}
+          type="submit"
+        >
+          Login
+        </button>
+        <div
+          className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <a
+              className=""
+              href="/register"
+              onClick={[Function]}
+              style={
+                Object {
+                  "textDecoration": "none",
+                }
+              }
+            >
+              Not a member? Register here
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+`;
