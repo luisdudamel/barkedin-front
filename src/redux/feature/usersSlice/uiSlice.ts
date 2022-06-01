@@ -9,7 +9,7 @@ const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
-    loading: (ui, action: PayloadAction<Loading>) => ({ ...ui, loading: true }),
+    loading: (ui, action: PayloadAction<Loading>) => ({ ...action.payload }),
   },
 });
 

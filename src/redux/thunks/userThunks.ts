@@ -6,6 +6,7 @@ import {
   UserCredential,
   UserState,
 } from "../../interfaces/UserCredential";
+import { loadingActionCreator } from "../feature/usersSlice/uiSlice";
 import {
   loginUserActionCreator,
   registerUserActionCreator,
@@ -27,6 +28,7 @@ export const registerUserThunk =
 export const loginUserThunk =
   (formData: LoginCredentials) => async (dispatch: Dispatch) => {
     try {
+      dispatch(loadingActionCreator({ loading: true }));
       const route = `${process.env.REACT_APP_API_URL_DEV}users/login`;
       const {
         data: { token },
@@ -38,4 +40,5 @@ export const loginUserThunk =
 
       dispatch(loginUserActionCreator(userInfo));
     } catch (error) {}
+    dispatch(loadingActionCreator({ loading: false }));
   };
