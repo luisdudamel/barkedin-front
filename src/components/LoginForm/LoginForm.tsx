@@ -1,7 +1,7 @@
+import { LoadingButton } from "@mui/lab";
 import {
   Avatar,
   Box,
-  Button,
   Container,
   CssBaseline,
   Grid,
@@ -11,7 +11,7 @@ import {
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { LoginCredentials } from "../../interfaces/UserCredential";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = (): JSX.Element => {
@@ -22,6 +22,7 @@ const LoginForm = (): JSX.Element => {
   };
   const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
+  const loading = useAppSelector((state) => state.ui.loading);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -132,7 +133,8 @@ const LoginForm = (): JSX.Element => {
               onChange={changeData}
             />
 
-            <Button
+            <LoadingButton
+              loading={loading}
               type="submit"
               fullWidth
               variant="contained"
@@ -141,7 +143,8 @@ const LoginForm = (): JSX.Element => {
               disabled={buttonDisabled}
             >
               Login
-            </Button>
+            </LoadingButton>
+
             <Grid container>
               <Grid item>
                 <NavLink to="/register" style={{ textDecoration: "none" }}>

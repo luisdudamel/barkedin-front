@@ -6,10 +6,11 @@ import {
   UserCredential,
   UserState,
 } from "../../interfaces/UserCredential";
+import { loadingActionCreator } from "../feature/uiSlice";
 import {
   loginUserActionCreator,
   registerUserActionCreator,
-} from "../feature/usersSlice/usersSlice";
+} from "../feature/usersSlice";
 
 interface Token {
   token: string;
@@ -17,16 +18,19 @@ interface Token {
 
 export const registerUserThunk =
   (formData: UserCredential) => async (dispatch: Dispatch) => {
+    dispatch(loadingActionCreator({ loading: true }));
     await axios.post(
       `${process.env.REACT_APP_API_URL_DEV}users/register`,
       formData
     );
     dispatch(registerUserActionCreator());
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const loginUserThunk =
   (formData: LoginCredentials) => async (dispatch: Dispatch) => {
     try {
+      dispatch(loadingActionCreator({ loading: true }));
       const route = `${process.env.REACT_APP_API_URL_DEV}users/login`;
       const {
         data: { token },
@@ -38,4 +42,5 @@ export const loginUserThunk =
 
       dispatch(loginUserActionCreator(userInfo));
     } catch (error) {}
+    dispatch(loadingActionCreator({ loading: false }));
   };

@@ -1,4 +1,4 @@
-import { UserState } from "../../../interfaces/UserCredential";
+import { UserState } from "../../interfaces/UserCredential";
 import usersReducer, { loginUserActionCreator } from "./usersSlice";
 
 describe("Given a usersReducer", () => {
