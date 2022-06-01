@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { UserCredential } from "../../interfaces/UserCredential";
 import { useAppDispatch } from "../../redux/hooks";
 import { registerUserThunk } from "../../redux/thunks/userThunks";
@@ -162,9 +163,9 @@ const RegisterForm = (): JSX.Element => {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Already have an account? Log in here"}
-                </Link>
+                <NavLink to="/login" style={{ textDecoration: "none" }}>
+                  Already have an account? Log in here
+                </NavLink>
               </Grid>
             </Grid>
           </Box>

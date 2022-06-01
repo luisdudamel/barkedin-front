@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { UserCredential } from "../../interfaces/UserCredential";
 import store from "../../redux/store";
 import RegisterForm from "./RegisterForm";
@@ -17,7 +18,9 @@ describe("Given a RegisterForm component", () => {
     test("Then it should render a form with a button with the text 'Register'", () => {
       render(
         <Provider store={store}>
-          <RegisterForm></RegisterForm>
+          <BrowserRouter>
+            <RegisterForm></RegisterForm>
+          </BrowserRouter>
         </Provider>
       );
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
@@ -32,7 +35,9 @@ describe("Given a RegisterForm component", () => {
     test("Then it should set the button 'Register' state to enabled'", () => {
       render(
         <Provider store={store}>
-          <RegisterForm></RegisterForm>
+          <BrowserRouter>
+            <RegisterForm></RegisterForm>
+          </BrowserRouter>
         </Provider>
       );
 
@@ -66,7 +71,9 @@ describe("Given a RegisterForm component", () => {
 
       render(
         <Provider store={store}>
-          <RegisterForm></RegisterForm>
+          <BrowserRouter>
+            <RegisterForm></RegisterForm>
+          </BrowserRouter>
         </Provider>
       );
 
