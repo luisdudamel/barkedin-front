@@ -10,18 +10,17 @@ import {
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { UserCredential } from "../../interfaces/UserCredential";
+import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch } from "../../redux/hooks";
-import { registerUserThunk } from "../../redux/thunks/userThunks";
+import { loginUserThunk } from "../../redux/thunks/userThunks";
 
-const RegisterForm = (): JSX.Element => {
+const LoginForm = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const formInitialState: UserCredential = {
-    name: "",
+  const formInitialState: LoginCredentials = {
     username: "",
     password: "",
   };
-  const [formData, setFormData] = useState<UserCredential>(formInitialState);
+  const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -29,17 +28,13 @@ const RegisterForm = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (
-      formData.username !== "" &&
-      formData.password !== "" &&
-      formData.name !== ""
-    ) {
+    if (formData.password !== "" && formData.username !== "") {
       setButtonDisabled(false);
       return;
     }
 
     setButtonDisabled(true);
-  }, [formData.name, formData.password, formData.username]);
+  }, [formData.username, formData.password]);
 
   const resetData = (): void => {
     setFormData(formInitialState);
@@ -49,7 +44,7 @@ const RegisterForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    dispatch(registerUserThunk(formData));
+    dispatch(loginUserThunk(formData));
     resetData();
   };
 
@@ -112,19 +107,6 @@ const RegisterForm = (): JSX.Element => {
             onSubmit={submitRegisterForm}
           >
             <TextField
-              value={formData.name}
-              hiddenLabel
-              margin="normal"
-              required
-              type="name"
-              label="Name"
-              id="name"
-              name="name"
-              autoComplete="off"
-              autoFocus
-              onChange={changeData}
-            />
-            <TextField
               value={formData.username}
               hiddenLabel
               margin="normal"
@@ -162,8 +144,8 @@ const RegisterForm = (): JSX.Element => {
             </Button>
             <Grid container>
               <Grid item>
-                <NavLink to="/login" style={{ textDecoration: "none" }}>
-                  Already have an account? Log in here
+                <NavLink to="/register" style={{ textDecoration: "none" }}>
+                  Not a member? Register here
                 </NavLink>
               </Grid>
             </Grid>
@@ -174,4 +156,4 @@ const RegisterForm = (): JSX.Element => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

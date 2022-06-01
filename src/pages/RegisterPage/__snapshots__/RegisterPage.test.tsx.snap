@@ -238,10 +238,14 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <a
-              className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineAlways css-1ucbcvl-MuiTypography-root-MuiLink-root"
-              href="#"
-              onBlur={[Function]}
-              onFocus={[Function]}
+              className=""
+              href="/login"
+              onClick={[Function]}
+              style={
+                Object {
+                  "textDecoration": "none",
+                }
+              }
             >
               Already have an account? Log in here
             </a>

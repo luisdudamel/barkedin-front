@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserState } from "../../../interfaces/UserCredential";
 
-interface UserState {
-  name: string;
-  username: string;
-  logged: boolean;
-}
-
-const initialState: UserState = { name: "", username: "", logged: false };
+const initialState: UserState = {
+  name: "",
+  username: "",
+  logged: false,
+  id: "",
+};
 
 const userSlice = createSlice({
   name: "user",
@@ -14,7 +14,7 @@ const userSlice = createSlice({
   reducers: {
     loginUser: (user, action: PayloadAction<UserState>) => ({
       ...action.payload,
-      logged: true,
+      logged: localStorage.getItem("token") ? true : false,
     }),
   },
 });
