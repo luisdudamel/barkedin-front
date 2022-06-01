@@ -19,9 +19,13 @@ const userSlice = createSlice({
       id: user.id,
       logged: true,
     }),
+    registerUser: (): void => {},
   },
 });
 
 export default userSlice.reducer;
 
-export const { loginUser: loginUserActionCreator } = userSlice.actions;
+export const {
+  loginUser: loginUserActionCreator,
+  registerUser: registerUserActionCreator,
+} = userSlice.actions;
