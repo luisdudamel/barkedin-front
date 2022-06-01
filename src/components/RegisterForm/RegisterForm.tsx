@@ -9,11 +9,13 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import UserCredential from "../../interfaces/UserCredential";
+import { useAppDispatch } from "../../redux/hooks";
+import { registerUserThunk } from "../../redux/thunks/userThunks";
 
 const RegisterForm = (): JSX.Element => {
+  const dispatch = useAppDispatch();
   const formInitialState: UserCredential = {
     name: "",
     username: "",
@@ -22,7 +24,7 @@ const RegisterForm = (): JSX.Element => {
   const [formData, setFormData] = useState<UserCredential>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
-  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
@@ -39,20 +41,15 @@ const RegisterForm = (): JSX.Element => {
     setButtonDisabled(true);
   }, [formData.name, formData.password, formData.username]);
 
-  const resetData = () => {
+  const resetData = (): void => {
     setFormData(formInitialState);
   };
 
   const submitRegisterForm = async (
     event: React.FormEvent<HTMLFormElement>
-  ) => {
+  ): Promise<void> => {
     event.preventDefault();
-    try {
-      await axios.post<UserCredential>(
-        `${process.env.REACT_APP_API_URL_DEV}users/register`,
-        formData
-      );
-    } catch {}
+    dispatch(registerUserThunk(formData));
     resetData();
   };
 
