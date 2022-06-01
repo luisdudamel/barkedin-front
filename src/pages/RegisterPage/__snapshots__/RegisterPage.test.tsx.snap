@@ -212,8 +212,9 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <button
-          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled  css-593tnw-MuiButtonBase-root-MuiButton-root"
+          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-bpzx6b-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={true}
+          id=":r3:"
           onBlur={[Function]}
           onContextMenu={[Function]}
           onDragLeave={[Function]}
