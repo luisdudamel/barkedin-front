@@ -12,10 +12,7 @@ describe("Given a usersReducer", () => {
         logged: false,
       };
 
-      window.localStorage.__proto__.getItem = jest
-        .fn()
-        .mockReturnValue("token");
-
+      localStorage.getItem = jest.fn().mockReturnValue("token");
       const loginAction = loginUserActionCreator(mockUser);
       const loggedUser = usersReducer(mockUser, loginAction);
 

@@ -17,7 +17,7 @@ const userSlice = createSlice({
       name: user.name,
       username: user.username,
       id: user.id,
-      logged: localStorage.getItem("token") ? true : false,
+      logged: true,
     }),
   },
 });
