@@ -7,7 +7,7 @@ import store from "../../redux/store";
 import theme from "../../theme";
 import LoginPage from "./LoginPage";
 
-describe("Given a RegisterPage component page", () => {
+describe("Given a LoginPage component page", () => {
   describe("When it's invoked", () => {
     test("Then it should always match this snapshot", () => {
       const testedRegisterPage = TestRenderer.create(
@@ -23,7 +23,7 @@ describe("Given a RegisterPage component page", () => {
       expect(testedRegisterPage).toMatchSnapshot();
     });
 
-    test("Then it should render a register form with a button with the text 'Register'", () => {
+    test("Then it should render a register form with a button with the text 'Login'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
