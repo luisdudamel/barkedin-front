@@ -140,7 +140,7 @@ const LoginForm = (): JSX.Element => {
               sx={{ mt: 3, mb: 2 }}
               disabled={buttonDisabled}
             >
-              Register
+              Login
             </Button>
             <Grid container>
               <Grid item>

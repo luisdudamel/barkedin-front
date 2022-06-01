@@ -12,15 +12,14 @@ interface Token {
   token: string;
 }
 
-export const registerUserThunk =
-  (formData: UserCredential) => async (dispatch: Dispatch) => {
-    try {
-      await axios.post<UserCredential>(
-        `${process.env.REACT_APP_API_URL_DEV}users/register`,
-        formData
-      );
-    } catch {}
-  };
+export const registerUserThunk = (formData: UserCredential) => async () => {
+  try {
+    await axios.post<UserCredential>(
+      `${process.env.REACT_APP_API_URL_DEV}users/register`,
+      formData
+    );
+  } catch {}
+};
 
 export const loginUserThunk =
   (formData: LoginCredentials) => async (dispatch: Dispatch) => {
