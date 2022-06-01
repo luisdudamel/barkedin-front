@@ -22,7 +22,7 @@ const RegisterForm = (): JSX.Element => {
   const [formData, setFormData] = useState<UserCredential>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
-  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
@@ -39,13 +39,13 @@ const RegisterForm = (): JSX.Element => {
     setButtonDisabled(true);
   }, [formData.name, formData.password, formData.username]);
 
-  const resetData = () => {
+  const resetData = (): void => {
     setFormData(formInitialState);
   };
 
   const submitRegisterForm = async (
     event: React.FormEvent<HTMLFormElement>
-  ) => {
+  ): Promise<void> => {
     event.preventDefault();
     try {
       await axios.post<UserCredential>(

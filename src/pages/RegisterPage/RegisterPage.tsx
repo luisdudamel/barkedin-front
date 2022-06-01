@@ -1,7 +1,7 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import RegisterPageStyled from "./RegisterPageStyled";
 
-const RegisterPage = () => {
+const RegisterPage = (): JSX.Element => {
   return (
     <RegisterPageStyled>
       <RegisterForm />
