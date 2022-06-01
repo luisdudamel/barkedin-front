@@ -10,18 +10,16 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { UserCredential } from "../../interfaces/UserCredential";
+import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch } from "../../redux/hooks";
-import { registerUserThunk } from "../../redux/thunks/userThunks";
 
 const RegisterForm = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const formInitialState: UserCredential = {
+  const formInitialState: LoginCredentials = {
     name: "",
-    username: "",
     password: "",
   };
-  const [formData, setFormData] = useState<UserCredential>(formInitialState);
+  const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -29,17 +27,13 @@ const RegisterForm = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (
-      formData.username !== "" &&
-      formData.password !== "" &&
-      formData.name !== ""
-    ) {
+    if (formData.password !== "" && formData.name !== "") {
       setButtonDisabled(false);
       return;
     }
 
     setButtonDisabled(true);
-  }, [formData.name, formData.password, formData.username]);
+  }, [formData.name, formData.password]);
 
   const resetData = (): void => {
     setFormData(formInitialState);
@@ -49,7 +43,7 @@ const RegisterForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    dispatch(registerUserThunk(formData));
+    dispatch(loginUserThunk(formData));
     resetData();
   };
 

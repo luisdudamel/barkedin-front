@@ -1,6 +1,10 @@
-interface UserCredential {
+export interface UserCredential {
   name: string;
   username: string;
   password: string;
 }
-export default UserCredential;
+
+export interface LoginCredentials {
+  name: string;
+  password: string;
+}

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
-import UserCredential from "../../interfaces/UserCredential";
+import { UserCredential } from "../../interfaces/UserCredential";
 import store from "../../redux/store";
 import RegisterForm from "./RegisterForm";
 
