@@ -13,12 +13,14 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     loginUser: (user, action: PayloadAction<UserState>) => ({
-      ...action.payload,
-      logged: localStorage.getItem("token") ? true : false,
+      name: user.name,
+      username: user.username,
+      id: user.id,
+      logged: true,
     }),
   },
 });
 
-export const userSliceReducer = userSlice.reducer;
+export default userSlice.reducer;
 
 export const { loginUser: loginUserActionCreator } = userSlice.actions;
