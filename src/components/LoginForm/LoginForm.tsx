@@ -1,3 +1,4 @@
+import { LoadingButton } from "@mui/lab";
 import {
   Avatar,
   Box,
@@ -132,7 +133,8 @@ const LoginForm = (): JSX.Element => {
               onChange={changeData}
             />
 
-            <Button
+            <LoadingButton
+              loading={false}
               type="submit"
               fullWidth
               variant="contained"
@@ -141,7 +143,8 @@ const LoginForm = (): JSX.Element => {
               disabled={buttonDisabled}
             >
               Login
-            </Button>
+            </LoadingButton>
+
             <Grid container>
               <Grid item>
                 <NavLink to="/register" style={{ textDecoration: "none" }}>
