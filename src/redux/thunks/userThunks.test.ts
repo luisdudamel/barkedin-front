@@ -19,7 +19,7 @@ describe("Given the loginUserThunk", () => {
 describe("Given the registerUserThunk", () => {
   describe("When invoked", () => {
     test("Then the dispatch function will be called", async () => {
-      axios.post = jest.fn().mockResolvedValue("Asdasd");
+      axios.post = jest.fn().mockResolvedValue("mockresponse");
       const dispatch = jest.fn();
       const thunk = registerUserThunk({
         name: "Pato",
