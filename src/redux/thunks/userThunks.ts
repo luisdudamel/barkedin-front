@@ -6,20 +6,23 @@ import {
   UserCredential,
   UserState,
 } from "../../interfaces/UserCredential";
-import { loginUserActionCreator } from "../feature/usersSlice/usersSlice";
+import {
+  loginUserActionCreator,
+  registerUserActionCreator,
+} from "../feature/usersSlice/usersSlice";
 
 interface Token {
   token: string;
 }
 
-export const registerUserThunk = (formData: UserCredential) => async () => {
-  try {
-    await axios.post<UserCredential>(
+export const registerUserThunk =
+  (formData: UserCredential) => async (dispatch: Dispatch) => {
+    await axios.post(
       `${process.env.REACT_APP_API_URL_DEV}users/register`,
       formData
     );
-  } catch {}
-};
+    dispatch(registerUserActionCreator());
+  };
 
 export const loginUserThunk =
   (formData: LoginCredentials) => async (dispatch: Dispatch) => {
