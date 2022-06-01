@@ -2,10 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import {
-  LoginCredentials,
-  UserCredential,
-} from "../../interfaces/UserCredential";
+import { LoginCredentials } from "../../interfaces/UserCredential";
 import store from "../../redux/store";
 import LoginForm from "./LoginForm";
 
