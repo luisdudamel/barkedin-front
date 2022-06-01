@@ -13,10 +13,11 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     loginUser: (user, action: PayloadAction<UserState>) => ({
+      ...action.payload,
       name: user.name,
       username: user.username,
       id: user.id,
-      logged: true,
+      logged: localStorage.getItem("token") ? true : false,
     }),
   },
 });
