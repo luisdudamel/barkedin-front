@@ -4,7 +4,13 @@ import jwtDecode from "jwt-decode";
 import {
   LoginCredentials,
   UserCredential,
+  UserState,
 } from "../../interfaces/UserCredential";
+import { loginUserActionCreator } from "../feature/usersSlice/usersSlice";
+
+interface Token {
+  token: string;
+}
 
 export const registerUserThunk =
   (formData: UserCredential) => async (dispatch: Dispatch) => {
@@ -22,12 +28,12 @@ export const loginUserThunk =
       const route = `${process.env.REACT_APP_API_URL_DEV}users/login`;
       const {
         data: { token },
-      } = await axios.post(route, formData);
+      } = await axios.post<Token>(route, formData);
 
       localStorage.setItem("token", token);
 
-      const userInfo = jwtDecode(token);
+      const userInfo = jwtDecode<UserState>(token);
 
-      dispatch(loginActionCreator(userInfo));
+      dispatch(loginUserActionCreator(userInfo));
     } catch (error) {}
   };

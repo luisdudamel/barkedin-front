@@ -12,11 +12,12 @@ import {
 import React, { useState, useEffect } from "react";
 import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch } from "../../redux/hooks";
+import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const RegisterForm = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const formInitialState: LoginCredentials = {
-    name: "",
+    username: "",
     password: "",
   };
   const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
@@ -27,13 +28,13 @@ const RegisterForm = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (formData.password !== "" && formData.name !== "") {
+    if (formData.password !== "" && formData.username !== "") {
       setButtonDisabled(false);
       return;
     }
 
     setButtonDisabled(true);
-  }, [formData.name, formData.password]);
+  }, [formData.username, formData.password]);
 
   const resetData = (): void => {
     setFormData(formInitialState);
@@ -105,19 +106,6 @@ const RegisterForm = (): JSX.Element => {
             }}
             onSubmit={submitRegisterForm}
           >
-            <TextField
-              value={formData.name}
-              hiddenLabel
-              margin="normal"
-              required
-              type="name"
-              label="Name"
-              id="name"
-              name="name"
-              autoComplete="off"
-              autoFocus
-              onChange={changeData}
-            />
             <TextField
               value={formData.username}
               hiddenLabel
