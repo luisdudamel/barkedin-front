@@ -2,7 +2,6 @@ import { LoadingButton } from "@mui/lab";
 import {
   Avatar,
   Box,
-  Button,
   Container,
   CssBaseline,
   Grid,
@@ -12,7 +11,7 @@ import {
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { LoginCredentials } from "../../interfaces/UserCredential";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = (): JSX.Element => {
@@ -23,6 +22,7 @@ const LoginForm = (): JSX.Element => {
   };
   const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
+  const loading = useAppSelector((state) => state.ui.loading);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -134,7 +134,7 @@ const LoginForm = (): JSX.Element => {
             />
 
             <LoadingButton
-              loading={false}
+              loading={loading}
               type="submit"
               fullWidth
               variant="contained"
