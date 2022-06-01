@@ -9,11 +9,13 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import UserCredential from "../../interfaces/UserCredential";
+import { useAppDispatch } from "../../redux/hooks";
+import { registerUserThunk } from "../../redux/thunks/userThunks";
 
 const RegisterForm = (): JSX.Element => {
+  const dispatch = useAppDispatch();
   const formInitialState: UserCredential = {
     name: "",
     username: "",
@@ -47,12 +49,7 @@ const RegisterForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    try {
-      await axios.post<UserCredential>(
-        `${process.env.REACT_APP_API_URL_DEV}users/register`,
-        formData
-      );
-    } catch {}
+    dispatch(registerUserThunk(formData));
     resetData();
   };
 

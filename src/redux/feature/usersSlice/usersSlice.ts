@@ -12,7 +12,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    login: (user, action: PayloadAction<UserState>) => ({
+    loginUser: (user, action: PayloadAction<UserState>) => ({
       ...action.payload,
       logged: true,
     }),
@@ -20,3 +20,5 @@ const userSlice = createSlice({
 });
 
 export const userSliceReducer = userSlice.reducer;
+
+export const { loginUser: loginUserActionCreator } = userSlice.actions;
