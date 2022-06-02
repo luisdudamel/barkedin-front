@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import store from "../../redux/store";
 import CredentialsValidation from "./CredentialsValidation";
 
 let mockLogged: boolean;
@@ -34,11 +36,13 @@ describe("Given a CredentialsValidation component", () => {
       saveToStorage("token");
       mockLogged = true;
       render(
-        <BrowserRouter>
-          <CredentialsValidation>
-            <h1>Luis</h1>
-          </CredentialsValidation>
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <CredentialsValidation>
+              <h1>Luis</h1>
+            </CredentialsValidation>
+          </BrowserRouter>
+        </Provider>
       );
 
       const headingExpected = screen.getByRole("heading", { name: /Luis/i });
@@ -52,11 +56,13 @@ describe("Given a CredentialsValidation component", () => {
       mockLogged = false;
 
       render(
-        <BrowserRouter>
-          <CredentialsValidation>
-            <h1>Luis</h1>
-          </CredentialsValidation>
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <CredentialsValidation>
+              <h1>Luis</h1>
+            </CredentialsValidation>
+          </BrowserRouter>
+        </Provider>
       );
 
       expect(mockNavigate).toHaveBeenCalled();
