@@ -12,13 +12,11 @@ const CredentialsValidation = ({ children }: Props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!logged && !token) navigate("/login");
+    if (!logged || !token) navigate("/login");
   }, [logged, navigate, token]);
 
   if (token) {
     return children;
-  } else {
-    return null;
   }
 };
 
