@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserState } from "../../interfaces/UserCredential";
 import { loginUserActionCreator } from "../../redux/feature/usersSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
@@ -8,14 +9,15 @@ interface Props {
 }
 
 const CredentialsValidation = ({ children }: Props) => {
-  const user = useAppSelector((state) => state.user);
+  const user = useAppSelector<UserState>((state) => state.user);
+
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  if (!user.logged || !token) navigate("/login");
-
   useEffect(() => {
+    if (!user.logged || !token) navigate("/login");
+
     dispatch(
       loginUserActionCreator({
         name: user.name,
@@ -24,7 +26,15 @@ const CredentialsValidation = ({ children }: Props) => {
         logged: true,
       })
     );
-  }, [dispatch, user.id, user.name, user.username]);
+  }, [
+    dispatch,
+    navigate,
+    token,
+    user.id,
+    user.logged,
+    user.name,
+    user.username,
+  ]);
 
   return children;
 };

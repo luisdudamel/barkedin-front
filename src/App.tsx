@@ -5,7 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
