@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 
-const CredentialsValidation = () => {
+interface Props {
+  children: JSX.Element;
+}
+
+const CredentialsValidation = ({ children }: Props) => {
   const { logged } = useAppSelector((state) => state.user);
 
   const navigate = useNavigate();
@@ -12,11 +16,10 @@ const CredentialsValidation = () => {
   });
 
   if (logged) {
-    return;
+    return children;
   } else {
     return null;
   }
 };
 
 export default CredentialsValidation;
-export {};
