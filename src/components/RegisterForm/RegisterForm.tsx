@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserCredential } from "../../interfaces/UserCredential";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { registerUserThunk } from "../../redux/thunks/userThunks";
@@ -24,6 +24,7 @@ const RegisterForm = (): JSX.Element => {
   const [formData, setFormData] = useState<UserCredential>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
+  const navigate = useNavigate();
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
@@ -51,6 +52,7 @@ const RegisterForm = (): JSX.Element => {
     event.preventDefault();
     dispatch(registerUserThunk(formData));
     resetData();
+    navigate("/login");
   };
 
   return (

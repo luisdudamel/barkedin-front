@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
@@ -23,7 +23,7 @@ const LoginForm = (): JSX.Element => {
   const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
-
+  const navigate = useNavigate();
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
@@ -41,12 +41,13 @@ const LoginForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
-  const submitRegisterForm = async (
+  const submitLoginForm = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    dispatch(loginUserThunk(formData));
+    await dispatch(loginUserThunk(formData));
     resetData();
+    navigate("/mydogs");
   };
 
   return (
@@ -105,7 +106,7 @@ const LoginForm = (): JSX.Element => {
               alignItems: "center",
               border: "none",
             }}
-            onSubmit={submitRegisterForm}
+            onSubmit={submitLoginForm}
           >
             <TextField
               value={formData.username}
