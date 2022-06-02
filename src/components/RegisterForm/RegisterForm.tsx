@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { NavigateFunction, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserCredential } from "../../interfaces/UserCredential";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { registerUserThunk } from "../../redux/thunks/userThunks";
