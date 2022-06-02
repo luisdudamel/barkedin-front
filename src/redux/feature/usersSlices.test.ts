@@ -2,7 +2,7 @@ import { UserState } from "../../interfaces/UserCredential";
 import usersReducer, { loginUserActionCreator } from "./usersSlice";
 
 describe("Given a usersReducer", () => {
-  describe("When it receives an object with valid name and username", () => {
+  describe("When its invoked and receives an object with valid name and username", () => {
     test("Then it should return the same object with the logged property set to true", () => {
       const expectedLoggedStatus = true;
       const mockUser: UserState = {
