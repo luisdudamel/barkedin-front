@@ -8,14 +8,14 @@ interface Props {
 
 const CredentialsValidation = ({ children }: Props) => {
   const { logged } = useAppSelector((state) => state.user);
-
+  const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!logged) navigate("/login");
-  });
+    if (!logged && !token) navigate("/login");
+  }, [logged, navigate, token]);
 
-  if (logged) {
+  if (token) {
     return children;
   } else {
     return null;
