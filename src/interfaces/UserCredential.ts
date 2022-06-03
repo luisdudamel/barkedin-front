@@ -19,3 +19,7 @@ export interface UserState {
 export interface Token {
   token: string;
 }
+
+export interface LocalToken {
+  token: string;
+}

@@ -22,6 +22,8 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockNavigate,
 }));
 
+jest.mock("jwt-decode", () => () => "Tokencito");
+
 const saveToStorage = (value: string) => {
   window.localStorage.setItem("token", value);
 };
