@@ -15,3 +15,7 @@ export interface UserState {
   logged: boolean;
   id: string;
 }
+
+export interface Token {
+  token: string;
+}
