@@ -12,7 +12,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { LoginCredentials } from "../../interfaces/UserCredential";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { getFavDogsThunk } from "../../redux/thunks/dogsThunks";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = (): JSX.Element => {
