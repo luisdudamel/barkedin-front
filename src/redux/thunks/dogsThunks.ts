@@ -14,6 +14,5 @@ export const getFavDogs = async (token: string) => {
         },
       }
     );
-    console.log(favDogs);
   } catch {}
 };
