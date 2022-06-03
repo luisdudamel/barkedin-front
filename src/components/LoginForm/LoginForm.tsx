@@ -21,6 +21,7 @@ const LoginForm = (): JSX.Element => {
     password: "",
   };
   const [formData, setFormData] = useState<LoginCredentials>(formInitialState);
+
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
   const navigate = useNavigate();
