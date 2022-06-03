@@ -16,16 +16,17 @@ const CredentialsValidation = ({ children }: Props) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!token && !user.logged) navigate("/login");
-
-    dispatch(
-      loginUserActionCreator({
-        name: user.name,
-        id: user.id,
-        username: user.username,
-        logged: true,
-      })
-    );
+    if (!token) {
+      navigate("/login");
+    } else
+      dispatch(
+        loginUserActionCreator({
+          name: user.name,
+          id: user.id,
+          username: user.username,
+          logged: true,
+        })
+      );
   }, [
     dispatch,
     navigate,
