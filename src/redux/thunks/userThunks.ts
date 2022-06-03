@@ -1,23 +1,20 @@
-import { Dispatch } from "@reduxjs/toolkit";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import {
   LoginCredentials,
   UserCredential,
   UserState,
+  Token,
 } from "../../interfaces/UserCredential";
 import { loadingActionCreator } from "../feature/uiSlice";
 import {
   loginUserActionCreator,
   registerUserActionCreator,
 } from "../feature/usersSlice";
-
-interface Token {
-  token: string;
-}
+import { AppDispatch } from "../store";
 
 export const registerUserThunk =
-  (formData: UserCredential) => async (dispatch: Dispatch) => {
+  (formData: UserCredential) => async (dispatch: AppDispatch) => {
     dispatch(loadingActionCreator({ loading: true }));
     await axios.post(
       `${process.env.REACT_APP_API_URL_DEV}users/register`,
@@ -28,7 +25,7 @@ export const registerUserThunk =
   };
 
 export const loginUserThunk =
-  (formData: LoginCredentials) => async (dispatch: Dispatch) => {
+  (formData: LoginCredentials) => async (dispatch: AppDispatch) => {
     try {
       dispatch(loadingActionCreator({ loading: true }));
       const route = `${process.env.REACT_APP_API_URL_DEV}users/login`;

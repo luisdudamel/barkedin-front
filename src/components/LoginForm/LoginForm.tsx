@@ -45,7 +45,9 @@ const LoginForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
+
     await dispatch(loginUserThunk(formData));
+
     resetData();
     navigate("/mydogs");
   };
