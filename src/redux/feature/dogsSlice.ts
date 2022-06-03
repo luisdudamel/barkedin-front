@@ -5,7 +5,7 @@ const initialState: Dog[] = [];
 
 const dogSlice = createSlice({
   name: "dogs",
-  initialState,
+  initialState: initialState,
   reducers: {
     loadFavDogs: (favDogs, action: PayloadAction<Dog[]>) => [...action.payload],
   },

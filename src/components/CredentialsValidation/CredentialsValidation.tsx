@@ -16,7 +16,7 @@ const CredentialsValidation = ({ children }: Props) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!user.logged || !token) navigate("/login");
+    if (!token && !user.logged) navigate("/login");
 
     dispatch(
       loginUserActionCreator({
