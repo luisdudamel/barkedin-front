@@ -2,7 +2,7 @@ export interface Dog {
   name: string;
   picture: string;
   age: number;
-  tittle: string;
+  title: string;
   toy: string;
   weight: string;
 }

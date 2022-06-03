@@ -7,9 +7,7 @@ const dogSlice = createSlice({
   name: "dogs",
   initialState,
   reducers: {
-    loadFavDogs: (favDogs, action: PayloadAction<Dog>) => [
-      { ...action.payload },
-    ],
+    loadFavDogs: (favDogs, action: PayloadAction<Dog[]>) => [...action.payload],
   },
 });
 
