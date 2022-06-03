@@ -4,6 +4,7 @@ import { Dog } from "../../interfaces/Dogs";
 import { getFavDogsThunk } from "../../redux/thunks/dogsThunks";
 import { useEffect } from "react";
 import { UserState } from "../../interfaces/UserCredential";
+import { DogList } from "../../components/DogList/DogList";
 
 const MyDogsPage = (): JSX.Element => {
   const currentFavDogs: Dog[] = useAppSelector((state) => state.dogs);
@@ -17,11 +18,7 @@ const MyDogsPage = (): JSX.Element => {
   return (
     <>
       <MyDogsPageStyled>
-        <ul>
-          {currentFavDogs.map((dog) => {
-            return <li key={dog.name}>{dog.name}</li>;
-          })}
-        </ul>
+        <DogList dogs={currentFavDogs}></DogList>
       </MyDogsPageStyled>
     </>
   );

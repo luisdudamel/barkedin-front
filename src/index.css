@@ -5,7 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffc027;
 }
-
+@media (min-width: 700px) {
+  .bottom {
+    display: none;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
