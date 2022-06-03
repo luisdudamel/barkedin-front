@@ -14,6 +14,7 @@ describe("Given a getFavDogsThunk", () => {
         data: {
           favdogs: MockFavDogs,
         },
+        status: 200,
       });
 
       const expectedAction = loadFavDogsActionCreator(MockFavDogs);

@@ -16,7 +16,8 @@ export const getFavDogsThunk =
           username: "luis1",
         },
       });
-
-      dispatch(loadFavDogsActionCreator(favDogs));
+      if (status === 200) {
+        dispatch(loadFavDogsActionCreator(favDogs));
+      }
     } catch {}
   };
