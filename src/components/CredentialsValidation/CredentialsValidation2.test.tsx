@@ -1,17 +1,26 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store";
 import CredentialsValidation from "./CredentialsValidation";
+
+let mockedToken: string | any;
+let mockLogged: boolean;
 
 jest.mock("../../redux/hooks", () => ({
   ...jest.requireActual("../../redux/hooks"),
   useAppSelector: () => ({
     name: "asdas",
     username: "asdasd",
-    logged: false,
+    logged: mockLogged,
   }),
 }));
+
+mockedToken = "Tokencito";
+jest.mock("jwt-decode", () => () => mockedToken);
+const saveToStorage = (value: string) => {
+  window.localStorage.setItem("token", value);
+};
 
 window.localStorage.removeItem("tokencito");
 
@@ -23,8 +32,12 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("Given a CredentialsValidation component", () => {
-  describe("When its invoked and the user is not logged in", () => {
-    test("Then it should call the navigate function", () => {
+  describe("When its invoked and the user is logged in", () => {
+    test("Then it should return its children", () => {
+      saveToStorage("token");
+
+      mockLogged = true;
+
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -35,7 +48,9 @@ describe("Given a CredentialsValidation component", () => {
         </Provider>
       );
 
-      expect(mockNavigate).toHaveBeenCalled();
+      const headingExpected = screen.getByRole("heading", { name: /Luis/i });
+
+      expect(headingExpected).toBeInTheDocument();
     });
   });
 });
