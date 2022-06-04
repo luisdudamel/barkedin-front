@@ -14,7 +14,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
         className="avatars-container"
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+          className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
@@ -22,7 +22,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           />
         </div>
         <div
-          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+          className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
@@ -30,7 +30,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           />
         </div>
         <div
-          className="MuiAvatar-root MuiAvatar-circular css-y2r78m-MuiAvatar-root"
+          className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
@@ -39,7 +39,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
         </div>
       </div>
       <h1
-        className="MuiTypography-root MuiTypography-h5 css-1uviv7h-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h5 css-wtwr59-MuiTypography-root"
       >
         Welcome to BarkedIn!
       </h1>
@@ -52,7 +52,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink={false}
             htmlFor="name"
             id="name-label"
@@ -67,7 +67,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             </span>
           </label>
           <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
             onClick={[Function]}
           >
             <input
@@ -106,7 +106,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink={false}
             htmlFor="username"
             id="username-label"
@@ -121,7 +121,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             </span>
           </label>
           <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
             onClick={[Function]}
           >
             <input
@@ -161,7 +161,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1gv81fz-MuiFormLabel-root-MuiInputLabel-root"
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink={false}
             htmlFor="password"
             id="password-label"
@@ -176,7 +176,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
             </span>
           </label>
           <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1q5ijy-MuiInputBase-root-MuiOutlinedInput-root"
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
             onClick={[Function]}
           >
             <input
@@ -212,7 +212,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <button
-          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-bpzx6b-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-j8aq0m-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={true}
           id=":r3:"
           onBlur={[Function]}

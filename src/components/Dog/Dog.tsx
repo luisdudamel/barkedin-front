@@ -1,10 +1,9 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea, CardActions } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
+import StyledDog from "./StyledDog";
 
 interface Props {
   dog: IDog;
@@ -12,29 +11,52 @@ interface Props {
 
 export const DogCard = ({ dog }: Props): JSX.Element => {
   return (
-    <Card sx={{ width: 350, height: 200 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          width="140"
-          image="../../images/doberman.png"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {dog.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+    <StyledDog>
+      <CardActionArea className="dog-card">
+        <CardContent className="dog-card-content">
+          <div className="dog-card-top">
+            <img
+              className="dog-card-top__avatar"
+              width={250}
+              alt={`${dog.name} avatar`}
+              src="../../devresources/images/avatars/beagle.jpg"
+            />
+            <CardActions>
+              <img
+                className="dog-card-top__personality"
+                width={20}
+                alt={`${dog.name} avatar`}
+                src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
+              />
+            </CardActions>
+          </div>
+          <div className="dog-card-bottom">
+            <div>
+              <Typography
+                gutterBottom
+                variant="h5"
+                className="dog-card-bottom__name"
+                component="div"
+              >
+                {dog.name}
+              </Typography>
+              <Typography
+                variant="body1"
+                className="dog-card-bottom__title"
+                color="text.secondary"
+              >
+                {dog.title}
+              </Typography>
+            </div>
+            <img
+              className="dog-card-bottom__delete"
+              width={20}
+              alt={"Red trash can icon"}
+              src="../../images/icons/mobile/trash.png"
+            />
+          </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
-    </Card>
+    </StyledDog>
   );
 };
