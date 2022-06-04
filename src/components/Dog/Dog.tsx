@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
+import StyledDog from "./StyledDog";
 
 interface Props {
   dog: IDog;
@@ -12,7 +13,7 @@ interface Props {
 
 export const DogCard = ({ dog }: Props): JSX.Element => {
   return (
-    <Card sx={{ width: "100%", height: 200, borderRadius: "20px" }}>
+    <StyledDog>
       <CardActionArea>
         <CardMedia
           sx={{ width: 100 }}
@@ -24,7 +25,7 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
           <Typography gutterBottom variant="h5" component="div">
             {dog.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body1" color="text.secondary">
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
           </Typography>
@@ -35,6 +36,6 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
           Share
         </Button>
       </CardActions>
-    </Card>
+    </StyledDog>
   );
 };
