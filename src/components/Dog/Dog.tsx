@@ -12,12 +12,12 @@ interface Props {
 
 export const DogCard = ({ dog }: Props): JSX.Element => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 350, height: 200 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          width="140"
+          image="../../images/doberman.png"
           alt="green iguana"
         />
         <CardContent>

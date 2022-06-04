@@ -20,7 +20,6 @@ const MyDogsPage = (): JSX.Element => {
     <>
       <MyDogsPageStyled>
         <Stack
-          mt={2}
           direction="column"
           justifyContent="center"
           alignItems="center"

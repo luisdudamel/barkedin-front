@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { Dog } from "../../classes/Dog";
 import { IDog } from "../../interfaces/Dogs";
 import { DogCard } from "../Dog/Dog";
 
@@ -12,13 +11,16 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
     <>
       <Grid
         container
-        spacing={2}
-        direction="row"
+        direction={"row"}
         justifyContent="center"
         alignItems="center"
       >
         {dogs.map((dog) => {
-          return <DogCard dog={dog}></DogCard>;
+          return (
+            <Grid key={dog.name} item>
+              <DogCard dog={dog}></DogCard>
+            </Grid>
+          );
         })}
       </Grid>
     </>
