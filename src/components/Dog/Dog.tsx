@@ -19,7 +19,7 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
               className="dog-card-top__avatar"
               width={250}
               alt={`${dog.name} avatar`}
-              src="../../devresources/images/avatars/beagle.jpg"
+              src="../../images/avatars/beagle.jpg"
             />
             <CardActions>
               <img
