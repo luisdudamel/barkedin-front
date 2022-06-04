@@ -10,6 +10,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
   return (
     <>
       <Grid
+        className="dogs-grid"
         container
         direction={"row"}
         justifyContent="center"
@@ -17,7 +18,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
       >
         {dogs.map((dog) => {
           return (
-            <Grid key={dog.name} item>
+            <Grid margin={1} key={dog.name} item>
               <DogCard dog={dog}></DogCard>
             </Grid>
           );

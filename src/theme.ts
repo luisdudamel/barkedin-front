@@ -19,6 +19,16 @@ const theme = createTheme({
       main: red.A400,
     },
   },
+
+  // components: {
+  //   MuiGrid: {
+  //     styleOverrides: {
+  //       root: {
+  //         margin: "none"
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export default theme;
