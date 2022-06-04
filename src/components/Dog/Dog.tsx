@@ -1,11 +1,11 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea, CardActions } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
 import StyledDog from "./StyledDog";
+
+import { FavoriteBorder } from "@mui/icons-material";
 
 interface Props {
   dog: IDog;
@@ -13,15 +13,25 @@ interface Props {
 
 export const DogCard = ({ dog }: Props): JSX.Element => {
   return (
-    <StyledDog>
-      <CardActionArea>
-        <CardMedia
-          sx={{ width: 100 }}
-          component="img"
-          image="../../images/doberman.png"
-          alt="green iguana"
-        />
+    <CardActionArea>
+      <StyledDog>
         <CardContent>
+          <div className="dog-card-top">
+            <img
+              className="card-avatar"
+              width={250}
+              alt={`${dog.name} avatar`}
+              src="../../devresources/images/avatars/beagle.jpg"
+            />
+            <CardActions>
+              <img
+                className="card-personality"
+                width={20}
+                alt={`${dog.name} avatar`}
+                src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
+              />
+            </CardActions>
+          </div>
           <Typography gutterBottom variant="h5" component="div">
             {dog.name}
           </Typography>
@@ -30,12 +40,7 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
-    </StyledDog>
+      </StyledDog>
+    </CardActionArea>
   );
 };
