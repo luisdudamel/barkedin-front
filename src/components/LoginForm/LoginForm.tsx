@@ -50,7 +50,7 @@ const LoginForm = (): JSX.Element => {
     await dispatch(loginUserThunk(formData));
 
     resetData();
-    navigate("/mydogs");
+    navigate("/profile");
   };
 
   return (
