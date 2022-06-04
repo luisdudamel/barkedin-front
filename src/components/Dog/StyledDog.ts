@@ -5,6 +5,14 @@ const StyledDog = styled.div`
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  width: 500px;
+  margin: 15px;
+  .dog-card {
+    display: flex;
+    &-content {
+      width: 100%;
+    }
+  }
   .dog-card-top {
     display: flex;
     justify-content: space-between;
@@ -14,8 +22,8 @@ const StyledDog = styled.div`
       object-fit: contain;
     }
     .card-personality {
-      height: 70px;
-      width: 70px;
+      height: 60px;
+      width: 60px;
       object-fit: fill;
     }
   }
