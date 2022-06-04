@@ -16,26 +16,45 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
         <CardContent className="dog-card-content">
           <div className="dog-card-top">
             <img
-              className="card-avatar"
+              className="dog-card-top__avatar"
               width={250}
               alt={`${dog.name} avatar`}
               src="../../devresources/images/avatars/beagle.jpg"
             />
             <CardActions>
               <img
-                className="card-personality"
+                className="dog-card-top__personality"
                 width={20}
                 alt={`${dog.name} avatar`}
                 src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
               />
             </CardActions>
           </div>
-          <Typography gutterBottom variant="h5" component="div">
-            {dog.name}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {dog.title}
-          </Typography>
+          <div className="dog-card-bottom">
+            <div>
+              <Typography
+                gutterBottom
+                variant="h5"
+                className="dog-card-bottom__name"
+                component="div"
+              >
+                {dog.name}
+              </Typography>
+              <Typography
+                variant="body1"
+                className="dog-card-bottom__title"
+                color="text.secondary"
+              >
+                {dog.title}
+              </Typography>
+            </div>
+            <img
+              className="dog-card-bottom__delete"
+              width={20}
+              alt={"Red trash can icon"}
+              src="../../images/icons/mobile/trash.png"
+            />
+          </div>
         </CardContent>
       </CardActionArea>
     </StyledDog>

@@ -3,7 +3,7 @@ import { red } from "@mui/material/colors";
 
 const theme = createTheme({
   typography: {
-    fontFamily: ['"Outfit"', "sans-serif"].join(","),
+    fontFamily: ["Outfit"].join(","),
   },
   palette: {
     background: {
