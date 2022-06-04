@@ -12,11 +12,12 @@ function App(): JSX.Element {
   return (
     <>
       <Routes>
+        <Route path="*" element={<Navigate to="/login" />} />
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
-          path="/mydogs"
+          path="/profile"
           element={
             <CredentialsValidation>
               <MyDogsPage />

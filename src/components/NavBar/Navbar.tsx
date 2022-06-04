@@ -21,7 +21,9 @@ export const NavBar = () => {
           <BottomNavigationAction
             icon={
               <img
-                alt="Favorites navbar icon"
+                alt={`Home navbar ${
+                  pathname === "/home" ? "active" : "inactive"
+                } icon`}
                 height={"30px"}
                 src={`../../images/mobile/navbar/${
                   pathname === "/home" ? "active" : "inactive"
@@ -33,7 +35,9 @@ export const NavBar = () => {
           <BottomNavigationAction
             icon={
               <img
-                alt="Favorites navbar icon"
+                alt={`Dates navbar ${
+                  pathname === "/dates" ? "active" : "inactive"
+                } icon`}
                 height={"30px"}
                 src={`../../images/mobile/navbar/${
                   pathname === "/dates" ? "active" : "inactive"
@@ -45,10 +49,12 @@ export const NavBar = () => {
           <BottomNavigationAction
             icon={
               <img
-                alt="Favorites navbar icon"
+                alt={`Favorites navbar ${
+                  pathname === "/favorites" ? "active" : "inactive"
+                } icon`}
                 height={"30px"}
                 src={`../../images/mobile/navbar/${
-                  pathname === "/mydogs" ? "active" : "inactive"
+                  pathname === "/favorites" ? "active" : "inactive"
                 }/friends.png`}
               />
             }
@@ -57,7 +63,9 @@ export const NavBar = () => {
           <BottomNavigationAction
             icon={
               <img
-                alt="Favorites navbar icon"
+                alt={`Profile navbar ${
+                  pathname === "/profile" ? "active" : "inactive"
+                } icon`}
                 height={"30px"}
                 src={`../../images/mobile/navbar/${
                   pathname === "/profile" ? "active" : "inactive"

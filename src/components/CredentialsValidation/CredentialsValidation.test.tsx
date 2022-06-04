@@ -13,8 +13,6 @@ jest.mock("../../redux/hooks", () => ({
   }),
 }));
 
-window.localStorage.removeItem("tokencito");
-
 const mockNavigate = jest.fn();
 
 jest.mock("react-router-dom", () => ({
@@ -35,7 +33,7 @@ describe("Given a CredentialsValidation component", () => {
         </Provider>
       );
 
-      expect(mockNavigate).toHaveBeenCalled();
+      expect(mockNavigate).toHaveBeenCalledWith("/login");
     });
   });
 });
