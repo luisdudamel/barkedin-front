@@ -1,15 +1,28 @@
-import { Dog } from "../../interfaces/Dogs";
+import { Grid } from "@mui/material";
+import { IDog } from "../../interfaces/Dogs";
+import { DogCard } from "../Dog/Dog";
 
 interface Props {
-  dogs: Dog[];
+  dogs: IDog[];
 }
 
-export const DogList = ({ dogs }: Props) => {
+export const DogList = ({ dogs }: Props): JSX.Element => {
   return (
-    <ul>
-      {dogs.map((dog) => {
-        return <li key={dog.name}>{dog.name}</li>;
-      })}
-    </ul>
+    <>
+      <Grid
+        container
+        direction={"row"}
+        justifyContent="center"
+        alignItems="center"
+      >
+        {dogs.map((dog) => {
+          return (
+            <Grid key={dog.name} item>
+              <DogCard dog={dog}></DogCard>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </>
   );
 };

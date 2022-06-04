@@ -1,4 +1,4 @@
-export interface Dog {
+export interface IDog {
   name: string;
   picture: string;
   age: number;
