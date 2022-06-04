@@ -1,8 +1,10 @@
 import { Grid } from "@mui/material";
-import { Dog } from "../../interfaces/Dogs";
+import { Dog } from "../../classes/Dog";
+import { IDog } from "../../interfaces/Dogs";
+import { DogCard } from "../Dog/Dog";
 
 interface Props {
-  dogs: Dog[];
+  dogs: IDog[];
 }
 
 export const DogList = ({ dogs }: Props): JSX.Element => {
@@ -16,11 +18,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
         alignItems="center"
       >
         {dogs.map((dog) => {
-          return (
-            <Grid textAlign={"center"} item xs={12} sm={6} key={dog.name}>
-              {dog.name}
-            </Grid>
-          );
+          return <DogCard dog={dog}></DogCard>;
         })}
       </Grid>
     </>

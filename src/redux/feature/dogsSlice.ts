@@ -1,13 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Dog } from "../../interfaces/Dogs";
+import { IDog } from "../../interfaces/Dogs";
 
-const initialState: Dog[] = [];
+const initialState: IDog[] = [];
 
 const dogSlice = createSlice({
   name: "dogs",
   initialState: initialState,
   reducers: {
-    loadFavDogs: (favDogs, action: PayloadAction<Dog[]>) => [...action.payload],
+    loadFavDogs: (favDogs, action: PayloadAction<IDog[]>) => [
+      ...action.payload,
+    ],
   },
 });
 

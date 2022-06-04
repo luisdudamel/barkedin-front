@@ -1,6 +1,6 @@
-import { Dog } from "../interfaces/Dogs";
+import { IDog } from "../interfaces/Dogs";
 
-export const MockFavDogs: Dog[] = [
+export const MockFavDogs: IDog[] = [
   {
     age: 7,
     name: "Rocko",
