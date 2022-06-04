@@ -18,7 +18,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
       >
         {dogs.map((dog) => {
           return (
-            <Grid margin={1} key={dog.name} item>
+            <Grid xs={12} sm={5} md={4} lg={3} margin={1} key={dog.name} item>
               <DogCard dog={dog}></DogCard>
             </Grid>
           );
