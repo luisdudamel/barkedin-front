@@ -29,7 +29,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
       </div>
     </nav>
     <nav
-      className="sc-hKMtZM cZSsHr"
+      className="sc-hKMtZM eLaKud"
     >
       <div
         className="profile-bar-container MuiBox-root css-i9gxme"
@@ -38,10 +38,10 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
           className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic appbar css-18ditn3-MuiPaper-root-MuiAppBar-root"
         >
           <div
-            className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular toolbar css-hyum1k-MuiToolbar-root"
           >
             <button
-              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root  css-16i308-MuiButtonBase-root-MuiButton-root"
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
               onContextMenu={[Function]}
@@ -58,7 +58,60 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               tabIndex={0}
               type="button"
             >
-              Login
+              Logout
+              <span
+                className="MuiButton-endIcon MuiButton-iconSizeMedium css-1gnd1fd-MuiButton-endIcon"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="LogoutRoundedIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 5h6c.55 0 1-.45 1-1s-.45-1-1-1H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h6c.55 0 1-.45 1-1s-.45-1-1-1H5V5z"
+                  />
+                  <path
+                    d="m20.65 11.65-2.79-2.79c-.32-.32-.86-.1-.86.35V11h-7c-.55 0-1 .45-1 1s.45 1 1 1h7v1.79c0 .45.54.67.85.35l2.79-2.79c.2-.19.2-.51.01-.7z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              New dog
+              <span
+                className="MuiButton-endIcon MuiButton-iconSizeMedium css-1gnd1fd-MuiButton-endIcon"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="AddCircleIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
         </header>
@@ -71,7 +124,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -97,12 +150,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Rocko avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Rocko.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Rocko avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Rocko.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Rocko avatar"
                   className="dog-card-top__personality"
@@ -143,7 +200,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -169,12 +226,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Lamu avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Lamu.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Lamu avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Lamu.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Lamu avatar"
                   className="dog-card-top__personality"
@@ -215,7 +276,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -241,12 +302,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Firulais avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Firulais.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Firulais avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Firulais.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Firulais avatar"
                   className="dog-card-top__personality"
@@ -287,7 +352,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -313,12 +378,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Breck avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Breck.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Breck avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Breck.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Breck avatar"
                   className="dog-card-top__personality"
@@ -359,7 +428,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -385,12 +454,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Fenix avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Fenix.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Fenix avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Fenix.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Fenix avatar"
                   className="dog-card-top__personality"
@@ -431,7 +504,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
       >
         <div
-          className="sc-gsnTZi dqnYDt"
+          className="sc-gsnTZi dCwVrA"
         >
           <button
             className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
@@ -457,12 +530,16 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               <div
                 className="dog-card-top"
               >
-                <img
-                  alt="Chuletas avatar"
-                  className="dog-card-top__avatar"
-                  src="../../images/avatars/Chuletas.png"
-                  width={250}
-                />
+                <div
+                  className="image-container"
+                >
+                  <img
+                    alt="Chuletas avatar"
+                    className="dog-card-top__avatar"
+                    src="../../images/avatars/Chuletas.png"
+                    width="100%"
+                  />
+                </div>
                 <img
                   alt="Chuletas avatar"
                   className="dog-card-top__personality"

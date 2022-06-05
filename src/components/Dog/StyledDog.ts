@@ -5,7 +5,7 @@ const StyledDog = styled.div`
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 
   margin-left: 30px;

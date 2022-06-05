@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledProfileBar = styled.nav`
   width: 100%;
   box-shadow: none;
+
   .appbar {
     background-color: transparent;
     box-shadow: none;
