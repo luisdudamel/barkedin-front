@@ -1,7 +1,7 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
 import StyledDog from "./StyledDog";
 
@@ -21,14 +21,13 @@ export const DogCard = ({ dog }: Props): JSX.Element => {
               alt={`${dog.name} avatar`}
               src="../../images/avatars/beagle.jpg"
             />
-            <CardActions>
-              <img
-                className="dog-card-top__personality"
-                width={20}
-                alt={`${dog.name} avatar`}
-                src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
-              />
-            </CardActions>
+
+            <img
+              className="dog-card-top__personality"
+              width={20}
+              alt={`${dog.name} avatar`}
+              src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
+            />
           </div>
           <div className="dog-card-bottom">
             <div>

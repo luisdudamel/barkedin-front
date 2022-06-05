@@ -6,6 +6,7 @@ const StyledDog = styled.div`
   display: flex;
   flex-direction: column;
   width: 500px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 
   margin-left: 15px;
   margin-right: 15px;
@@ -23,10 +24,12 @@ const StyledDog = styled.div`
         object-fit: fill;
       }
       &__personality {
-        height: 60px;
-        width: 60px;
+        height: 70px;
+        width: 70px;
         object-fit: fill;
-        margin-left: 30px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
       }
     }
     &-bottom {
@@ -36,8 +39,8 @@ const StyledDog = styled.div`
       align-items: center;
       padding-right: 20px;
       &__delete {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
       }
       &__name {
         font-size: 40px;
@@ -73,7 +76,9 @@ const StyledDog = styled.div`
           height: 40px;
           width: 40px;
           object-fit: fill;
-          margin-left: 20px;
+          margin-top: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
       &-bottom {
