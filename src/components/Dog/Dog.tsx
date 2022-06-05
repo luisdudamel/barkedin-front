@@ -15,13 +15,14 @@ export const Dog = ({ dog }: Props): JSX.Element => {
       <CardActionArea className="dog-card">
         <CardContent className="dog-card-content">
           <div className="dog-card-top">
-            <img
-              className="dog-card-top__avatar"
-              width={250}
-              alt={`${dog.name} avatar`}
-              src={`../../images/avatars/${dog.name}.png`}
-            />
-
+            <div className="image-container">
+              <img
+                width={"100%"}
+                className="dog-card-top__avatar"
+                alt={`${dog.name} avatar`}
+                src={`../../images/avatars/${dog.name}.png`}
+              />
+            </div>
             <img
               className="dog-card-top__personality"
               width={20}

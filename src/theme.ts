@@ -5,6 +5,18 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Outfit"].join(","),
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: "#2a9d8f",
+          },
+        },
+      },
+    },
+  },
   palette: {
     background: {
       default: "#ffc027",

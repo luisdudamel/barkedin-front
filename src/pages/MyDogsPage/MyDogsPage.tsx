@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { UserState } from "../../interfaces/UserCredential";
 import { DogList } from "../../components/DogList/DogList";
 import { Stack } from "@mui/material";
+import { Header } from "../../components/Header/Header";
+import { ProfileBar } from "../../components/ProfileBar/ProfileBar";
 
 const MyDogsPage = (): JSX.Element => {
   const currentFavDogs: IDog[] = useAppSelector((state) => state.dogs);
@@ -25,7 +27,8 @@ const MyDogsPage = (): JSX.Element => {
           alignItems="center"
           spacing={1}
         >
-          <h1>My dogs</h1>
+          <Header />
+          <ProfileBar />
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
       </MyDogsPageStyled>
