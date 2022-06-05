@@ -20,9 +20,8 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
             <Grid
               className="dogs-grid"
               xs={12}
-              sm={8}
-              md={5}
-              lg={4}
+              md={4}
+              lg={3}
               margin={3}
               key={dog.name}
               item
