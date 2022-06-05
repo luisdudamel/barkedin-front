@@ -17,24 +17,27 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
+            alt="Doberman avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/doberman.png"
+            src="../../images/doberman.webp"
           />
         </div>
         <div
           className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
+            alt="Husky avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/dog.png"
+            src="../../images/dog.webp"
           />
         </div>
         <div
           className="MuiAvatar-root MuiAvatar-circular css-3cgv3-MuiAvatar-root"
         >
           <img
+            alt="Greyhound avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/greyhound.png"
+            src="../../images/greyhound.webp"
           />
         </div>
       </div>

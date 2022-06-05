@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.nav`
+  margin-top: 10px;
   width: 100%;
   .appbar {
     background-color: transparent;

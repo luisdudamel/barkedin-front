@@ -70,7 +70,8 @@ const RegisterForm = (): JSX.Element => {
         >
           <div className="avatars-container">
             <Avatar
-              src="../../images/doberman.png"
+              src="../../images/doberman.webp"
+              alt="Doberman avatar icon"
               sx={{
                 m: 1,
                 height: "100px",
@@ -78,7 +79,8 @@ const RegisterForm = (): JSX.Element => {
               }}
             ></Avatar>
             <Avatar
-              src="../../images/dog.png"
+              src="../../images/dog.webp"
+              alt="Husky avatar icon"
               sx={{
                 m: 1,
                 height: "100px",
@@ -86,7 +88,8 @@ const RegisterForm = (): JSX.Element => {
               }}
             ></Avatar>
             <Avatar
-              src="../../images/greyhound.png"
+              src="../../images/greyhound.webp"
+              alt="Greyhound avatar icon"
               sx={{
                 m: 1,
                 height: "100px",
