@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
-import { DogCard } from "../Dog/Dog";
+import { Dog } from "../Dog/Dog";
 
 interface Props {
   dogs: IDog[];
@@ -26,7 +26,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
               key={dog.name}
               item
             >
-              <DogCard dog={dog}></DogCard>
+              <Dog dog={dog}></Dog>
             </Grid>
           );
         })}

@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a MyDogsPage component page When it's invoked Then it should always match this snapshot 1`] = `
+<div
+  className="sc-bczRLJ efjVMu"
+>
+  <div
+    className="css-1npihzk-MuiStack-root"
+  >
+    <h1>
+      My dogs
+    </h1>
+    <div
+      className="MuiGrid-root MuiGrid-container css-1hbmzt3-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Rocko avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Rocko.png"
+                  width={250}
+                />
+                <img
+                  alt="Rocko avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/ball-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Rocko
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Ball Player
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Lamu avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Lamu.png"
+                  width={250}
+                />
+                <img
+                  alt="Lamu avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/beach-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Lamu
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Beach Lover
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Firulais avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Firulais.png"
+                  width={250}
+                />
+                <img
+                  alt="Firulais avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/nature-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Firulais
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Nature Explorer
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Breck avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Breck.png"
+                  width={250}
+                />
+                <img
+                  alt="Breck avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/walker-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Breck
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Calm Walker
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Fenix avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Fenix.png"
+                  width={250}
+                />
+                <img
+                  alt="Fenix avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/frisbee-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Fenix
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Frisbee Player
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 dogs-grid css-1o156uu-MuiGrid-root"
+      >
+        <div
+          className="sc-gsnTZi dqnYDt"
+        >
+          <button
+            className="MuiButtonBase-root MuiCardActionArea-root dog-card css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="MuiCardContent-root dog-card-content css-46bh2p-MuiCardContent-root"
+            >
+              <div
+                className="dog-card-top"
+              >
+                <img
+                  alt="Chuletas avatar"
+                  className="dog-card-top__avatar"
+                  src="../../images/avatars/Chuletas.png"
+                  width={250}
+                />
+                <img
+                  alt="Chuletas avatar"
+                  className="dog-card-top__personality"
+                  src="../../images/icons/mobile/personalities/inactive/walker-inactive.png"
+                  width={20}
+                />
+              </div>
+              <div
+                className="dog-card-bottom"
+              >
+                <div>
+                  <div
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                  >
+                    Chuletas
+                  </div>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                  >
+                    Calm Walker
+                  </p>
+                </div>
+                <img
+                  alt="Red trash can icon"
+                  className="dog-card-bottom__delete"
+                  src="../../images/icons/mobile/trash.png"
+                  width={20}
+                />
+              </div>
+            </div>
+            <span
+              className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

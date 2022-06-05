@@ -5,4 +5,6 @@ export interface IDog {
   title: string;
   toy: string;
   weight: string;
+  breed: string;
+  personality: string;
 }
