@@ -9,7 +9,7 @@ interface Props {
   dog: IDog;
 }
 
-export const DogCard = ({ dog }: Props): JSX.Element => {
+export const Dog = ({ dog }: Props): JSX.Element => {
   return (
     <StyledDog>
       <CardActionArea className="dog-card">
