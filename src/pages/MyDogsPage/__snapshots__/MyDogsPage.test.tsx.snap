@@ -7,9 +7,63 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
   <div
     className="css-1npihzk-MuiStack-root"
   >
-    <h1>
-      My dogs
-    </h1>
+    <nav
+      className="sc-dkzDqf cyxKEQ"
+    >
+      <div
+        className="header-container MuiBox-root css-i9gxme"
+      >
+        <header
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic appbar css-18ditn3-MuiPaper-root-MuiAppBar-root"
+        >
+          <div
+            className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+          >
+            <div
+              className="MuiTypography-root MuiTypography-h6 page-title css-poizw5-MuiTypography-root"
+            >
+              My Dogs
+            </div>
+          </div>
+        </header>
+      </div>
+    </nav>
+    <nav
+      className="sc-hKMtZM cZSsHr"
+    >
+      <div
+        className="profile-bar-container MuiBox-root css-i9gxme"
+      >
+        <header
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic appbar css-18ditn3-MuiPaper-root-MuiAppBar-root"
+        >
+          <div
+            className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+          >
+            <button
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root  css-16i308-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Login
+            </button>
+          </div>
+        </header>
+      </div>
+    </nav>
     <div
       className="MuiGrid-root MuiGrid-container css-1hbmzt3-MuiGrid-root"
     >
