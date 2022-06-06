@@ -29,7 +29,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
       </div>
     </nav>
     <nav
-      className="sc-hKMtZM eLaKud"
+      className="sc-hKMtZM hhRTHw"
     >
       <div
         className="profile-bar-container MuiBox-root css-i9gxme"
@@ -149,6 +149,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -173,11 +174,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Rocko
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Ball Player
                   </p>
@@ -185,6 +188,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />
@@ -225,6 +229,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -249,11 +254,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Lamu
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Beach Lover
                   </p>
@@ -261,6 +268,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />
@@ -301,6 +309,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -325,11 +334,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Firulais
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Nature Explorer
                   </p>
@@ -337,6 +348,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />
@@ -377,6 +389,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -401,11 +414,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Breck
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Calm Walker
                   </p>
@@ -413,6 +428,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />
@@ -453,6 +469,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -477,11 +494,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Fenix
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Frisbee Player
                   </p>
@@ -489,6 +508,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />
@@ -529,6 +549,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             >
               <div
                 className="dog-card-top"
+                onClick={[Function]}
               >
                 <div
                   className="image-container"
@@ -553,11 +574,13 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <div>
                   <div
                     className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom dog-card-bottom__name css-hwgg1z-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Chuletas
                   </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 dog-card-bottom__title css-1cz1j3c-MuiTypography-root"
+                    onClick={[Function]}
                   >
                     Calm Walker
                   </p>
@@ -565,6 +588,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                 <img
                   alt="Red trash can icon"
                   className="dog-card-bottom__delete"
+                  onClick={[Function]}
                   src="../../images/icons/mobile/trash.png"
                   width={20}
                 />

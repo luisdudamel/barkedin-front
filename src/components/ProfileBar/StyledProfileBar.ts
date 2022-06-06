@@ -25,7 +25,7 @@ export const StyledProfileBar = styled.nav`
   .profile-button {
     background: #2a9d8f;
     border-radius: 15px;
-    font-style: normal;
+    font-style: italic;
     font-weight: 600;
     font-size: 24px;
     line-height: 141.93%;
