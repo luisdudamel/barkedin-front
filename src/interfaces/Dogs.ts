@@ -7,4 +7,5 @@ export interface IDog {
   weight: string;
   breed: string;
   personality: string;
+  id: string;
 }

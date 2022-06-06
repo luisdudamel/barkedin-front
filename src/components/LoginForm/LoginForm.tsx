@@ -3,7 +3,6 @@ import {
   Avatar,
   Box,
   Container,
-  CssBaseline,
   Grid,
   TextField,
   Typography,
@@ -56,7 +55,6 @@ const LoginForm = (): JSX.Element => {
   return (
     <>
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
@@ -98,7 +96,12 @@ const LoginForm = (): JSX.Element => {
           <Typography
             component="h1"
             variant="h5"
-            sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
+            sx={{
+              fontSize: "30px",
+              fontWeight: "bold",
+              fontStyle: "italic",
+              color: "#264653",
+            }}
           >
             Welcome to BarkedIn!
           </Typography>

@@ -22,7 +22,7 @@ jest.mock("react-router-dom", () => ({
 
 describe("Given a CredentialsValidation component", () => {
   describe("When its invoked and the user is not logged in", () => {
-    test("Then it should call the navigate function", () => {
+    test.only("Then it should call the navigate function", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>

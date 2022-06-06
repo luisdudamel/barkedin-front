@@ -10,6 +10,9 @@ const dogSlice = createSlice({
     loadFavDogs: (favDogs, action: PayloadAction<IDog[]>) => [
       ...action.payload,
     ],
+    deleteFavDog: (favDogs, action: PayloadAction<IDog["id"]>) => [
+      ...favDogs.filter((dog) => dog.id !== action.payload),
+    ],
   },
 });
 

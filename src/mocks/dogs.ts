@@ -10,6 +10,7 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "beagle",
     personality: "ball",
+    id: "213123123",
   },
   {
     age: 2,
@@ -20,6 +21,7 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "cocker",
     personality: "beach",
+    id: "213123123",
   },
   {
     age: 4,
@@ -30,6 +32,7 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "border collie",
     personality: "nature",
+    id: "213123123",
   },
   {
     age: 4,
@@ -40,6 +43,7 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "golden retriever",
     personality: "walker",
+    id: "213123123",
   },
   {
     age: 9,
@@ -50,6 +54,7 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "collie",
     personality: "frisbee",
+    id: "213123123",
   },
   {
     age: 9,
@@ -60,5 +65,6 @@ export const MockFavDogs: IDog[] = [
     weight: "4",
     breed: "beagle",
     personality: "walker",
+    id: "213123123",
   },
 ];

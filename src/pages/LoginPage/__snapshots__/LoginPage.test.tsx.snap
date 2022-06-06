@@ -42,7 +42,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
         </div>
       </div>
       <h1
-        className="MuiTypography-root MuiTypography-h5 css-wtwr59-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h5 css-1hgudfg-MuiTypography-root"
       >
         Welcome to BarkedIn!
       </h1>
