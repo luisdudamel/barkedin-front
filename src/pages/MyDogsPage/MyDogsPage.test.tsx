@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import TestRenderer from "react-test-renderer";
-import { MockFavDogs } from "../../mocks/dogs";
+import { mockFavDogs } from "../../mocks/dogs";
 import store from "../../redux/store";
 import theme from "../../theme";
 import MyDogsPage from "./MyDogsPage";
@@ -12,7 +12,7 @@ const mockDispatch = jest.fn();
 
 jest.mock("../../redux/hooks", () => ({
   ...jest.requireActual("../../redux/hooks"),
-  useAppSelector: () => MockFavDogs,
+  useAppSelector: () => mockFavDogs,
   useAppDispatch: () => mockDispatch,
 }));
 
