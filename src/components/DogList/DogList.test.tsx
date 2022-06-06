@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { mockFavDogs } from "../../mocks/dogs";
 import { DogList } from "../../components/DogList/DogList";
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 describe("Given a DogList function", () => {
   describe("When invoked with an group of 6 dogs", () => {
@@ -8,7 +10,11 @@ describe("Given a DogList function", () => {
       const mockedDogList = mockFavDogs;
       const expectedDogsQuantity = 6;
 
-      render(<DogList dogs={mockedDogList}></DogList>);
+      render(
+        <Provider store={store}>
+          <DogList dogs={mockedDogList}></DogList>
+        </Provider>
+      );
 
       const expectedDogs = screen.getAllByRole("button");
 

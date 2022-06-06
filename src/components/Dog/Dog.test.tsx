@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { mockFavDogs } from "../../mocks/dogs";
+import store from "../../redux/store";
 import { Dog } from "./Dog";
 
 describe("Given a Dog function", () => {
@@ -8,7 +10,11 @@ describe("Given a Dog function", () => {
       const dogToRender = mockFavDogs[0];
       const expectedText = "Rocko";
 
-      render(<Dog dog={dogToRender}></Dog>);
+      render(
+        <Provider store={store}>
+          <Dog dog={dogToRender}></Dog>
+        </Provider>
+      );
 
       const dogRenderedText = screen.getByText(/rocko/i);
 
