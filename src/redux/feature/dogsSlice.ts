@@ -16,6 +16,9 @@ const dogSlice = createSlice({
   },
 });
 
-export const { loadFavDogs: loadFavDogsActionCreator } = dogSlice.actions;
+export const {
+  loadFavDogs: loadFavDogsActionCreator,
+  deleteFavDog: deleteFavDogActionCreator,
+} = dogSlice.actions;
 
 export default dogSlice.reducer;
