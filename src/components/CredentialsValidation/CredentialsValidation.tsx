@@ -8,6 +8,7 @@ interface Props {
 const CredentialsValidation = ({ children }: Props) => {
   const logged = useAppSelector((state) => state.user.logged);
   const navigate = useNavigate();
+  debugger;
 
   useEffect(() => {
     if (!logged) {

@@ -1,16 +1,17 @@
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { UserState } from "../../interfaces/UserCredential";
 import store from "../../redux/store";
+
 import CredentialsValidation from "./CredentialsValidation";
+
+let mockUnloggedUser: UserState;
 
 jest.mock("../../redux/hooks", () => ({
   ...jest.requireActual("../../redux/hooks"),
-  useAppSelector: () => ({
-    name: "asdas",
-    username: "asdasd",
-    logged: false,
-  }),
+  useAppSelector: () => mockUnloggedUser.logged,
 }));
 
 const mockNavigate = jest.fn();
@@ -22,7 +23,14 @@ jest.mock("react-router-dom", () => ({
 
 describe("Given a CredentialsValidation component", () => {
   describe("When its invoked and the user is not logged in", () => {
-    test.only("Then it should call the navigate function", () => {
+    test("Then it should call the navigate function", () => {
+      mockUnloggedUser = {
+        name: "Deslogueado",
+        username: "Deslogueado",
+        logged: false,
+        id: "123",
+      };
+
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -33,7 +41,7 @@ describe("Given a CredentialsValidation component", () => {
         </Provider>
       );
 
-      expect(mockNavigate).toHaveBeenCalledWith("/login");
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
