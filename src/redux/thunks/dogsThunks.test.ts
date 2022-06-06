@@ -1,5 +1,5 @@
 import axios from "axios";
-import { MockFavDogs } from "../../mocks/dogs";
+import { mockFavDogs } from "../../mocks/dogs";
 import { loadFavDogsActionCreator } from "../feature/dogsSlice";
 import { getFavDogsThunk } from "./dogsThunks";
 
@@ -10,12 +10,12 @@ describe("Given a getFavDogsThunk", () => {
 
       axios.get = jest.fn().mockResolvedValue({
         data: {
-          favdogs: MockFavDogs,
+          favdogs: mockFavDogs,
         },
         status: 200,
       });
 
-      const expectedAction = loadFavDogsActionCreator(MockFavDogs);
+      const expectedAction = loadFavDogsActionCreator(mockFavDogs);
       const thunk = getFavDogsThunk("luis1");
       await thunk(dispatch);
 
