@@ -13,7 +13,6 @@ import {
   FormControl,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
@@ -35,7 +34,6 @@ const CreateForm = (): JSX.Element => {
   const [formData, setFormData] = useState<IDog>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
-  const navigate = useNavigate();
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
