@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export const ProfileBar = (): JSX.Element => {
   const navigate = useNavigate();
+
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -20,7 +21,7 @@ export const ProfileBar = (): JSX.Element => {
         <AppBar className="appbar" position="static">
           <Toolbar className="toolbar">
             <Button
-              className="profile-button"
+              className="logout profile-button"
               variant="contained"
               endIcon={<LogoutRounded />}
               onClick={() => logout()}

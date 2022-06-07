@@ -41,7 +41,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
             className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular toolbar css-hyum1k-MuiToolbar-root"
           >
             <button
-              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root logout profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
