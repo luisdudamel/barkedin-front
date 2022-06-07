@@ -44,6 +44,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
+              onClick={[Function]}
               onContextMenu={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -82,6 +83,7 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
               className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root profile-button css-9ntkjh-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
+              onClick={[Function]}
               onContextMenu={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}

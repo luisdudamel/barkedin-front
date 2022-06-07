@@ -5,8 +5,15 @@ import Toolbar from "@mui/material/Toolbar";
 import { StyledProfileBar } from "./StyledProfileBar";
 import { Button } from "@mui/material";
 import { AddCircle, LogoutRounded } from "@mui/icons-material";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const ProfileBar = (): JSX.Element => {
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <StyledProfileBar>
       <Box className="profile-bar-container" sx={{ flexGrow: 1 }}>
@@ -16,6 +23,7 @@ export const ProfileBar = (): JSX.Element => {
               className="profile-button"
               variant="contained"
               endIcon={<LogoutRounded />}
+              onClick={() => logout()}
             >
               Logout
             </Button>
@@ -23,6 +31,7 @@ export const ProfileBar = (): JSX.Element => {
               className="profile-button"
               variant="contained"
               endIcon={<AddCircle />}
+              onClick={() => navigate("/create")}
             >
               New dog
             </Button>
