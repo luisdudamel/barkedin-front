@@ -17,21 +17,6 @@ jest.mock("../../redux/hooks", () => ({
 }));
 
 describe("Given a MyDogsPage component page", () => {
-  describe("When it's invoked", () => {
-    test("Then it should always match this snapshot", () => {
-      const testedMyDogsPage = TestRenderer.create(
-        <Provider store={store}>
-          <BrowserRouter>
-            <ThemeProvider theme={theme}>
-              <MyDogsPage />
-            </ThemeProvider>
-          </BrowserRouter>
-        </Provider>
-      );
-
-      expect(testedMyDogsPage).toMatchSnapshot();
-    });
-  });
   describe("When its invoked", () => {
     test("Then it should call the dispatch function with an username'", () => {
       render(
