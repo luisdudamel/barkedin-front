@@ -156,7 +156,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Rocko avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Rocko.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>
@@ -233,7 +234,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Lamu avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Lamu.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>
@@ -310,7 +312,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Firulais avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Firulais.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>
@@ -387,7 +390,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Breck avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Breck.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>
@@ -464,7 +468,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Fenix avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Fenix.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>
@@ -541,7 +546,8 @@ exports[`Given a MyDogsPage component page When it's invoked Then it should alwa
                   <img
                     alt="Chuletas avatar"
                     className="dog-card-top__avatar"
-                    src="../../images/avatars/Chuletas.png"
+                    crossOrigin=""
+                    src="uploads/images/rocko.jpg"
                     width="100%"
                   />
                 </div>

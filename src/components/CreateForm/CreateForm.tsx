@@ -16,8 +16,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
 
 const CreateForm = (): JSX.Element => {
+  const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
   const formInitialState: IDog = {
     name: "",
@@ -36,7 +38,10 @@ const CreateForm = (): JSX.Element => {
   const navigate = useNavigate();
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setFormData({ ...formData, [event.target.id]: event.target.value });
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.value,
+    });
   };
 
   const selectTitle = (event: SelectChangeEvent<string>) => {
@@ -46,6 +51,12 @@ const CreateForm = (): JSX.Element => {
       personality: event.target.value.includes("Calm")
         ? event.target.value.split(" ")[1]
         : event.target.value.split(" ")[0],
+    });
+  };
+  const uploadImage = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.files?.[0] || "",
     });
   };
 
@@ -76,13 +87,17 @@ const CreateForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
-  const submitRegisterForm = async (
+  const submitCreate = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    // dispatch(registerUserThunk(formData));
+    const newDogFormData = new FormData();
+    newDogFormData.append("username", JSON.stringify(username));
+    newDogFormData.append("newDog", JSON.stringify(formData));
+    newDogFormData.append("picture", formData.picture);
+
+    dispatch(createFavDogThunk(newDogFormData));
     resetData();
-    navigate("/login");
   };
 
   return (
@@ -118,7 +133,7 @@ const CreateForm = (): JSX.Element => {
                 alignItems: "center",
                 border: "none",
               }}
-              onSubmit={submitRegisterForm}
+              onSubmit={submitCreate}
             >
               <TextField
                 className="create-input"
@@ -213,7 +228,7 @@ const CreateForm = (): JSX.Element => {
                 component="label"
               >
                 Upload picture
-                <input type="file" hidden />
+                <input type="file" hidden id="picture" onChange={uploadImage} />
               </Button>
               <LoadingButton
                 className="create-input"
