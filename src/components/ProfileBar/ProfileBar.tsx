@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import { StyledProfileBar } from "./StyledProfileBar";
 import { Button } from "@mui/material";
 import { AddCircle, LogoutRounded } from "@mui/icons-material";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const ProfileBar = (): JSX.Element => {
   const navigate = useNavigate();
