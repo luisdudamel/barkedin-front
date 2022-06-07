@@ -14,6 +14,7 @@ const CredentialsValidation = ({ children }: Props) => {
       navigate("/login");
     }
   }, [logged, navigate]);
+
   return children;
 };
 

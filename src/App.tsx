@@ -12,6 +12,7 @@ import { useAppDispatch } from "./redux/hooks";
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
+
   try {
     const userData = jwtDecode<any>(token as string);
     dispatch(
