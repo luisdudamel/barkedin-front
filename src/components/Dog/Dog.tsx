@@ -29,7 +29,7 @@ export const Dog = ({ dog }: Props): JSX.Element => {
                 className="dog-card-top__avatar"
                 crossOrigin=""
                 alt={`${dog.name} avatar`}
-                src={`uploads/images/${dog.picture}`}
+                src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dog.picture}`}
               />
             </div>
             <img
