@@ -77,7 +77,8 @@
       "!src/reportWebVitals.ts",
       "!src/setupTests.ts",
       "!src/react-app-env.d.ts",
-      "!src/setupTests.ts"
+      "!src/setupTests.ts",
+      "!src/mocks/*"
     ]
   },
   "babel": {

@@ -2,13 +2,13 @@
 
 exports[`Given a LoginPage component page When it's invoked Then it should always match this snapshot 1`] = `
 <div
-  className="sc-bczRLJ hqXxVU"
+  className="sc-bczRLJ VRLlR"
 >
   <main
-    className="MuiContainer-root MuiContainer-maxWidthXs css-nzinn5-MuiContainer-root"
+    className="MuiContainer-root MuiContainer-maxWidthLg form-container css-1oqqzyl-MuiContainer-root"
   >
     <div
-      className="MuiBox-root css-htzt7r"
+      className="MuiBox-root css-1lhe3be"
     >
       <div
         className="avatars-container"
@@ -42,7 +42,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
         </div>
       </div>
       <h1
-        className="MuiTypography-root MuiTypography-h5 css-1hgudfg-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h5 login-title css-1icvlpi-MuiTypography-root"
       >
         Welcome to BarkedIn!
       </h1>
@@ -52,7 +52,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
         onSubmit={[Function]}
       >
         <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root login-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
             className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
@@ -107,7 +107,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
           </div>
         </div>
         <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root login-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
             className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
@@ -183,12 +183,17 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
         </button>
         <div
           className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          style={
+            Object {
+              "justifyContent": "center",
+            }
+          }
         >
           <div
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <a
-              className=""
+              className="form-link"
               href="/register"
               onClick={[Function]}
               style={

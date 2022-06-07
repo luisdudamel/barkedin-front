@@ -13,12 +13,17 @@ const dogSlice = createSlice({
     deleteFavDog: (favDogs, action: PayloadAction<IDog["id"]>) => [
       ...favDogs.filter((dog) => dog.id !== action.payload),
     ],
+    createFavDog: (favDogs, action: PayloadAction<IDog>) => [
+      ...favDogs,
+      action.payload,
+    ],
   },
 });
 
 export const {
   loadFavDogs: loadFavDogsActionCreator,
   deleteFavDog: deleteFavDogActionCreator,
+  createFavDog: createFavDogActionCreator,
 } = dogSlice.actions;
 
 export default dogSlice.reducer;

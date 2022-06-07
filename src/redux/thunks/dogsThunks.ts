@@ -48,3 +48,18 @@ export const deleteFavDogThunk =
       }
     } catch {}
   };
+
+export const createFavDogThunk =
+  (newDog: any) => async (dispatch: AppDispatch) => {
+    const currentToken = localStorage.getItem("token");
+    await axios.post(
+      `${process.env.REACT_APP_API_URL_DEV}dogs/create`,
+      newDog,
+      {
+        headers: {
+          Authorization: `Bearer ${currentToken}`,
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+  };

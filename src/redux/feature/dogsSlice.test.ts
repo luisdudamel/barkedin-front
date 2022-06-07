@@ -1,6 +1,11 @@
 import { IDog } from "../../interfaces/Dogs";
-import { mockFavDogs, mockFavDogsFirstDeleted } from "../../mocks/dogs";
+import {
+  mockFavDogs,
+  mockFavDogsFirstDeleted,
+  mockFavDogsOneAdded,
+} from "../../mocks/dogs";
 import dogsReducer, {
+  createFavDogActionCreator,
   deleteFavDogActionCreator,
   loadFavDogsActionCreator,
 } from "./dogsSlice";
@@ -30,6 +35,31 @@ describe("Given a deleteFavDog slice", () => {
       const actualDogsOneDeleted = dogsReducer(actualDogs, deleteAction);
 
       expect(expectedDogsOneDeleted).toEqual(actualDogsOneDeleted);
+    });
+  });
+});
+
+describe("Given a createFavDog slice", () => {
+  describe("When its invoked with a list of dogs and a new dog", () => {
+    test("Then it should return the same list of dogs with the new dog added", () => {
+      const actualDogs: IDog[] = mockFavDogs;
+      const favDogToAdd: IDog = {
+        name: "Hachiko",
+        age: 3,
+        breed: "Akita",
+        id: "123123",
+        personality: "beach",
+        picture: "Hachiko.jpg",
+        title: "Beach Lover",
+        toy: "Ball",
+        weight: "23kg",
+      };
+      const expectedDogsOneAdded: IDog[] = mockFavDogsOneAdded;
+
+      const createAction = createFavDogActionCreator(favDogToAdd);
+      const actualDogsOneAdded = dogsReducer(actualDogs, createAction);
+
+      expect(expectedDogsOneAdded).toEqual(actualDogsOneAdded);
     });
   });
 });

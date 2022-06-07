@@ -2,13 +2,13 @@
 
 exports[`Given a RegisterPage component page When it's invoked Then it should always match this snapshot 1`] = `
 <div
-  className="sc-bczRLJ hqXxVU"
+  className="sc-bczRLJ jXcOHX"
 >
   <main
     className="MuiContainer-root MuiContainer-maxWidthXs css-nzinn5-MuiContainer-root"
   >
     <div
-      className="MuiBox-root css-htzt7r"
+      className="MuiBox-root css-1lhe3be"
     >
       <div
         className="avatars-container"
@@ -42,9 +42,9 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
         </div>
       </div>
       <h1
-        className="MuiTypography-root MuiTypography-h5 css-wtwr59-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h5 register-title css-wtwr59-MuiTypography-root"
       >
-        Welcome to BarkedIn!
+        Create your account!
       </h1>
       <form
         className="MuiBox-root css-1y9cz7a"
@@ -52,7 +52,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
         onSubmit={[Function]}
       >
         <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root register-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
             className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
@@ -106,7 +106,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root register-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
             className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
@@ -161,7 +161,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <div
-          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root register-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
         >
           <label
             className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
@@ -215,7 +215,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <button
-          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-duzj3y-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled register-input css-duzj3y-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={true}
           id=":r3:"
           onBlur={[Function]}
@@ -237,6 +237,11 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
         </button>
         <div
           className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          style={
+            Object {
+              "justifyContent": "center",
+            }
+          }
         >
           <div
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"

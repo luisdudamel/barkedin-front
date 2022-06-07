@@ -3,6 +3,7 @@ import React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
+import CreatePage from "./pages/CreatePage/CreatePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -12,6 +13,7 @@ import { useAppDispatch } from "./redux/hooks";
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
+
   try {
     const userData = jwtDecode<any>(token as string);
     dispatch(
@@ -33,6 +35,7 @@ function App(): JSX.Element {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/create" element={<CreatePage />} />
         <Route
           path="/profile"
           element={
