@@ -61,10 +61,11 @@ const RegisterForm = (): JSX.Element => {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 15,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
             border: "none",
           }}
         >
@@ -98,11 +99,12 @@ const RegisterForm = (): JSX.Element => {
             ></Avatar>
           </div>
           <Typography
+            className="register-title"
             component="h1"
             variant="h5"
             sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
           >
-            Welcome to BarkedIn!
+            Create your account!
           </Typography>
           <Box
             component="form"
@@ -117,6 +119,7 @@ const RegisterForm = (): JSX.Element => {
             onSubmit={submitRegisterForm}
           >
             <TextField
+              className="register-input"
               value={formData.name}
               hiddenLabel
               margin="normal"
@@ -130,6 +133,7 @@ const RegisterForm = (): JSX.Element => {
               onChange={changeData}
             />
             <TextField
+              className="register-input"
               value={formData.username}
               hiddenLabel
               margin="normal"
@@ -143,6 +147,7 @@ const RegisterForm = (): JSX.Element => {
               onChange={changeData}
             />
             <TextField
+              className="register-input"
               value={formData.password}
               hiddenLabel
               margin="normal"
@@ -156,6 +161,7 @@ const RegisterForm = (): JSX.Element => {
             />
 
             <LoadingButton
+              className="register-input"
               loading={loading}
               type="submit"
               fullWidth
@@ -166,7 +172,7 @@ const RegisterForm = (): JSX.Element => {
             >
               Register
             </LoadingButton>
-            <Grid container>
+            <Grid style={{ justifyContent: "center" }} container>
               <Grid item>
                 <NavLink to="/login" style={{ textDecoration: "none" }}>
                   Already have an account? Log in here

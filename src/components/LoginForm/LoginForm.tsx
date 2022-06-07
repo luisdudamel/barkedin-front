@@ -54,13 +54,14 @@ const LoginForm = (): JSX.Element => {
 
   return (
     <>
-      <Container component="main" maxWidth="xs">
+      <Container className="form-container" component="main" maxWidth="lg">
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 15,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
             border: "none",
           }}
         >
@@ -94,10 +95,11 @@ const LoginForm = (): JSX.Element => {
             ></Avatar>
           </div>
           <Typography
+            className="login-title"
             component="h1"
             variant="h5"
             sx={{
-              fontSize: "30px",
+              fontSize: "40px",
               fontWeight: "bold",
               fontStyle: "italic",
               color: "#264653",
@@ -118,6 +120,7 @@ const LoginForm = (): JSX.Element => {
             onSubmit={submitLoginForm}
           >
             <TextField
+              className="login-input"
               value={formData.username}
               hiddenLabel
               margin="normal"
@@ -131,6 +134,7 @@ const LoginForm = (): JSX.Element => {
               onChange={changeData}
             />
             <TextField
+              className="login-input"
               value={formData.password}
               hiddenLabel
               margin="normal"
@@ -155,9 +159,13 @@ const LoginForm = (): JSX.Element => {
               Login
             </LoadingButton>
 
-            <Grid container>
+            <Grid style={{ justifyContent: "center" }} container>
               <Grid item>
-                <NavLink to="/register" style={{ textDecoration: "none" }}>
+                <NavLink
+                  className={"form-link"}
+                  to="/register"
+                  style={{ textDecoration: "none" }}
+                >
                   Not a member? Register here
                 </NavLink>
               </Grid>

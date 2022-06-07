@@ -12,5 +12,30 @@ const LoginPageStyled = styled.div`
   h1 {
     padding-top: 30px;
   }
+
+  @media (max-width: 440px) {
+    .login-title {
+      font-size: 20px;
+    }
+    .MuiAvatar-img {
+      width: 50px;
+      height: 50px;
+    }
+    .MuiAvatar-root {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @media (min-width: 441px) {
+    .login-input {
+      width: 300px;
+    }
+    .form-container {
+      justify-content: center;
+    }
+    .form-link {
+      font-size: 20px;
+    }
+  }
 `;
 export default LoginPageStyled;
