@@ -10,6 +10,7 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  FormControl,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -42,6 +43,9 @@ const CreateForm = (): JSX.Element => {
     setFormData({
       ...formData,
       title: event.target.value,
+      personality: event.target.value.includes("Calm")
+        ? event.target.value.split(" ")[1]
+        : event.target.value.split(" ")[0],
     });
   };
 
@@ -50,9 +54,6 @@ const CreateForm = (): JSX.Element => {
       formData.age !== 0 &&
       formData.breed !== "" &&
       formData.name !== "" &&
-      formData.id !== "" &&
-      formData.personality !== "" &&
-      formData.picture !== "" &&
       formData.title !== "" &&
       formData.toy !== "" &&
       formData.weight !== ""
@@ -65,10 +66,7 @@ const CreateForm = (): JSX.Element => {
   }, [
     formData.age,
     formData.breed,
-    formData.id,
     formData.name,
-    formData.personality,
-    formData.picture,
     formData.title,
     formData.toy,
     formData.weight,
@@ -101,124 +99,136 @@ const CreateForm = (): JSX.Element => {
             border: "none",
           }}
         >
-          <Typography
-            className="create-title"
-            component="h1"
-            variant="h5"
-            sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
-          >
-            Create a new dog!
-          </Typography>
-          <Box
-            component="form"
-            noValidate
-            sx={{
-              mt: 1,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              border: "none",
-            }}
-            onSubmit={submitRegisterForm}
-          >
-            <TextField
-              className="create-input"
-              value={formData.name}
-              hiddenLabel
-              margin="normal"
-              required
-              type="name"
-              label="Dog name"
-              id="name"
-              name="name"
-              autoComplete="off"
-              autoFocus
-              onChange={changeData}
-            />
-            <TextField
-              className="create-input"
-              value={formData.age}
-              hiddenLabel
-              margin="normal"
-              required
-              name="age"
-              label="Age"
-              placeholder="Age"
-              type="age"
-              id="age"
-              autoComplete="off"
-              onChange={changeData}
-            />
-            <TextField
-              className="create-input"
-              value={formData.breed}
-              hiddenLabel
-              margin="normal"
-              required
-              name="breed"
-              label="Breed"
-              type="breed"
-              id="breed"
-              onChange={changeData}
-            />
-            <TextField
-              className="create-input"
-              value={formData.weight}
-              hiddenLabel
-              margin="normal"
-              required
-              name="weight"
-              label="Weight"
-              type="weight"
-              id="weight"
-              onChange={changeData}
-            />
-            <TextField
-              className="create-input"
-              value={formData.toy}
-              hiddenLabel
-              margin="normal"
-              required
-              name="toy"
-              label="Favorite toy"
-              type="toy"
-              id="toy"
-              onChange={changeData}
-            />
-
-            <InputLabel id="title">Title</InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="title"
-              value={formData.title}
-              label="Title"
-              onChange={selectTitle}
+          <FormControl>
+            <Typography
+              className="create-title"
+              component="h1"
+              variant="h5"
+              sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={"12"}>Ten</MenuItem>
-              <MenuItem value={"20"}>Twenty</MenuItem>
-              <MenuItem value={"30"}>Thirty</MenuItem>
-            </Select>
-
-            <Button size="small" variant="contained" component="label">
-              Upload picture
-              <input type="file" hidden />
-            </Button>
-            <LoadingButton
-              className="create-input"
-              loading={loading}
-              type="submit"
-              fullWidth
-              variant="contained"
-              size="small"
-              sx={{ mt: 3, mb: 2 }}
-              disabled={buttonDisabled}
+              Create a new dog!
+            </Typography>
+            <Box
+              component="form"
+              noValidate
+              sx={{
+                mt: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "none",
+              }}
+              onSubmit={submitRegisterForm}
             >
-              Create
-            </LoadingButton>
-          </Box>
+              <TextField
+                className="create-input"
+                value={formData.name}
+                hiddenLabel
+                margin="normal"
+                required
+                type="name"
+                label="Dog name"
+                id="name"
+                name="name"
+                autoComplete="off"
+                autoFocus
+                onChange={changeData}
+              />
+              <TextField
+                className="create-input"
+                value={formData.age}
+                hiddenLabel
+                margin="normal"
+                required
+                name="age"
+                label="Age"
+                placeholder="Age"
+                type="number"
+                id="age"
+                autoComplete="off"
+                onChange={changeData}
+              />
+              <TextField
+                className="create-input"
+                value={formData.breed}
+                hiddenLabel
+                margin="normal"
+                required
+                name="breed"
+                label="Breed"
+                type="breed"
+                id="breed"
+                onChange={changeData}
+              />
+              <TextField
+                className="create-input"
+                value={formData.weight}
+                hiddenLabel
+                margin="normal"
+                required
+                name="weight"
+                label="Weight"
+                type="weight"
+                id="weight"
+                onChange={changeData}
+              />
+              <TextField
+                className="create-input"
+                value={formData.toy}
+                hiddenLabel
+                margin="normal"
+                required
+                name="toy"
+                label="Favorite toy"
+                type="toy"
+                id="toy"
+                onChange={changeData}
+              />
+              <FormControl sx={{ mt: "20px" }} fullWidth>
+                <InputLabel id="title">Title*</InputLabel>
+
+                <Select
+                  required
+                  labelId="title"
+                  id="title"
+                  value={formData.title}
+                  label="Title"
+                  onChange={selectTitle}
+                >
+                  <MenuItem value={""}>
+                    <em>--</em>
+                  </MenuItem>
+                  <MenuItem value={"Ball Player"}>Ball Player</MenuItem>
+                  <MenuItem value={"Beach Lover"}>Beach Lover</MenuItem>
+                  <MenuItem value={"Frisbee Player"}>Frisbee Player</MenuItem>
+                  <MenuItem value={"Nature Explorer"}>Nature Explorer</MenuItem>
+                  <MenuItem value={"Calm Walker"}>Calm Walker</MenuItem>
+                </Select>
+              </FormControl>
+              <Button
+                sx={{ mt: "30px" }}
+                fullWidth
+                size="small"
+                variant="contained"
+                component="label"
+              >
+                Upload picture
+                <input type="file" hidden />
+              </Button>
+              <LoadingButton
+                className="create-input"
+                loading={loading}
+                type="submit"
+                fullWidth
+                variant="contained"
+                size="small"
+                sx={{ mt: 3, mb: 2 }}
+                disabled={buttonDisabled}
+              >
+                Create
+              </LoadingButton>
+            </Box>
+          </FormControl>
         </Box>
       </Container>
     </>
