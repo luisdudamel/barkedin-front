@@ -8,4 +8,5 @@ export interface IDog {
   breed: string;
   personality: string;
   id: string;
+  bio: string;
 }

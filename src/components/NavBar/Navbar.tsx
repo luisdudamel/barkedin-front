@@ -5,10 +5,11 @@ import {
   CssBaseline,
   Paper,
 } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ pb: 7 }} className={"bottom"}>
@@ -28,6 +29,7 @@ export const NavBar = () => {
                 src={`../../images/icons/mobile/navbar/${
                   pathname === "/home" ? "active" : "inactive"
                 }/home.png`}
+                onClick={() => navigate("/home")}
               />
             }
           />
@@ -42,6 +44,7 @@ export const NavBar = () => {
                 src={`../../images/icons/mobile/navbar/${
                   pathname === "/dates" ? "active" : "inactive"
                 }/dates.png`}
+                onClick={() => navigate("/dates")}
               />
             }
           />
@@ -56,6 +59,7 @@ export const NavBar = () => {
                 src={`../../images/icons/mobile/navbar/${
                   pathname === "/favorites" ? "active" : "inactive"
                 }/friends.png`}
+                onClick={() => navigate("/friends")}
               />
             }
           />
@@ -70,6 +74,7 @@ export const NavBar = () => {
                 src={`../../images/icons/mobile/navbar/${
                   pathname === "/profile" ? "active" : "inactive"
                 }/profile.png`}
+                onClick={() => navigate("/profile")}
               />
             }
           />

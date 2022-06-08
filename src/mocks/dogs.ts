@@ -11,6 +11,7 @@ export const mockFavDogs: IDog[] = [
     breed: "beagle",
     personality: "ball",
     id: "213123123",
+    bio: "Good dog",
   },
   {
     age: 2,
@@ -22,6 +23,7 @@ export const mockFavDogs: IDog[] = [
     breed: "cocker",
     personality: "beach",
     id: "2131231234",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -33,6 +35,7 @@ export const mockFavDogs: IDog[] = [
     breed: "border collie",
     personality: "nature",
     id: "2131231235",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -44,6 +47,7 @@ export const mockFavDogs: IDog[] = [
     breed: "golden retriever",
     personality: "walker",
     id: "2131231236",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -55,6 +59,7 @@ export const mockFavDogs: IDog[] = [
     breed: "collie",
     personality: "frisbee",
     id: "2131231237",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -66,6 +71,7 @@ export const mockFavDogs: IDog[] = [
     breed: "beagle",
     personality: "walker",
     id: "2131231238",
+    bio: "Good dog",
   },
 ];
 
@@ -80,6 +86,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     breed: "cocker",
     personality: "beach",
     id: "2131231234",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -91,6 +98,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     breed: "border collie",
     personality: "nature",
     id: "2131231235",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -102,6 +110,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     breed: "golden retriever",
     personality: "walker",
     id: "2131231236",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -113,6 +122,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     breed: "collie",
     personality: "frisbee",
     id: "2131231237",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -124,6 +134,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     breed: "beagle",
     personality: "walker",
     id: "2131231238",
+    bio: "Good dog",
   },
 ];
 
@@ -138,6 +149,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "beagle",
     personality: "ball",
     id: "213123123",
+    bio: "Good dog",
   },
   {
     age: 2,
@@ -149,6 +161,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "cocker",
     personality: "beach",
     id: "2131231234",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -160,6 +173,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "border collie",
     personality: "nature",
     id: "2131231235",
+    bio: "Good dog",
   },
   {
     age: 4,
@@ -171,6 +185,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "golden retriever",
     personality: "walker",
     id: "2131231236",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -182,6 +197,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "collie",
     personality: "frisbee",
     id: "2131231237",
+    bio: "Good dog",
   },
   {
     age: 9,
@@ -193,6 +209,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     breed: "beagle",
     personality: "walker",
     id: "2131231238",
+    bio: "Good dog",
   },
   {
     name: "Hachiko",
@@ -204,5 +221,6 @@ export const mockFavDogsOneAdded: IDog[] = [
     title: "Beach Lover",
     toy: "Ball",
     weight: "23kg",
+    bio: "Good dog",
   },
 ];

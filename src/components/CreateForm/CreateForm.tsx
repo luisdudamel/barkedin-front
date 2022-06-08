@@ -30,6 +30,7 @@ const CreateForm = (): JSX.Element => {
     title: "",
     toy: "",
     weight: "",
+    bio: "",
   };
   const [formData, setFormData] = useState<IDog>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
@@ -63,7 +64,6 @@ const CreateForm = (): JSX.Element => {
       formData.age !== 0 &&
       formData.breed !== "" &&
       formData.name !== "" &&
-      formData.title !== "" &&
       formData.toy !== "" &&
       formData.weight !== ""
     ) {
@@ -76,7 +76,6 @@ const CreateForm = (): JSX.Element => {
     formData.age,
     formData.breed,
     formData.name,
-    formData.title,
     formData.toy,
     formData.weight,
   ]);
