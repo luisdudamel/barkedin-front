@@ -1,17 +1,20 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { NavBar } from "./Navbar";
 
 let mockPath: string;
+const mockNavigate = jest.fn();
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useLocation: () => ({ pathname: mockPath }),
+  useNavigate: () => mockNavigate,
 }));
 
 describe("Given a Navbar function", () => {
-  describe("When its invoked and the path is 'home'", () => {
-    test("Then it should render a home image with the alt text 'Home navbar active icon'", () => {
+  describe("When its invoked and the path is 'home' and the user clicks on home icon", () => {
+    test("Then it should render a home image with the alt text 'Home navbar active icon' and call navigate", () => {
       const expectedHomeText = "Home navbar active icon";
       mockPath = "/home";
 
@@ -21,14 +24,16 @@ describe("Given a Navbar function", () => {
         </BrowserRouter>
       );
       const expectedHomeButton = screen.getByAltText(expectedHomeText);
+      userEvent.click(expectedHomeButton);
 
       expect(expectedHomeButton).toBeInTheDocument();
+      expect(mockNavigate).toHaveBeenCalledWith(mockPath);
     });
   });
 
   describe("When its invoked and the path is 'dates'", () => {
     test("Then it should render a dates image with the alt text 'Dates navbar active icon'", () => {
-      const expectedHomeText = "Dates navbar active icon";
+      const expectedDatesText = "Dates navbar active icon";
       mockPath = "/dates";
 
       render(
@@ -36,15 +41,17 @@ describe("Given a Navbar function", () => {
           <NavBar />
         </BrowserRouter>
       );
-      const expectedHomeButton = screen.getByAltText(expectedHomeText);
+      const expectedDatesButton = screen.getByAltText(expectedDatesText);
+      userEvent.click(expectedDatesButton);
 
-      expect(expectedHomeButton).toBeInTheDocument();
+      expect(mockNavigate).toHaveBeenCalledWith(mockPath);
+      expect(expectedDatesButton).toBeInTheDocument();
     });
   });
 
   describe("When its invoked and the path is 'profile'", () => {
     test("Then it should render a profile image with the alt text 'Favorites navbar active icon'", () => {
-      const expectedHomeText = "Profile navbar active icon";
+      const expectedProfileText = "Profile navbar active icon";
       mockPath = "/profile";
 
       render(
@@ -52,25 +59,31 @@ describe("Given a Navbar function", () => {
           <NavBar />
         </BrowserRouter>
       );
-      const expectedHomeButton = screen.getByAltText(expectedHomeText);
+      const expectedProfileButton = screen.getByAltText(expectedProfileText);
+      userEvent.click(expectedProfileButton);
 
-      expect(expectedHomeButton).toBeInTheDocument();
+      expect(mockNavigate).toHaveBeenCalledWith(mockPath);
+      expect(expectedProfileButton).toBeInTheDocument();
     });
   });
 
   describe("When its invoked and the path is 'favorites'", () => {
     test("Then it should render a favorites image with the alt text 'Favorites navbar active icon'", () => {
-      const expectedHomeText = "Favorites navbar active icon";
-      mockPath = "/favorites";
+      const expectedFavoritesText = "Favorites navbar active icon";
+      mockPath = "/friends";
 
       render(
         <BrowserRouter>
           <NavBar />
         </BrowserRouter>
       );
-      const expectedHomeButton = screen.getByAltText(expectedHomeText);
+      const expectedFavoritesButton = screen.getByAltText(
+        expectedFavoritesText
+      );
+      userEvent.click(expectedFavoritesButton);
 
-      expect(expectedHomeButton).toBeInTheDocument();
+      expect(mockNavigate).toHaveBeenCalledWith(mockPath);
+      expect(expectedFavoritesButton).toBeInTheDocument();
     });
   });
 });

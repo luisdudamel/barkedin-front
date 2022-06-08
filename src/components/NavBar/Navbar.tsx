@@ -53,11 +53,11 @@ export const NavBar = () => {
             icon={
               <img
                 alt={`Favorites navbar ${
-                  pathname === "/favorites" ? "active" : "inactive"
+                  pathname === "/friends" ? "active" : "inactive"
                 } icon`}
                 height={"30px"}
                 src={`../../images/icons/mobile/navbar/${
-                  pathname === "/favorites" ? "active" : "inactive"
+                  pathname === "/friends" ? "active" : "inactive"
                 }/friends.png`}
                 onClick={() => navigate("/friends")}
               />
