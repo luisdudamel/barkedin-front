@@ -2,7 +2,6 @@ import { ThemeProvider } from "@mui/material";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import TestRenderer from "react-test-renderer";
 import { mockFavDogs } from "../../mocks/dogs";
 import store from "../../redux/store";
 import theme from "../../theme";

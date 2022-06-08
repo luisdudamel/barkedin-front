@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a CreatePage component page When it's invoked Then it should always match this snapshot 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-maxWidthXs css-nzinn5-MuiContainer-root"
+>
+  <div
+    className="MuiBox-root css-1lhe3be"
+  >
+    <div
+      className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+    >
+      <h1
+        className="MuiTypography-root MuiTypography-h5 create-title css-wtwr59-MuiTypography-root"
+      >
+        Create a new dog!
+      </h1>
+      <form
+        className="MuiBox-root css-1y9cz7a"
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root create-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="name"
+            id="name-label"
+          >
+            Dog name
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={true}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="name"
+              name="name"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="name"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Dog name
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root create-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-q9cykb-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={true}
+            htmlFor="age"
+            id="age-label"
+          >
+            Age
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="age"
+              name="age"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Age"
+              required={true}
+              type="number"
+              value={0}
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1in441m"
+              >
+                <span>
+                  Age
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root create-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="breed"
+            id="breed-label"
+          >
+            Breed
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="breed"
+              name="breed"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="breed"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Breed
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root create-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="weight"
+            id="weight-label"
+          >
+            Weight
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="weight"
+              name="weight"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="weight"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Weight
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root create-input css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="toy"
+            id="toy-label"
+          >
+            Favorite toy
+            <span
+              aria-hidden={true}
+              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-dqj5rd-MuiFormLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-hiddenLabel css-1hybmvl-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputHiddenLabel css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+              disabled={false}
+              id="toy"
+              name="toy"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={true}
+              type="toy"
+              value=""
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Favorite toy
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          className="MuiFormControl-root MuiFormControl-fullWidth css-1h6yefw-MuiFormControl-root"
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-15ycsir-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            id="title"
+          >
+            Title*
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-wv87nu-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+            onClick={[Function]}
+            required={true}
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="title title"
+              className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+              id="title"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </div>
+            <input
+              aria-hidden={true}
+              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+              disabled={false}
+              onAnimationStart={[Function]}
+              onChange={[Function]}
+              required={true}
+              tabIndex={-1}
+              value=""
+            />
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+              data-testid="ArrowDropDownIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Title
+                   
+                  *
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+        <label
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root  css-1i8yolr-MuiButtonBase-root-MuiButton-root"
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Upload picture
+          <input
+            hidden={true}
+            id="picture"
+            onChange={[Function]}
+            type="file"
+          />
+        </label>
+        <button
+          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled create-input css-duzj3y-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          disabled={true}
+          id=":r5:"
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={-1}
+          type="submit"
+        >
+          Create
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+`;
