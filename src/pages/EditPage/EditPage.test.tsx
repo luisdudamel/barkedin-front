@@ -4,22 +4,22 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store";
 import theme from "../../theme";
-import CreatePage from "./CreatePage";
+import EditPage from "./EditPage";
 
-describe("Given a CreatePage component page", () => {
+describe("Given a EditPage component page", () => {
   describe("When it's invoked", () => {
-    test("Then it should render a register form with a button with the text 'Create'", () => {
+    test("Then it should render a register form with a button with the text 'Edit'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
             <ThemeProvider theme={theme}>
-              <CreatePage />
+              <EditPage />
             </ThemeProvider>
           </BrowserRouter>
         </Provider>
       );
 
-      const expectedButton = screen.getByRole("button", { name: "Create" });
+      const expectedButton = screen.getByRole("button", { name: "Edit" });
 
       expect(expectedButton).toBeInTheDocument();
     });

@@ -4,11 +4,13 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
 import CreatePage from "./pages/CreatePage/CreatePage";
+import EditPage from "./pages/EditPage/EditPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { loginUserActionCreator } from "./redux/feature/usersSlice";
 import { useAppDispatch } from "./redux/hooks";
+import { getFavDogsThunk } from "./redux/thunks/dogsThunks";
 
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
@@ -24,6 +26,7 @@ function App(): JSX.Element {
         logged: true,
       })
     );
+    dispatch(getFavDogsThunk(userData.username));
   } catch (error) {}
 
   const { pathname } = useLocation();
@@ -36,6 +39,14 @@ function App(): JSX.Element {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/create" element={<CreatePage />} />
+        <Route
+          path="/edit/:id"
+          element={
+            <CredentialsValidation>
+              <EditPage />
+            </CredentialsValidation>
+          }
+        />
         <Route
           path="/profile"
           element={

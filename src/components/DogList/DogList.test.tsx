@@ -3,6 +3,7 @@ import { mockFavDogs } from "../../mocks/dogs";
 import { DogList } from "../../components/DogList/DogList";
 import { Provider } from "react-redux";
 import store from "../../redux/store";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a DogList function", () => {
   describe("When invoked with an group of 6 dogs", () => {
@@ -11,9 +12,11 @@ describe("Given a DogList function", () => {
       const expectedDogsQuantity = 6;
 
       render(
-        <Provider store={store}>
-          <DogList dogs={mockedDogList}></DogList>
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <DogList dogs={mockedDogList}></DogList>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedDogs = screen.getAllByRole("button");

@@ -13,12 +13,17 @@ import {
   FormControl,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
+import { editFavDogThunk } from "../../redux/thunks/dogsThunks";
 
-const CreateForm = (): JSX.Element => {
+const EditForm = (): JSX.Element => {
+  const { id } = useParams();
   const username = useAppSelector((state) => state.user.username);
+  const currentDog = useAppSelector((state) => state.dogs);
+  const currentDogId = currentDog.find((dog) => dog.id === id);
+
   const dispatch = useAppDispatch();
   const formInitialState: IDog = {
     name: "",
@@ -86,16 +91,17 @@ const CreateForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
-  const submitCreate = async (
+  const submitEdit = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
     const newDogFormData = new FormData();
     newDogFormData.append("username", JSON.stringify(username));
-    newDogFormData.append("newDog", JSON.stringify(formData));
+    newDogFormData.append("dogIdToEdit", id as string);
+    newDogFormData.append("updatedDog", JSON.stringify(formData));
     newDogFormData.append("picture", formData.picture);
 
-    dispatch(createFavDogThunk(newDogFormData));
+    dispatch(editFavDogThunk(newDogFormData, id));
     resetData();
   };
 
@@ -120,7 +126,7 @@ const CreateForm = (): JSX.Element => {
               variant="h5"
               sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
             >
-              Create a new dog!
+              Edit {currentDogId?.name}
             </Typography>
             <Box
               component="form"
@@ -132,7 +138,7 @@ const CreateForm = (): JSX.Element => {
                 alignItems: "center",
                 border: "none",
               }}
-              onSubmit={submitCreate}
+              onSubmit={submitEdit}
             >
               <TextField
                 className="create-input"
@@ -249,7 +255,7 @@ const CreateForm = (): JSX.Element => {
                 sx={{ mt: 3, mb: 2 }}
                 disabled={buttonDisabled}
               >
-                Create
+                Edit {currentDogId?.name}
               </LoadingButton>
             </Box>
           </FormControl>
@@ -259,4 +265,4 @@ const CreateForm = (): JSX.Element => {
   );
 };
 
-export default CreateForm;
+export default EditForm;

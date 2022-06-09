@@ -6,6 +6,7 @@ import { IDog } from "../../interfaces/Dogs";
 import StyledDog from "./StyledDog";
 import { deleteFavDogThunk } from "../../redux/thunks/dogsThunks";
 import { useAppDispatch } from "../../redux/hooks";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   dog: IDog;
@@ -17,6 +18,8 @@ export const Dog = ({ dog }: Props): JSX.Element => {
   const deleteFavDog = () => {
     dispatch(deleteFavDogThunk(dog.id));
   };
+
+  const navigate = useNavigate();
 
   return (
     <StyledDog>
@@ -30,6 +33,7 @@ export const Dog = ({ dog }: Props): JSX.Element => {
                 crossOrigin=""
                 alt={`${dog.name} avatar`}
                 src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dog.picture}`}
+                onClick={() => navigate(`/edit/${dog.id}`)}
               />
             </div>
             <img
