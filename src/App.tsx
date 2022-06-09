@@ -1,9 +1,11 @@
 import jwtDecode from "jwt-decode";
 import React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
 import CreatePage from "./pages/CreatePage/CreatePage";
+import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
 import EditPage from "./pages/EditPage/EditPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
@@ -36,9 +38,31 @@ function App(): JSX.Element {
       <Routes>
         <Route path="*" element={<Navigate to="/login" />} />
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/create" element={<CreatePage />} />
+        <Route
+          path="/register"
+          element={
+            <CredentialsInValidation>
+              <RegisterPage />
+            </CredentialsInValidation>
+          }
+        />
+        <Route path="/detail/:id" element={<DogDetailPage />} />
+        <Route
+          path="/login"
+          element={
+            <CredentialsInValidation>
+              <LoginPage />
+            </CredentialsInValidation>
+          }
+        />
+        <Route
+          path="/create"
+          element={
+            <CredentialsValidation>
+              <CreatePage />
+            </CredentialsValidation>
+          }
+        />
         <Route
           path="/edit/:id"
           element={

@@ -6,12 +6,25 @@ import { StyledProfileBar } from "./StyledProfileBar";
 import { Button } from "@mui/material";
 import { AddCircle, LogoutRounded } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
+import { logoutUserActionCreator } from "../../redux/feature/usersSlice";
 
 export const ProfileBar = (): JSX.Element => {
   const navigate = useNavigate();
 
+  const dispatch = useAppDispatch();
+
   const logout = () => {
     localStorage.removeItem("token");
+    dispatch(
+      logoutUserActionCreator({
+        name: "",
+        username: "",
+        id: "",
+        logged: false,
+      })
+    );
+
     navigate("/login");
   };
 
