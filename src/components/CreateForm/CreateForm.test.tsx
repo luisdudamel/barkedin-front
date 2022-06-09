@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { UserCredential } from "../../interfaces/UserCredential";
+
 import store from "../../redux/store";
 import CreateForm from "./CreateForm";
 
@@ -66,6 +66,11 @@ describe("Given a CreateForm component", () => {
       });
       userEvent.type(toyInput, "asdasdasd");
 
+      const bioInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: /bio/i,
+      });
+      userEvent.type(bioInput, "asdasdasd");
+
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
         name: "Create",
       });
@@ -112,6 +117,11 @@ describe("Given a CreateForm component", () => {
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
         name: "Create",
       });
+
+      const bioInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: /bio/i,
+      });
+      userEvent.type(bioInput, "asdasdasd");
 
       userEvent.click(expectedButton);
 

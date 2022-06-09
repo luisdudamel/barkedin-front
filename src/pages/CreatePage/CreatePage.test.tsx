@@ -9,20 +9,6 @@ import CreatePage from "./CreatePage";
 
 describe("Given a CreatePage component page", () => {
   describe("When it's invoked", () => {
-    test("Then it should always match this snapshot", () => {
-      const testedRegisterPage = TestRenderer.create(
-        <Provider store={store}>
-          <BrowserRouter>
-            <ThemeProvider theme={theme}>
-              <CreatePage />
-            </ThemeProvider>
-          </BrowserRouter>
-        </Provider>
-      );
-
-      expect(testedRegisterPage).toMatchSnapshot();
-    });
-
     test("Then it should render a register form with a button with the text 'Create'", () => {
       render(
         <Provider store={store}>

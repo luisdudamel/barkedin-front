@@ -65,6 +65,7 @@ const CreateForm = (): JSX.Element => {
       formData.breed !== "" &&
       formData.name !== "" &&
       formData.toy !== "" &&
+      formData.bio !== "" &&
       formData.weight !== ""
     ) {
       setButtonDisabled(false);
@@ -74,6 +75,7 @@ const CreateForm = (): JSX.Element => {
     setButtonDisabled(true);
   }, [
     formData.age,
+    formData.bio,
     formData.breed,
     formData.name,
     formData.toy,
@@ -216,7 +218,17 @@ const CreateForm = (): JSX.Element => {
                   <MenuItem value={"Nature Explorer"}>Nature Explorer</MenuItem>
                   <MenuItem value={"Calm Walker"}>Calm Walker</MenuItem>
                 </Select>
+                <TextField
+                  margin="normal"
+                  id="bio"
+                  label="Bio"
+                  multiline
+                  rows={4}
+                  defaultValue=""
+                  onChange={changeData}
+                />
               </FormControl>
+
               <Button
                 sx={{ mt: "30px" }}
                 fullWidth
