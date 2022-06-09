@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { mockFavDogs } from "../../mocks/dogs";
 import store from "../../redux/store";
 import { Dog } from "./Dog";
@@ -20,7 +21,9 @@ describe("Given a Dog function", () => {
 
       render(
         <Provider store={store}>
-          <Dog dog={dogToRender}></Dog>
+          <BrowserRouter>
+            <Dog dog={dogToRender}></Dog>
+          </BrowserRouter>
         </Provider>
       );
 
@@ -36,7 +39,9 @@ describe("Given a Dog function", () => {
 
       render(
         <Provider store={store}>
-          <Dog dog={dogToRender}></Dog>
+          <BrowserRouter>
+            <Dog dog={dogToRender}></Dog>
+          </BrowserRouter>
         </Provider>
       );
 

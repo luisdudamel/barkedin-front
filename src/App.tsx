@@ -8,7 +8,6 @@ import EditPage from "./pages/EditPage/EditPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import { loadFavDogsActionCreator } from "./redux/feature/dogsSlice";
 import { loginUserActionCreator } from "./redux/feature/usersSlice";
 import { useAppDispatch } from "./redux/hooks";
 import { getFavDogsThunk } from "./redux/thunks/dogsThunks";
