@@ -34,5 +34,16 @@ const StyledDogDetailPage = styled.div`
   .dog-card-bottom__bio-property {
     color: #f4a261;
   }
+  .edit-button {
+    margin-top: 40px;
+    width: 200px;
+    background: #2a9d8f;
+    border-radius: 15px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 141.93%;
+    letter-spacing: -0.05em;
+  }
 `;
 export default StyledDogDetailPage;

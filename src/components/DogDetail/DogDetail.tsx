@@ -1,7 +1,7 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Button, CardActionArea } from "@mui/material";
 import StyledDogDetail from "./StyledDogDetail";
 import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
@@ -16,47 +16,45 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
   return (
     <>
       <StyledDogDetail>
-        <CardActionArea className="dog-card">
-          <CardContent className="dog-card-content">
-            <div className="dog-card-top">
-              <div className="image-container">
-                <img
-                  width={"100%"}
-                  className="dog-card-top__avatar"
-                  crossOrigin=""
-                  alt={`${dogToShow.name} avatar`}
-                  src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dogToShow.picture}`}
-                  onClick={() => navigate(`/edit/${dogToShow.id}`)}
-                />
-              </div>
+        <CardContent className="dog-card-content">
+          <div className="dog-card-top">
+            <div className="image-container">
               <img
-                className="dog-card-top__personality"
-                width={20}
+                width={"100%"}
+                className="dog-card-top__avatar"
+                crossOrigin=""
                 alt={`${dogToShow.name} avatar`}
-                src={`../../images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
+                src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dogToShow.picture}`}
               />
             </div>
-            <div className="dog-card-bottom">
-              <div>
-                <Typography
-                  variant="body1"
-                  className="dog-card-bottom__title"
-                  color="text.secondary"
-                >
-                  {dogToShow.title}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  className="dog-card-bottom__bio"
-                  color="text.secondary"
-                >
-                  {dogToShow.bio}
-                </Typography>
-              </div>
+            <img
+              className="dog-card-top__personality"
+              width={20}
+              alt={`${dogToShow.name} avatar`}
+              src={`../../images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
+            />
+          </div>
+          <div className="dog-card-bottom">
+            <div>
+              <Typography
+                variant="body1"
+                className="dog-card-bottom__title"
+                color="text.secondary"
+              >
+                {dogToShow.title}
+              </Typography>
+              <Typography
+                variant="body1"
+                className="dog-card-bottom__bio"
+                color="text.secondary"
+              >
+                {dogToShow.bio}
+              </Typography>
             </div>
-          </CardContent>
-        </CardActionArea>
+          </div>
+        </CardContent>
       </StyledDogDetail>
+
       <StyledDogDetail className="dog-card-secondary-container">
         <CardContent>
           <div className="dog-card-secondary">
@@ -70,7 +68,7 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
                   Age:{" "}
                 </span>
                 <span className="dog-card-bottom__bio-property">
-                  {dogToShow.age}
+                  {dogToShow.age} years
                 </span>
               </Typography>
               <Typography
@@ -94,7 +92,7 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
                   Weight:{" "}
                 </span>
                 <span className="dog-card-bottom__bio-property">
-                  {dogToShow.weight}
+                  {dogToShow.weight} kg
                 </span>
               </Typography>
               <Typography
@@ -118,6 +116,13 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
           </div>
         </CardContent>
       </StyledDogDetail>
+      <Button
+        onClick={() => navigate(`/edit/${dogToShow.id}`)}
+        className="logout edit-button"
+        variant="contained"
+      >
+        Edit profile
+      </Button>
     </>
   );
 };
