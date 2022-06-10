@@ -28,5 +28,11 @@ const StyledDogDetailPage = styled.div`
     margin-top: 40px;
     width: 50%;
   }
+  .dog-card-bottom__bio-characteristic {
+    color: #264653;
+  }
+  .dog-card-bottom__bio-property {
+    color: #f4a261;
+  }
 `;
 export default StyledDogDetailPage;

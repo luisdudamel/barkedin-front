@@ -66,36 +66,54 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
                 className="dog-card-bottom__bio"
                 color="text.secondary"
               >
-                Age: {dogToShow.age}
+                <span className="dog-card-bottom__bio-characteristic">
+                  Age:{" "}
+                </span>
+                <span className="dog-card-bottom__bio-property">
+                  {dogToShow.age}
+                </span>
               </Typography>
               <Typography
                 variant="body1"
                 className="dog-card-bottom__bio"
                 color="text.secondary"
               >
-                Breed: {dogToShow.breed}
+                <span className="dog-card-bottom__bio-characteristic">
+                  Breed:{" "}
+                </span>
+                <span className="dog-card-bottom__bio-property">
+                  {dogToShow.breed}
+                </span>
               </Typography>
               <Typography
                 variant="body1"
                 className="dog-card-bottom__bio"
                 color="text.secondary"
               >
-                Weight: {dogToShow.weight}
+                <span className="dog-card-bottom__bio-characteristic">
+                  Weight:{" "}
+                </span>
+                <span className="dog-card-bottom__bio-property">
+                  {dogToShow.weight}
+                </span>
               </Typography>
               <Typography
                 variant="body1"
                 className="dog-card-bottom__bio"
                 color="text.secondary"
               >
-                Favorite toy: {dogToShow.toy}
+                <span className="dog-card-bottom__bio-characteristic">
+                  Favorite toy:{" "}
+                </span>
+                <span className="dog-card-bottom__bio-property">
+                  {dogToShow.toy}
+                </span>
               </Typography>
               <Typography
                 variant="body1"
                 className="dog-card-bottom__bio"
                 color="text.secondary"
-              >
-                Title: {dogToShow.title}
-              </Typography>
+              ></Typography>
             </div>
           </div>
         </CardContent>
