@@ -38,6 +38,6 @@ export const loginUserThunk =
       const userInfo = jwtDecode<UserState>(token);
 
       dispatch(loginUserActionCreator(userInfo));
+      dispatch(loadingActionCreator({ loading: false }));
     } catch (error) {}
-    dispatch(loadingActionCreator({ loading: false }));
   };
