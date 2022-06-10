@@ -1,16 +1,21 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea } from "@mui/material";
+import { Button } from "@mui/material";
 import StyledDogDetail from "./StyledDogDetail";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
+import { useAppSelector } from "../../redux/hooks";
 
 interface Props {
   dogToShow: IDog;
 }
 
 export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
+  const { id } = useParams();
+  const isOwnDog = useAppSelector((state) =>
+    state.dogs.find((dog) => dog.id === id)
+  );
   const navigate = useNavigate();
 
   return (
@@ -116,13 +121,15 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
           </div>
         </CardContent>
       </StyledDogDetail>
-      <Button
-        onClick={() => navigate(`/edit/${dogToShow.id}`)}
-        className="logout edit-button"
-        variant="contained"
-      >
-        Edit profile
-      </Button>
+      {isOwnDog && (
+        <Button
+          onClick={() => navigate(`/edit/${dogToShow.id}`)}
+          className="logout edit-button"
+          variant="contained"
+        >
+          Edit profile
+        </Button>
+      )}
     </>
   );
 };
