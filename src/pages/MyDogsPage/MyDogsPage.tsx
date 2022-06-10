@@ -8,10 +8,12 @@ import { DogList } from "../../components/DogList/DogList";
 import { Stack } from "@mui/material";
 import { Header } from "../../components/Header/Header";
 import { ProfileBar } from "../../components/ProfileBar/ProfileBar";
+import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
 
 const MyDogsPage = (): JSX.Element => {
   const currentFavDogs: IDog[] = useAppSelector((state) => state.dogs);
   const currentUser: UserState = useAppSelector((state) => state.user);
+  const loading = useAppSelector((state) => state.ui.loading);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -20,6 +22,7 @@ const MyDogsPage = (): JSX.Element => {
 
   return (
     <>
+      {loading && <LoadingBarLinear />}
       <MyDogsPageStyled>
         <Stack
           direction="column"
@@ -29,6 +32,7 @@ const MyDogsPage = (): JSX.Element => {
         >
           <Header text="My dogs" />
           <ProfileBar />
+
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
       </MyDogsPageStyled>

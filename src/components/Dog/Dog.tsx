@@ -41,6 +41,7 @@ export const Dog = ({ dog }: Props): JSX.Element => {
               width={20}
               alt={`${dog.name} avatar`}
               src={`../../images/icons/mobile/personalities/inactive/${dog.personality}-inactive.png`}
+              onClick={() => navigate(`/detail/${dog.id}`)}
             />
           </div>
           <div className="dog-card-bottom">
@@ -50,6 +51,7 @@ export const Dog = ({ dog }: Props): JSX.Element => {
                 variant="h5"
                 className="dog-card-bottom__name"
                 component="div"
+                onClick={() => navigate(`/detail/${dog.id}`)}
               >
                 {dog.name}
               </Typography>
@@ -57,6 +59,7 @@ export const Dog = ({ dog }: Props): JSX.Element => {
                 variant="body1"
                 className="dog-card-bottom__title"
                 color="text.secondary"
+                onClick={() => navigate(`/detail/${dog.id}`)}
               >
                 {dog.title}
               </Typography>
