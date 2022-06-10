@@ -11,5 +11,39 @@ const StyledDogDetailPage = styled.div`
   h1 {
     padding-top: 30px;
   }
+  .dog-card-bottom__title {
+    margin-top: 10px;
+  }
+  .dog-card-bottom__bio {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 141.93%;
+
+    letter-spacing: -0.05em;
+
+    color: #2a9d8f;
+  }
+  .dog-card-secondary-container {
+    margin-top: 40px;
+    width: 50%;
+  }
+  .dog-card-bottom__bio-characteristic {
+    color: #264653;
+  }
+  .dog-card-bottom__bio-property {
+    color: #f4a261;
+  }
+  .edit-button {
+    margin-top: 40px;
+    width: 200px;
+    background: #2a9d8f;
+    border-radius: 15px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 141.93%;
+    letter-spacing: -0.05em;
+  }
 `;
 export default StyledDogDetailPage;

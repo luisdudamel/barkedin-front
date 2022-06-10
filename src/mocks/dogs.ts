@@ -224,3 +224,16 @@ export const mockFavDogsOneAdded: IDog[] = [
     bio: "Good dog",
   },
 ];
+
+export const mockFavDog: IDog = {
+  age: 7,
+  name: "Fenix",
+  picture: "fenix.jpg",
+  title: "Ball Player",
+  toy: "Ball",
+  weight: "4",
+  breed: "cocker",
+  personality: "ball",
+  id: "123",
+  bio: "Good dog",
+};

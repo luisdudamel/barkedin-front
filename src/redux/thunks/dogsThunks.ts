@@ -26,10 +26,10 @@ export const getFavDogsThunk =
       });
       if (status === 200) {
         dispatch(loadFavDogsActionCreator(favDogs));
+        dispatch(loadingActionCreator({ loading: false }));
         return favDogs;
       }
     } catch {}
-    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const deleteFavDogThunk =
