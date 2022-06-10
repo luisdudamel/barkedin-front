@@ -39,7 +39,7 @@ Array [
             className="image-container"
           >
             <img
-              alt=" avatar"
+              alt=" avatar "
               className="dog-card-top__avatar"
               crossOrigin=""
               src="http://localhost:4000/uploads/images/"
