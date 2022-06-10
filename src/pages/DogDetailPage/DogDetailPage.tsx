@@ -4,6 +4,7 @@ import { Header } from "../../components/Header/Header";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppSelector } from "../../redux/hooks";
 import { IDog } from "../../interfaces/Dogs";
+import StyledDogDetailPage from "./DogDetailPageStyled";
 
 export const DogDetailPage = (): JSX.Element => {
   const { id } = useParams();
@@ -25,8 +26,10 @@ export const DogDetailPage = (): JSX.Element => {
 
   return (
     <>
-      <Header text={`${currentDogToShow?.name}'s profile`} />
-      <DogDetail dogToShow={currentDogToShow || initialDogDetail} />
+      <StyledDogDetailPage>
+        <Header text={`${currentDogToShow?.name}'s profile`} />
+        <DogDetail dogToShow={currentDogToShow || initialDogDetail} />
+      </StyledDogDetailPage>
       <NavBar />
     </>
   );
