@@ -35,7 +35,7 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
             <img
               className="dog-card-top__personality"
               width={20}
-              alt={`${dogToShow.name} avatar`}
+              alt={`${dogToShow.name} personality`}
               src={`../../images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
             />
           </div>
