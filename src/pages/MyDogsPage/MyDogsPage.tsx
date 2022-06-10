@@ -27,7 +27,7 @@ const MyDogsPage = (): JSX.Element => {
           alignItems="center"
           spacing={1}
         >
-          <Header />
+          <Header text="My dogs" />
           <ProfileBar />
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>

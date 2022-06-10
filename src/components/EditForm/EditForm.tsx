@@ -13,12 +13,13 @@ import {
   FormControl,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { editFavDogThunk } from "../../redux/thunks/dogsThunks";
 
 const EditForm = (): JSX.Element => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const username = useAppSelector((state) => state.user.username);
   const currentDog = useAppSelector((state) => state.dogs);
@@ -26,16 +27,16 @@ const EditForm = (): JSX.Element => {
 
   const dispatch = useAppDispatch();
   const formInitialState: IDog = {
-    name: "",
-    age: 0,
-    breed: "",
-    id: "",
-    personality: "",
-    picture: "",
-    title: "",
-    toy: "",
-    weight: "",
-    bio: "",
+    name: currentDogId?.name || "",
+    age: currentDogId?.age || 0,
+    breed: currentDogId?.breed || "",
+    id: currentDogId?.id || "",
+    personality: currentDogId?.personality || "",
+    picture: currentDogId?.picture || "",
+    title: currentDogId?.title || "",
+    toy: currentDogId?.toy || "",
+    weight: currentDogId?.weight || "",
+    bio: currentDogId?.bio || "",
   };
   const [formData, setFormData] = useState<IDog>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
@@ -103,6 +104,7 @@ const EditForm = (): JSX.Element => {
 
     dispatch(editFavDogThunk(newDogFormData, id));
     resetData();
+    navigate("/profile");
   };
 
   return (
@@ -177,6 +179,7 @@ const EditForm = (): JSX.Element => {
                 name="breed"
                 label="Breed"
                 type="breed"
+                autoComplete="off"
                 id="breed"
                 onChange={changeData}
               />
@@ -190,6 +193,7 @@ const EditForm = (): JSX.Element => {
                 label="Weight"
                 type="weight"
                 id="weight"
+                autoComplete="off"
                 onChange={changeData}
               />
               <TextField
@@ -198,6 +202,7 @@ const EditForm = (): JSX.Element => {
                 hiddenLabel
                 margin="normal"
                 required
+                autoComplete="off"
                 name="toy"
                 label="Favorite toy"
                 type="toy"
@@ -229,8 +234,9 @@ const EditForm = (): JSX.Element => {
                   id="bio"
                   label="Bio"
                   multiline
+                  autoComplete="off"
                   rows={4}
-                  defaultValue=""
+                  value={formData.bio}
                   onChange={changeData}
                 />
               </FormControl>

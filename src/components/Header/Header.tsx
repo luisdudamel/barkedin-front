@@ -5,7 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { StyledHeader } from "./StyledHeader";
 
-export const Header = (): JSX.Element => {
+interface Props {
+  text: string | undefined;
+}
+
+export const Header = ({ text }: Props): JSX.Element => {
   return (
     <StyledHeader>
       <Box className="header-container" sx={{ flexGrow: 1 }}>
@@ -17,7 +21,7 @@ export const Header = (): JSX.Element => {
               component="div"
               sx={{ flexGrow: 1 }}
             >
-              My Dogs
+              {text}
             </Typography>
           </Toolbar>
         </AppBar>

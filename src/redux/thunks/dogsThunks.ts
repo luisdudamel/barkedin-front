@@ -6,11 +6,12 @@ import {
 import { AppDispatch } from "../store";
 import { IDog } from "../../interfaces/Dogs";
 import { UserCredential } from "../../interfaces/UserCredential";
+import { loadingActionCreator } from "../feature/uiSlice";
 
 export const getFavDogsThunk =
   (username: UserCredential["username"]) => async (dispatch: AppDispatch) => {
     const currentToken = localStorage.getItem("token");
-
+    dispatch(loadingActionCreator({ loading: true }));
     try {
       const {
         data: { favdogs: favDogs },
@@ -25,8 +26,10 @@ export const getFavDogsThunk =
       });
       if (status === 200) {
         dispatch(loadFavDogsActionCreator(favDogs));
+        return favDogs;
       }
     } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const deleteFavDogThunk =

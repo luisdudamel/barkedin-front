@@ -13,11 +13,13 @@ import {
   FormControl,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
 
 const CreateForm = (): JSX.Element => {
+  const navigate = useNavigate();
   const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
   const formInitialState: IDog = {
@@ -97,6 +99,7 @@ const CreateForm = (): JSX.Element => {
 
     dispatch(createFavDogThunk(newDogFormData));
     resetData();
+    navigate("/profile");
   };
 
   return (
@@ -167,6 +170,7 @@ const CreateForm = (): JSX.Element => {
                 value={formData.breed}
                 hiddenLabel
                 margin="normal"
+                autoComplete="off"
                 required
                 name="breed"
                 label="Breed"
@@ -183,6 +187,7 @@ const CreateForm = (): JSX.Element => {
                 name="weight"
                 label="Weight"
                 type="weight"
+                autoComplete="off"
                 id="weight"
                 onChange={changeData}
               />
@@ -194,6 +199,7 @@ const CreateForm = (): JSX.Element => {
                 required
                 name="toy"
                 label="Favorite toy"
+                autoComplete="off"
                 type="toy"
                 id="toy"
                 onChange={changeData}

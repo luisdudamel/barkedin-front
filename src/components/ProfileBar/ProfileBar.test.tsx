@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import store from "../../redux/store";
 import { ProfileBar } from "./ProfileBar";
 
 const mockNavigate = jest.fn();
@@ -17,9 +19,11 @@ describe("Given a ProfileBar function", () => {
       const expectedNewDogText = "New dog";
 
       render(
-        <BrowserRouter>
-          <ProfileBar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <ProfileBar />
+          </BrowserRouter>
+        </Provider>
       );
       const expectedLogoutButton = screen.getByRole("button", {
         name: "Logout",
@@ -38,9 +42,11 @@ describe("Given a ProfileBar function", () => {
       const expectedCalledPath = "/login";
 
       render(
-        <BrowserRouter>
-          <ProfileBar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <ProfileBar />
+          </BrowserRouter>
+        </Provider>
       );
       const expectedLogoutButton = screen.getByRole("button", {
         name: "Logout",
@@ -57,9 +63,11 @@ describe("Given a ProfileBar function", () => {
       const expectedCalledPath = "/create";
 
       render(
-        <BrowserRouter>
-          <ProfileBar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <ProfileBar />
+          </BrowserRouter>
+        </Provider>
       );
       const expectedCreateButton = screen.getByRole("button", {
         name: "New dog",
