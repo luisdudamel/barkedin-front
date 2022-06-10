@@ -2,21 +2,22 @@ import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import { IDog } from "../../interfaces/Dogs";
+
 import StyledDogDetail from "./StyledDogDetail";
 import { deleteFavDogThunk } from "../../redux/thunks/dogsThunks";
 import { useAppDispatch } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
+import { IDog } from "../../interfaces/Dogs";
 
 interface Props {
-  dog: IDog | undefined;
+  dogToShow: IDog;
 }
 
-export const DogDetail = ({ dog }: Props): JSX.Element => {
+export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const deleteFavDog = () => {
-    dispatch(deleteFavDogThunk(dog?.id));
+    dispatch(deleteFavDogThunk(dogToShow.id));
   };
 
   const navigate = useNavigate();
@@ -31,16 +32,16 @@ export const DogDetail = ({ dog }: Props): JSX.Element => {
                 width={"100%"}
                 className="dog-card-top__avatar"
                 crossOrigin=""
-                alt={`${dog?.name} avatar`}
-                src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dog?.picture}`}
-                onClick={() => navigate(`/edit/${dog?.id}`)}
+                alt={`${dogToShow.name} avatar`}
+                src={`${process.env.REACT_APP_API_URL_DEV}uploads/images/${dogToShow.picture}`}
+                onClick={() => navigate(`/edit/${dogToShow.id}`)}
               />
             </div>
             <img
               className="dog-card-top__personality"
               width={20}
-              alt={`${dog?.name} avatar`}
-              src={`../../images/icons/mobile/personalities/inactive/${dog?.personality}-inactive.png`}
+              alt={`${dogToShow.name} avatar`}
+              src={`../../images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
             />
           </div>
           <div className="dog-card-bottom">
@@ -51,14 +52,14 @@ export const DogDetail = ({ dog }: Props): JSX.Element => {
                 className="dog-card-bottom__name"
                 component="div"
               >
-                {dog?.name}
+                {dogToShow.name}
               </Typography>
               <Typography
                 variant="body1"
                 className="dog-card-bottom__title"
                 color="text.secondary"
               >
-                {dog?.title}
+                {dogToShow.title}
               </Typography>
             </div>
             <img

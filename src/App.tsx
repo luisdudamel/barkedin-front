@@ -46,7 +46,14 @@ function App(): JSX.Element {
             </CredentialsInValidation>
           }
         />
-        <Route path="/detail/:id" element={<DogDetailPage />} />
+        <Route
+          path="/detail/:id"
+          element={
+            <CredentialsValidation>
+              <DogDetailPage />
+            </CredentialsValidation>
+          }
+        />
         <Route
           path="/login"
           element={

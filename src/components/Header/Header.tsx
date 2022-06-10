@@ -21,7 +21,7 @@ export const Header = ({ text }: Props): JSX.Element => {
               component="div"
               sx={{ flexGrow: 1 }}
             >
-              {text}'s profile
+              {text}
             </Typography>
           </Toolbar>
         </AppBar>
