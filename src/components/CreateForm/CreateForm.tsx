@@ -145,6 +145,7 @@ const CreateForm = (): JSX.Element => {
                 value={formData.name}
                 hiddenLabel
                 margin="normal"
+                inputProps={{ maxLength: 10 }}
                 required
                 type="name"
                 label="Dog name"

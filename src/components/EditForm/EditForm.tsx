@@ -41,7 +41,9 @@ const EditForm = (): JSX.Element => {
     weight: currentDogId?.weight || "",
     bio: currentDogId?.bio || "",
   };
-  const [formData, setFormData] = useState<IDog>(formInitialState);
+  const [formData, setFormData] = useState<IDog>(
+    currentDogId || formInitialState
+  );
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
 
@@ -175,6 +177,7 @@ const EditForm = (): JSX.Element => {
                 className="create-input"
                 value={formData.name}
                 hiddenLabel
+                inputProps={{ maxLength: 10 }}
                 margin="normal"
                 required
                 type="name"

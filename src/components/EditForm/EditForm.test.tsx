@@ -57,7 +57,7 @@ describe("Given a EditForm component", () => {
       userEvent.type(breedInput, "Cocker");
 
       const weightInput: HTMLInputElement = screen.getByRole("textbox", {
-        name: "Weight",
+        name: "Weight (in kg)",
       });
       userEvent.type(weightInput, "12kg");
 
@@ -105,7 +105,7 @@ describe("Given a EditForm component", () => {
       userEvent.type(breedInput, "Cocker");
 
       const weightInput: HTMLInputElement = screen.getByRole("textbox", {
-        name: "Weight",
+        name: "Weight (in kg)",
       });
       userEvent.type(weightInput, "12kg");
 
