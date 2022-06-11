@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import store from "../../redux/store";
-import CreateForm from "./CreateForm";
+import CreateEditForm from "./CreateEditForm";
 
 const mockDispatch = jest.fn();
 
@@ -13,13 +13,13 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
-describe("Given a CreateForm component", () => {
+describe("Given a CreateEditForm component", () => {
   describe("When invoked", () => {
     test("Then it should render a form with a button with the text 'Create'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <CreateForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );
@@ -36,7 +36,7 @@ describe("Given a CreateForm component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <CreateForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );
@@ -84,7 +84,7 @@ describe("Given a CreateForm component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <CreateForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );

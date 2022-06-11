@@ -4,9 +4,8 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
-import CreatePage from "./pages/CreatePage/CreatePage";
+import CreateEditPage from "./pages/CreateEditPage/CreateEditPage";
 import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
-import EditPage from "./pages/EditPage/EditPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -66,7 +65,7 @@ function App(): JSX.Element {
           path="/create"
           element={
             <CredentialsValidation>
-              <CreatePage />
+              <CreateEditPage />
             </CredentialsValidation>
           }
         />
@@ -74,7 +73,7 @@ function App(): JSX.Element {
           path="/edit/:id"
           element={
             <CredentialsValidation>
-              <EditPage />
+              <CreateEditPage />
             </CredentialsValidation>
           }
         />
