@@ -16,20 +16,19 @@ import { getFavDogsThunk } from "./redux/thunks/dogsThunks";
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    try {
-      const userData = jwtDecode<any>(token as string);
-      dispatch(
-        loginUserActionCreator({
-          name: userData.name,
-          username: userData.username,
-          id: userData.id,
-          logged: true,
-        })
-      );
-      dispatch(getFavDogsThunk(userData.username));
-    } catch (error) {}
-  }, [dispatch, token]);
+
+  try {
+    const userData = jwtDecode<any>(token as string);
+    dispatch(
+      loginUserActionCreator({
+        name: userData.name,
+        username: userData.username,
+        id: userData.id,
+        logged: true,
+      })
+    );
+    dispatch(getFavDogsThunk(userData.username));
+  } catch (error) {}
 
   const { pathname } = useLocation();
 

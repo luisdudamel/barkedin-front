@@ -35,7 +35,7 @@ export const getFavDogsThunk =
 export const deleteFavDogThunk =
   (id: IDog["id"]) => async (dispatch: AppDispatch) => {
     const currentToken = localStorage.getItem("token");
-
+    dispatch(loadingActionCreator({ loading: true }));
     try {
       const { status } = await axios.delete(
         `${process.env.REACT_APP_API_URL_DEV}dogs/${id}`,
@@ -50,10 +50,12 @@ export const deleteFavDogThunk =
         dispatch(deleteFavDogActionCreator(id));
       }
     } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const createFavDogThunk =
   (newDog: any) => async (dispatch: AppDispatch) => {
+    dispatch(loadingActionCreator({ loading: true }));
     const currentToken = localStorage.getItem("token");
     await axios.post(
       `${process.env.REACT_APP_API_URL_DEV}dogs/create`,
@@ -65,10 +67,13 @@ export const createFavDogThunk =
         },
       }
     );
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const editFavDogThunk =
-  (editedFavDog: any, id: string | undefined) => async () => {
+  (editedFavDog: any, id: string | undefined) =>
+  async (dispatch: AppDispatch) => {
+    dispatch(loadingActionCreator({ loading: true }));
     const currentToken = localStorage.getItem("token");
     await axios.put(
       `${process.env.REACT_APP_API_URL_DEV}dogs/edit/:${id}`,
@@ -80,4 +85,5 @@ export const editFavDogThunk =
         },
       }
     );
+    dispatch(loadingActionCreator({ loading: false }));
   };
