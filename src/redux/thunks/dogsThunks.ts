@@ -30,6 +30,7 @@ export const getFavDogsThunk =
         return favDogs;
       }
     } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const deleteFavDogThunk =

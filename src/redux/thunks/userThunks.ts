@@ -26,18 +26,19 @@ export const registerUserThunk =
 
 export const loginUserThunk =
   (formData: LoginCredentials) => async (dispatch: AppDispatch) => {
+    dispatch(loadingActionCreator({ loading: true }));
     try {
-      dispatch(loadingActionCreator({ loading: true }));
       const route = `${process.env.REACT_APP_API_URL_DEV}users/login`;
+
       const {
         data: { token },
       } = await axios.post<Token>(route, formData);
-
       localStorage.setItem("token", token);
 
       const userInfo = jwtDecode<UserState>(token);
 
-      dispatch(loginUserActionCreator(userInfo));
       dispatch(loadingActionCreator({ loading: false }));
+      dispatch(loginUserActionCreator(userInfo));
     } catch (error) {}
+    dispatch(loadingActionCreator({ loading: false }));
   };

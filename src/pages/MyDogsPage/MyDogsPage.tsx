@@ -9,6 +9,7 @@ import { Stack } from "@mui/material";
 import { Header } from "../../components/Header/Header";
 import { ProfileBar } from "../../components/ProfileBar/ProfileBar";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
+import { LoadButton } from "../../components/LoadButton/LoadButton";
 
 const MyDogsPage = (): JSX.Element => {
   const currentFavDogs: IDog[] = useAppSelector((state) => state.dogs);
@@ -35,6 +36,7 @@ const MyDogsPage = (): JSX.Element => {
 
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
+        <LoadButton />
       </MyDogsPageStyled>
     </>
   );
