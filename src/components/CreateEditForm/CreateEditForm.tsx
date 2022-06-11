@@ -30,7 +30,9 @@ interface Props {
 
 const CreateEditForm = ({ id }: Props): JSX.Element => {
   const navigate = useNavigate();
+
   const username = useAppSelector((state) => state.user.username);
+
   const dispatch = useAppDispatch();
   const currentDog = useAppSelector((state) => state.dogs);
   const currentDogId = currentDog.find((dog) => dog.id === id);
@@ -134,7 +136,11 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
     const newDogFormData = new FormData();
     newDogFormData.append("username", JSON.stringify(username));
     newDogFormData.append("newDog", JSON.stringify(formData));
-    newDogFormData.append("picture", formData.picture);
+
+    newDogFormData.append(
+      "picture",
+      formData.picture === "" ? "no-picture" : formData.picture
+    );
 
     if (id) {
       dispatch(editFavDogThunk(newDogFormData, id));
@@ -311,7 +317,7 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
             <Alert
               onClose={handleClose}
               severity="success"
-              sx={{ width: "100%" }}
+              sx={{ width: "100%", backgroundColor: "#2A9D8F", color: "white" }}
             >
               {id
                 ? `${currentDogId?.name} succesfully edited!`

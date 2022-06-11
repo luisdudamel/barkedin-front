@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { mockFavDog } from "../../mocks/dogs";
+import { mockFavDog, mockFavDogs } from "../../mocks/dogs";
 import store from "../../redux/store";
 import theme from "../../theme";
 import { DogDetail } from "./DogDetail";
@@ -24,7 +24,7 @@ jest.mock("react-router-dom", () => ({
 
 jest.mock("../../redux/hooks", () => ({
   ...jest.requireActual("../../redux/hooks"),
-  useAppSelector: () => mockFavDog,
+  useAppSelector: () => mockFavDogs,
 }));
 
 describe("Given a DogDetails function", () => {

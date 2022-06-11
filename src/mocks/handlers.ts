@@ -13,4 +13,18 @@ export const handlers = [
       return res(ctx.status(200));
     }
   ),
+
+  rest.post(
+    `${process.env.REACT_APP_API_URL_DEV}dogs/create`,
+    (req, res, ctx) => {
+      return res(ctx.status(200));
+    }
+  ),
+
+  rest.put(
+    `${process.env.REACT_APP_API_URL_DEV}dogs/edit/:1234`,
+    (req, res, ctx) => {
+      return res(ctx.status(200));
+    }
+  ),
 ];
