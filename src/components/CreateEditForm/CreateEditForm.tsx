@@ -30,7 +30,9 @@ interface Props {
 
 const CreateEditForm = ({ id }: Props): JSX.Element => {
   const navigate = useNavigate();
+
   const username = useAppSelector((state) => state.user.username);
+
   const dispatch = useAppDispatch();
   const currentDog = useAppSelector((state) => state.dogs);
   const currentDogId = currentDog.find((dog) => dog.id === id);
@@ -134,7 +136,7 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
     const newDogFormData = new FormData();
     newDogFormData.append("username", JSON.stringify(username));
     newDogFormData.append("newDog", JSON.stringify(formData));
-    debugger;
+
     newDogFormData.append(
       "picture",
       formData.picture === "" ? "no-picture" : formData.picture
