@@ -12,33 +12,51 @@ import {
   SelectChangeEvent,
   FormControl,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
+import {
+  createFavDogThunk,
+  editFavDogThunk,
+} from "../../redux/thunks/dogsThunks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
-const CreateForm = (): JSX.Element => {
+interface Props {
+  id?: string;
+}
+
+const CreateEditForm = ({ id }: Props): JSX.Element => {
   const navigate = useNavigate();
   const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
+  const currentDog = useAppSelector((state) => state.dogs);
+  const currentDogId = currentDog.find((dog) => dog.id === id);
 
-  const formInitialState: IDog = {
-    name: "",
-    age: 0,
-    breed: "",
-    id: "",
-    personality: "",
-    picture: "",
-    title: "",
-    toy: "",
-    weight: "",
-    bio: "",
-  };
+  const formInitialState: IDog = useMemo(() => {
+    return {
+      name: "",
+      age: 0,
+      breed: "",
+      id: "",
+      personality: "",
+      picture: "",
+      title: "",
+      toy: "",
+      weight: "",
+      bio: "",
+    };
+  }, []);
+
   const [formData, setFormData] = useState<IDog>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
+
+  useEffect(() => {
+    if (id) {
+      setFormData(currentDogId || formInitialState);
+    }
+  }, [currentDogId, formInitialState, id]);
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -99,7 +117,11 @@ const CreateForm = (): JSX.Element => {
     newDogFormData.append("newDog", JSON.stringify(formData));
     newDogFormData.append("picture", formData.picture);
 
-    dispatch(createFavDogThunk(newDogFormData));
+    if (id) {
+      dispatch(editFavDogThunk(newDogFormData, id));
+    } else {
+      dispatch(createFavDogThunk(newDogFormData));
+    }
     resetData();
     navigate("/profile");
   };
@@ -126,7 +148,7 @@ const CreateForm = (): JSX.Element => {
               variant="h5"
               sx={{ fontWeight: "bold", fontStyle: "italic", color: "#264653" }}
             >
-              Create a new dog!
+              {id ? `Edit ${currentDogId?.name}` : "Create a new dog!"}
             </Typography>
             <Box
               component="form"
@@ -236,7 +258,7 @@ const CreateForm = (): JSX.Element => {
                   label="Bio"
                   multiline
                   rows={4}
-                  defaultValue=""
+                  value={formData.bio}
                   onChange={changeData}
                 />
               </FormControl>
@@ -261,7 +283,7 @@ const CreateForm = (): JSX.Element => {
                 sx={{ mt: 3, mb: 2 }}
                 disabled={buttonDisabled}
               >
-                Create
+                {id ? `Edit ${currentDogId?.name}` : "Create"}
               </LoadingButton>
             </Box>
           </FormControl>
@@ -271,4 +293,4 @@ const CreateForm = (): JSX.Element => {
   );
 };
 
-export default CreateForm;
+export default CreateEditForm;

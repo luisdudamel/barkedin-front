@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import store from "../../redux/store";
-import EditForm from "./EditForm";
+import CreateEditForm from "./CreateEditForm";
 
 const mockDispatch = jest.fn();
 
@@ -13,30 +13,30 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
-describe("Given a EditForm component", () => {
+describe("Given a CreateEditForm component", () => {
   describe("When invoked", () => {
-    test("Then it should render a form with a button with the text 'Edit'", () => {
+    test("Then it should render a form with a button with the text 'Create'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <EditForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
-        name: "Edit",
+        name: "Create",
       });
 
       expect(expectedButton).toBeInTheDocument();
     });
   });
 
-  describe("When invoked and an user enters a valid dog data", () => {
-    test("Then it should set the button 'Edit' state to enabled'", () => {
+  describe("When invoked and an user enters a valid dog", () => {
+    test("Then it should set the button 'Create' state to enabled'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <EditForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );
@@ -72,19 +72,19 @@ describe("Given a EditForm component", () => {
       userEvent.type(bioInput, "asdasdasd");
 
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
-        name: "Edit",
+        name: "Create",
       });
 
       expect(expectedButton).toBeEnabled();
     });
   });
 
-  describe("When invoked and an user enters valid dog data and clicks on edit button", () => {
+  describe("When invoked and an user enters valid dog data an clicks on the create button", () => {
     test("Then it should call dispatch", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <EditForm />
+            <CreateEditForm />
           </BrowserRouter>
         </Provider>
       );
@@ -115,7 +115,7 @@ describe("Given a EditForm component", () => {
       userEvent.type(toyInput, "asdasdasd");
 
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
-        name: "Edit",
+        name: "Create",
       });
 
       const bioInput: HTMLInputElement = screen.getByRole("textbox", {
