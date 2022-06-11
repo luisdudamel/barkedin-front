@@ -4,7 +4,7 @@ import { Header } from "../../components/Header/Header";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppSelector } from "../../redux/hooks";
 import { IDog } from "../../interfaces/Dogs";
-import StyledDogDetailPage from "./DogDetailPageStyled";
+import StyledDogDetailPage from "./StyledDogDetailPage";
 
 export const DogDetailPage = (): JSX.Element => {
   const { id } = useParams();

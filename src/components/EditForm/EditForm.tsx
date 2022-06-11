@@ -11,12 +11,15 @@ import {
   MenuItem,
   SelectChangeEvent,
   FormControl,
+  Snackbar,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { editFavDogThunk } from "../../redux/thunks/dogsThunks";
+import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 const EditForm = (): JSX.Element => {
   const navigate = useNavigate();
@@ -38,9 +41,28 @@ const EditForm = (): JSX.Element => {
     weight: currentDogId?.weight || "",
     bio: currentDogId?.bio || "",
   };
-  const [formData, setFormData] = useState<IDog>(formInitialState);
+  const [formData, setFormData] = useState<IDog>(
+    currentDogId || formInitialState
+  );
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -61,7 +83,7 @@ const EditForm = (): JSX.Element => {
   const uploadImage = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
-      [event.target.id]: event.target.files?.[0] || "",
+      [event.target.id]: event.target.files?.[0] || " ",
     });
   };
 
@@ -100,15 +122,24 @@ const EditForm = (): JSX.Element => {
     newDogFormData.append("username", JSON.stringify(username));
     newDogFormData.append("dogIdToEdit", id as string);
     newDogFormData.append("updatedDog", JSON.stringify(formData));
-    newDogFormData.append("picture", formData.picture);
+    newDogFormData.append("picture", formData.picture || " ");
 
     dispatch(editFavDogThunk(newDogFormData, id));
     resetData();
-    navigate("/profile");
+    handleClick();
+    setTimeout(() => navigate("/profile"), 3000);
   };
+
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
   return (
     <>
+      {loading && <LoadingBarLinear />}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -146,6 +177,7 @@ const EditForm = (): JSX.Element => {
                 className="create-input"
                 value={formData.name}
                 hiddenLabel
+                inputProps={{ maxLength: 10 }}
                 margin="normal"
                 required
                 type="name"
@@ -161,9 +193,10 @@ const EditForm = (): JSX.Element => {
                 value={formData.age}
                 hiddenLabel
                 margin="normal"
+                inputProps={{ min: "0" }}
                 required
                 name="age"
-                label="Age"
+                label="Age (in years)"
                 placeholder="Age"
                 type="number"
                 id="age"
@@ -189,8 +222,9 @@ const EditForm = (): JSX.Element => {
                 hiddenLabel
                 margin="normal"
                 required
+                inputProps={{ maxLength: 3 }}
                 name="weight"
-                label="Weight"
+                label="Weight (in kg)"
                 type="weight"
                 id="weight"
                 autoComplete="off"
@@ -266,6 +300,16 @@ const EditForm = (): JSX.Element => {
             </Box>
           </FormControl>
         </Box>
+
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {formData.name} succesfully edited!
+          </Alert>
+        </Snackbar>
       </Container>
     </>
   );

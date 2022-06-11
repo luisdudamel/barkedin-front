@@ -17,11 +17,13 @@ import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { createFavDogThunk } from "../../redux/thunks/dogsThunks";
+import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
 const CreateForm = (): JSX.Element => {
   const navigate = useNavigate();
   const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
+
   const formInitialState: IDog = {
     name: "",
     age: 0,
@@ -104,6 +106,7 @@ const CreateForm = (): JSX.Element => {
 
   return (
     <>
+      {loading && <LoadingBarLinear />}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -142,6 +145,7 @@ const CreateForm = (): JSX.Element => {
                 value={formData.name}
                 hiddenLabel
                 margin="normal"
+                inputProps={{ maxLength: 10 }}
                 required
                 type="name"
                 label="Dog name"
@@ -158,7 +162,8 @@ const CreateForm = (): JSX.Element => {
                 margin="normal"
                 required
                 name="age"
-                label="Age"
+                inputProps={{ min: "0" }}
+                label="Age (in years)"
                 placeholder="Age"
                 type="number"
                 id="age"
@@ -184,8 +189,9 @@ const CreateForm = (): JSX.Element => {
                 hiddenLabel
                 margin="normal"
                 required
+                inputProps={{ maxLength: 3 }}
                 name="weight"
-                label="Weight"
+                label="Weight (in kg)"
                 type="weight"
                 autoComplete="off"
                 id="weight"

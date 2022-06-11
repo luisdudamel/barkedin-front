@@ -6,6 +6,7 @@ import StyledDogDetail from "./StyledDogDetail";
 import { useNavigate, useParams } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppSelector } from "../../redux/hooks";
+import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
 interface Props {
   dogToShow: IDog;
@@ -17,9 +18,11 @@ export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
     state.dogs.find((dog) => dog.id === id)
   );
   const navigate = useNavigate();
+  const loading = useAppSelector((state) => state.ui.loading);
 
   return (
     <>
+      {loading && <LoadingBarLinear />}
       <StyledDogDetail>
         <CardContent className="dog-card-content">
           <div className="dog-card-top">
