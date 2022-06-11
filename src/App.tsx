@@ -1,5 +1,5 @@
 import jwtDecode from "jwt-decode";
-import React, { useEffect } from "react";
+import React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
