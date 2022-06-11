@@ -1,5 +1,5 @@
 import jwtDecode from "jwt-decode";
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
@@ -16,19 +16,20 @@ import { getFavDogsThunk } from "./redux/thunks/dogsThunks";
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
-
-  try {
-    const userData = jwtDecode<any>(token as string);
-    dispatch(
-      loginUserActionCreator({
-        name: userData.name,
-        username: userData.username,
-        id: userData.id,
-        logged: true,
-      })
-    );
-    dispatch(getFavDogsThunk(userData.username));
-  } catch (error) {}
+  useEffect(() => {
+    try {
+      const userData = jwtDecode<any>(token as string);
+      dispatch(
+        loginUserActionCreator({
+          name: userData.name,
+          username: userData.username,
+          id: userData.id,
+          logged: true,
+        })
+      );
+      dispatch(getFavDogsThunk(userData.username));
+    } catch (error) {}
+  }, [dispatch, token]);
 
   const { pathname } = useLocation();
 
