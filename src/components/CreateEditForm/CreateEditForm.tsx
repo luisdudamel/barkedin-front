@@ -11,6 +11,8 @@ import {
   MenuItem,
   SelectChangeEvent,
   FormControl,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,6 +53,23 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
   const [formData, setFormData] = useState<IDog>(formInitialState);
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const loading = useAppSelector((state) => state.ui.loading);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   useEffect(() => {
     if (id) {
@@ -123,7 +142,8 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
       dispatch(createFavDogThunk(newDogFormData));
     }
     resetData();
-    navigate("/profile");
+    handleClick();
+    setTimeout(() => navigate("/profile"), 3000);
   };
 
   return (
@@ -287,6 +307,17 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
               </LoadingButton>
             </Box>
           </FormControl>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              {id
+                ? `${currentDogId?.name} succesfully edited!`
+                : "New dog created!"}
+            </Alert>
+          </Snackbar>
         </Box>
       </Container>
     </>

@@ -11,7 +11,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function CustomizedSnackbars() {
+export const CustomizedSnackbars = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -41,4 +41,4 @@ export default function CustomizedSnackbars() {
       </Snackbar>
     </Stack>
   );
-}
+};
