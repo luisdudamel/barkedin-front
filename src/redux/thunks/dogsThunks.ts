@@ -68,8 +68,7 @@ export const createFavDogThunk =
   };
 
 export const editFavDogThunk =
-  (editedFavDog: any, id: string | undefined) =>
-  async (dispatch: AppDispatch) => {
+  (editedFavDog: any, id: string | undefined) => async () => {
     const currentToken = localStorage.getItem("token");
     await axios.put(
       `${process.env.REACT_APP_API_URL_DEV}dogs/edit/:${id}`,
