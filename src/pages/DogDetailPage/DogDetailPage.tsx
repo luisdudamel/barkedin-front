@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { DogDetail } from "../../components/DogDetail/DogDetail";
 import { Header } from "../../components/Header/Header";
 import { NavBar } from "../../components/NavBar/Navbar";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { IDog } from "../../interfaces/Dogs";
 import StyledDogDetailPage from "./StyledDogDetailPage";
 import { getDogByIdThunk } from "../../redux/thunks/dogsThunks";
@@ -20,9 +20,11 @@ export const DogDetailPage = (): JSX.Element => {
     title: "",
     toy: "",
     weight: "",
+    owner: "",
   };
   const { id } = useParams();
   const [actualDog, setActualDog] = useState(initialDogDetail);
+  const userId = useAppSelector((state) => state.user.id);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -33,11 +35,14 @@ export const DogDetailPage = (): JSX.Element => {
       } catch {}
     })();
   }, [dispatch, id]);
+
+  const isOwn = userId === actualDog.owner;
+
   return (
     <>
       <StyledDogDetailPage>
         <Header text={`${actualDog?.name}'s profile`} />
-        <DogDetail dogToShow={actualDog || initialDogDetail} />
+        <DogDetail dogToShow={actualDog || initialDogDetail} isOwnDog={isOwn} />
       </StyledDogDetailPage>
       <NavBar />
     </>
