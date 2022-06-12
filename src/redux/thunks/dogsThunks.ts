@@ -127,3 +127,27 @@ export const editFavDogThunk =
     );
     dispatch(loadingActionCreator({ loading: false }));
   };
+
+export const getDogByIdThunk =
+  (id: IDog["id"]) => async (dispatch: AppDispatch) => {
+    const currentToken = localStorage.getItem("token");
+    dispatch(loadingActionCreator({ loading: true }));
+
+    try {
+      const { data: dog, status } = await axios.get<IDog>(
+        `${process.env.REACT_APP_API_URL_DEV}dogs/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${currentToken}`,
+          },
+        }
+      );
+
+      if (status === 200) {
+        dispatch(loadingActionCreator({ loading: false }));
+
+        return dog;
+      }
+    } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
+  };

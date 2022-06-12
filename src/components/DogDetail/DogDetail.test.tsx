@@ -34,7 +34,7 @@ describe("Given a DogDetails function", () => {
         <Provider store={store}>
           <BrowserRouter>
             <ThemeProvider theme={theme}>
-              <DogDetail dogToShow={mockFavDog} />
+              <DogDetail dogToShow={mockFavDog} isOwnDog={true} />
             </ThemeProvider>
           </BrowserRouter>
         </Provider>
@@ -53,7 +53,7 @@ describe("Given a DogDetails function", () => {
         <Provider store={store}>
           <BrowserRouter>
             <ThemeProvider theme={theme}>
-              <DogDetail dogToShow={mockFavDog} />
+              <DogDetail dogToShow={mockFavDog} isOwnDog={true} />
             </ThemeProvider>
           </BrowserRouter>
         </Provider>
@@ -72,7 +72,7 @@ describe("Given a DogDetails function", () => {
         <Provider store={store}>
           <BrowserRouter>
             <ThemeProvider theme={theme}>
-              <DogDetail dogToShow={mockFavDog} />
+              <DogDetail dogToShow={mockFavDog} isOwnDog={true} />
             </ThemeProvider>
           </BrowserRouter>
         </Provider>

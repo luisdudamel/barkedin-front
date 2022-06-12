@@ -3,20 +3,17 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import StyledDogDetail from "./StyledDogDetail";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IDog } from "../../interfaces/Dogs";
 import { useAppSelector } from "../../redux/hooks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
 interface Props {
   dogToShow: IDog;
+  isOwnDog: boolean;
 }
 
-export const DogDetail = ({ dogToShow }: Props): JSX.Element => {
-  const { id } = useParams();
-  const isOwnDog = useAppSelector((state) =>
-    state.dogs.find((dog) => dog.id === id)
-  );
+export const DogDetail = ({ dogToShow, isOwnDog }: Props): JSX.Element => {
   const navigate = useNavigate();
   const loading = useAppSelector((state) => state.ui.loading);
 

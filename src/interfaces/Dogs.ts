@@ -9,4 +9,5 @@ export interface IDog {
   personality: string;
   id: string | undefined;
   bio: string;
+  owner: string;
 }
