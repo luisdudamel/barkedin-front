@@ -23,7 +23,7 @@ export const DogList = ({ dogs }: Props): JSX.Element => {
               md={4}
               lg={3}
               margin={3}
-              key={dog.name}
+              key={dog.id}
               item
             >
               <Dog dog={dog}></Dog>

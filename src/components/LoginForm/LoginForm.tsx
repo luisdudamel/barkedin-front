@@ -46,8 +46,8 @@ const LoginForm = (): JSX.Element => {
   ): Promise<void> => {
     event.preventDefault();
 
-    const status = await dispatch(loginUserThunk(formData));
-    console.log(status);
+    await dispatch(loginUserThunk(formData));
+
     resetData();
     navigate("/profile");
   };

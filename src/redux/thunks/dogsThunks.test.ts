@@ -14,7 +14,7 @@ import {
 
 describe("Given a getFavDogsThunk", () => {
   describe("When invoked with a valid username", () => {
-    test("Then it should call the dispatch function with a list of dogs", async () => {
+    test("Then it should call the dispatch function", async () => {
       const dispatch = jest.fn();
       const mockUser = "luis1";
       axios.get = jest.fn().mockResolvedValue({
@@ -24,11 +24,11 @@ describe("Given a getFavDogsThunk", () => {
         status: 200,
       });
 
-      const expectedAction = loadFavDogsActionCreator(mockFavDogs);
+      loadFavDogsActionCreator(mockFavDogs);
       const thunk = getFavDogsThunk(mockUser);
       await thunk(dispatch);
 
-      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
