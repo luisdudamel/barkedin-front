@@ -41,7 +41,7 @@ export const DogDetailPage = (): JSX.Element => {
   return (
     <>
       <StyledDogDetailPage>
-        <Header text={`${actualDog?.name}'s profile`} />
+        <Header text={`${actualDog?.name}'s profile!`} />
         <DogDetail dogToShow={actualDog || initialDogDetail} isOwnDog={isOwn} />
       </StyledDogDetailPage>
       <NavBar />
