@@ -54,6 +54,7 @@ describe("Given a createFavDog slice", () => {
         toy: "Ball",
         weight: "23kg",
         bio: "Good dog",
+        owner: "123",
       };
       const expectedDogsOneAdded: IDog[] = mockFavDogsOneAdded;
 

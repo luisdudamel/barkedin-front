@@ -13,6 +13,28 @@ export const handlers = [
       return res(ctx.status(200));
     }
   ),
+  rest.get(`${process.env.REACT_APP_API_URL_DEV}dogs/123`, (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        data: {
+          dog: {
+            name: "Perro 1",
+            age: 12,
+            weight: "23",
+            toy: "Stones",
+            title: "Beach Lover",
+            personality: "Beach",
+            picture: "",
+            breed: "Pitbull",
+            bio: "Lo mejor de todos",
+            id: "62a39325a7617d7fa3478ac8",
+            owner: "123",
+          },
+        },
+      })
+    );
+  }),
   rest.delete(
     `${process.env.REACT_APP_API_URL_DEV}dogs/1234`,
     (req, res, ctx) => {

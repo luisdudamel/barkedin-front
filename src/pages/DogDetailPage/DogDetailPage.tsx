@@ -9,6 +9,7 @@ import { getDogByIdThunk } from "../../redux/thunks/dogsThunks";
 import { useEffect, useState } from "react";
 
 export const DogDetailPage = (): JSX.Element => {
+  const { id } = useParams();
   const initialDogDetail: IDog = {
     name: "",
     age: 0,
@@ -22,7 +23,6 @@ export const DogDetailPage = (): JSX.Element => {
     weight: "",
     owner: "",
   };
-  const { id } = useParams();
   const [actualDog, setActualDog] = useState(initialDogDetail);
   const userId = useAppSelector((state) => state.user.id);
   const dispatch = useAppDispatch();

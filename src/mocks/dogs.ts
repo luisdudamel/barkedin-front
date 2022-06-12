@@ -12,6 +12,7 @@ export const mockFavDogs: IDog[] = [
     personality: "ball",
     id: "213123123",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 2,
@@ -24,6 +25,7 @@ export const mockFavDogs: IDog[] = [
     personality: "beach",
     id: "2131231234",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -36,6 +38,7 @@ export const mockFavDogs: IDog[] = [
     personality: "nature",
     id: "2131231235",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -48,6 +51,7 @@ export const mockFavDogs: IDog[] = [
     personality: "walker",
     id: "2131231236",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -60,6 +64,7 @@ export const mockFavDogs: IDog[] = [
     personality: "frisbee",
     id: "2131231237",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -72,6 +77,7 @@ export const mockFavDogs: IDog[] = [
     personality: "walker",
     id: "2131231238",
     bio: "Good dog",
+    owner: "123",
   },
 ];
 
@@ -87,6 +93,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     personality: "beach",
     id: "2131231234",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -99,6 +106,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     personality: "nature",
     id: "2131231235",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -111,6 +119,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     personality: "walker",
     id: "2131231236",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -123,6 +132,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     personality: "frisbee",
     id: "2131231237",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -135,6 +145,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     personality: "walker",
     id: "2131231238",
     bio: "Good dog",
+    owner: "123",
   },
 ];
 
@@ -150,6 +161,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "ball",
     id: "213123123",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 2,
@@ -162,6 +174,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "beach",
     id: "2131231234",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -174,6 +187,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "nature",
     id: "2131231235",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 4,
@@ -186,6 +200,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "walker",
     id: "2131231236",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -198,6 +213,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "frisbee",
     id: "2131231237",
     bio: "Good dog",
+    owner: "123",
   },
   {
     age: 9,
@@ -210,6 +226,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     personality: "walker",
     id: "2131231238",
     bio: "Good dog",
+    owner: "123",
   },
   {
     name: "Hachiko",
@@ -222,6 +239,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     toy: "Ball",
     weight: "23kg",
     bio: "Good dog",
+    owner: "123",
   },
 ];
 
@@ -236,4 +254,5 @@ export const mockFavDog: IDog = {
   personality: "ball",
   id: "123",
   bio: "Good dog",
+  owner: "123",
 };
