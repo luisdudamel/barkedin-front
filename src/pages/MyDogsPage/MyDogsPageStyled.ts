@@ -10,5 +10,10 @@ const MyDogsPageStyled = styled.div`
   h1 {
     padding-top: 30px;
   }
+  .load-more-container {
+    width: 170px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
 `;
 export default MyDogsPageStyled;

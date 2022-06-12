@@ -7,6 +7,12 @@ export const handlers = [
       return res(ctx.status(200));
     }
   ),
+  rest.get(
+    `${process.env.REACT_APP_API_URL_DEV}dogs/favdogs/0`,
+    (req, res, ctx) => {
+      return res(ctx.status(200));
+    }
+  ),
   rest.delete(
     `${process.env.REACT_APP_API_URL_DEV}dogs/1234`,
     (req, res, ctx) => {

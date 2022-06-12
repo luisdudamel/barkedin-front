@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   deleteFavDogActionCreator,
   loadFavDogsActionCreator,
+  loadMoreFavDogsActionCreator,
 } from "../feature/dogsSlice";
 import { AppDispatch } from "../store";
 import { IDog } from "../../interfaces/Dogs";
@@ -14,22 +15,61 @@ export const getFavDogsThunk =
     dispatch(loadingActionCreator({ loading: true }));
     try {
       const {
-        data: { favdogs: favDogs },
-        status,
-      } = await axios.get(`${process.env.REACT_APP_API_URL_DEV}dogs/favdogs`, {
-        headers: {
-          Authorization: `Bearer ${currentToken}`,
-        },
         data: {
-          username: username,
+          favdogs: { dogs: favDogs },
         },
-      });
+        status,
+      } = await axios.get(
+        `${process.env.REACT_APP_API_URL_DEV}dogs/favdogs/0`,
+        {
+          headers: {
+            Authorization: `Bearer ${currentToken}`,
+          },
+          data: {
+            username: username,
+          },
+        }
+      );
+
       if (status === 200) {
         dispatch(loadFavDogsActionCreator(favDogs));
         dispatch(loadingActionCreator({ loading: false }));
         return favDogs;
       }
     } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
+  };
+
+export const loadMoreFavDogsThunk =
+  (username: UserCredential["username"], page: number) =>
+  async (dispatch: AppDispatch) => {
+    const currentToken = localStorage.getItem("token");
+    dispatch(loadingActionCreator({ loading: true }));
+    try {
+      const {
+        data: {
+          favdogs: { dogs: favDogs },
+        },
+        status,
+      } = await axios.get(
+        `${process.env.REACT_APP_API_URL_DEV}dogs/favdogs/${page}`,
+        {
+          headers: {
+            Authorization: `Bearer ${currentToken}`,
+          },
+          data: {
+            username: username,
+          },
+        }
+      );
+
+      if (status === 200) {
+        dispatch(loadMoreFavDogsActionCreator(favDogs));
+        dispatch(loadingActionCreator({ loading: false }));
+        return favDogs;
+      }
+    } catch {}
+    dispatch(loadingActionCreator({ loading: false }));
   };
 
 export const deleteFavDogThunk =

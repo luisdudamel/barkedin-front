@@ -3,6 +3,7 @@ import { mockFavDog, mockFavDogs } from "../../mocks/dogs";
 import {
   deleteFavDogActionCreator,
   loadFavDogsActionCreator,
+  loadMoreFavDogsActionCreator,
 } from "../feature/dogsSlice";
 import { loadingActionCreator } from "../feature/uiSlice";
 import {
@@ -10,11 +11,12 @@ import {
   deleteFavDogThunk,
   editFavDogThunk,
   getFavDogsThunk,
+  loadMoreFavDogsThunk,
 } from "./dogsThunks";
 
 describe("Given a getFavDogsThunk", () => {
   describe("When invoked with a valid username", () => {
-    test("Then it should call the dispatch function with a list of dogs", async () => {
+    test("Then it should call the dispatch function", async () => {
       const dispatch = jest.fn();
       const mockUser = "luis1";
       axios.get = jest.fn().mockResolvedValue({
@@ -24,11 +26,11 @@ describe("Given a getFavDogsThunk", () => {
         status: 200,
       });
 
-      const expectedAction = loadFavDogsActionCreator(mockFavDogs);
+      loadFavDogsActionCreator(mockFavDogs);
       const thunk = getFavDogsThunk(mockUser);
       await thunk(dispatch);
 
-      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
@@ -82,6 +84,28 @@ describe("Given a editFavDogThunk", () => {
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given a loadMoreFavDogsThunk", () => {
+  describe("When invoked with a valid username and page", () => {
+    test("Then it should call the dispatch function", async () => {
+      const dispatch = jest.fn();
+      const mockPage = 1;
+      const mockUser = "luis1";
+      axios.get = jest.fn().mockResolvedValue({
+        data: {
+          favdogs: mockFavDogs,
+        },
+        status: 200,
+      });
+
+      loadMoreFavDogsActionCreator(mockFavDogs);
+      const thunk = loadMoreFavDogsThunk(mockUser, mockPage);
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });

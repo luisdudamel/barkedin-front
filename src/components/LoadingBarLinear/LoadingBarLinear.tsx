@@ -7,7 +7,6 @@ const StyledLoadingBarLinear = styled.div`
   position: fixed;
   z-index: 100;
   justify-content: center;
-  position: fixed;
   padding: 0;
   margin: 0;
   align-items: center;
