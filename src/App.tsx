@@ -6,12 +6,12 @@ import CredentialsValidation from "./components/CredentialsValidation/Credential
 import { NavBar } from "./components/NavBar/Navbar";
 import CreateEditPage from "./pages/CreateEditPage/CreateEditPage";
 import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
+import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { loginUserActionCreator } from "./redux/feature/usersSlice";
 import { useAppDispatch } from "./redux/hooks";
-import { getFavDogsThunk } from "./redux/thunks/dogsThunks";
 
 function App(): JSX.Element {
   const token = localStorage.getItem("token");
@@ -27,7 +27,6 @@ function App(): JSX.Element {
         logged: true,
       })
     );
-    dispatch(getFavDogsThunk(userData.username));
   } catch (error) {}
 
   const { pathname } = useLocation();
@@ -37,6 +36,7 @@ function App(): JSX.Element {
       <Routes>
         <Route path="*" element={<Navigate to="/login" />} />
         <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/home" element={<HomePage />} />
         <Route
           path="/register"
           element={

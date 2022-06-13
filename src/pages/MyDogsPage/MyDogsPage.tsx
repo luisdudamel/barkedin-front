@@ -1,8 +1,11 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import MyDogsPageStyled from "./MyDogsPageStyled";
 import { IDog } from "../../interfaces/Dogs";
-import { loadMoreFavDogsThunk } from "../../redux/thunks/dogsThunks";
-import { useState } from "react";
+import {
+  getFavDogsThunk,
+  loadMoreFavDogsThunk,
+} from "../../redux/thunks/dogsThunks";
+import { useEffect, useState } from "react";
 import { UserState } from "../../interfaces/UserCredential";
 import { DogList } from "../../components/DogList/DogList";
 import { Stack } from "@mui/material";
@@ -16,11 +19,15 @@ const MyDogsPage = (): JSX.Element => {
   let initialPage = 1;
 
   const [page, setPage] = useState(initialPage);
-
+  const loading = useAppSelector((state) => state.ui.loading);
   const currentFavDogs: IDog[] = useAppSelector((state) => state.dogs);
   const currentUser: UserState = useAppSelector((state) => state.user);
-  const loading = useAppSelector((state) => state.ui.loading);
+
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getFavDogsThunk(currentUser.username, 0));
+  }, [currentUser, dispatch]);
 
   const loadMoreFavDogs = () => {
     setPage(page + 1);
