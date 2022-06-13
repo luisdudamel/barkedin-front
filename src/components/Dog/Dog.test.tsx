@@ -11,6 +11,7 @@ const mockDispatch = jest.fn();
 jest.mock("../../redux/hooks", () => ({
   ...jest.requireActual("../../redux/hooks"),
   useAppDispatch: () => mockDispatch,
+  useAppSelector: () => "123",
 }));
 
 const mockNavigate = jest.fn();

@@ -11,7 +11,8 @@ const theme = createTheme({
         root: {
           textTransform: "none",
           "&:hover": {
-            backgroundColor: "#2a9d8f",
+            backgroundColor: "white",
+            color: "#F4A261",
           },
         },
       },

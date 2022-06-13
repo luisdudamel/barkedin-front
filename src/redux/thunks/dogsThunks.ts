@@ -12,7 +12,7 @@ import { UserCredential } from "../../interfaces/UserCredential";
 import { loadingActionCreator } from "../feature/uiSlice";
 
 export const getAllDogsThunk =
-  (page: number) => async (dispatch: AppDispatch) => {
+  (page: number, filter: string) => async (dispatch: AppDispatch) => {
     const currentToken = localStorage.getItem("token");
     dispatch(loadingActionCreator({ loading: true }));
 
@@ -22,11 +22,14 @@ export const getAllDogsThunk =
           dogs: { dogs: allDogs },
         },
         status,
-      } = await axios.get(`${process.env.REACT_APP_API_URL_DEV}dogs/all/0`, {
-        headers: {
-          Authorization: `Bearer ${currentToken}`,
-        },
-      });
+      } = await axios.get(
+        `${process.env.REACT_APP_API_URL_DEV}dogs/all/${page}${filter}`,
+        {
+          headers: {
+            Authorization: `Bearer ${currentToken}`,
+          },
+        }
+      );
       if (status === 200) {
         dispatch(loadAllDogsActionCreator(allDogs));
         dispatch(loadingActionCreator({ loading: false }));
@@ -37,7 +40,7 @@ export const getAllDogsThunk =
   };
 
 export const loadMoreAllDogsThunk =
-  (page: number) => async (dispatch: AppDispatch) => {
+  (page: number, filter: string) => async (dispatch: AppDispatch) => {
     const currentToken = localStorage.getItem("token");
     dispatch(loadingActionCreator({ loading: true }));
     try {
@@ -47,7 +50,7 @@ export const loadMoreAllDogsThunk =
         },
         status,
       } = await axios.get(
-        `${process.env.REACT_APP_API_URL_DEV}dogs/all/${page}?`,
+        `${process.env.REACT_APP_API_URL_DEV}dogs/all/${page}${filter}`,
         {
           headers: {
             Authorization: `Bearer ${currentToken}`,

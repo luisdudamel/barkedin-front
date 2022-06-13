@@ -71,7 +71,6 @@ const StyledDog = styled.div`
         display: flex;
         justify-content: space-between;
         &__avatar {
-          width: 65%;
           border-radius: 30px;
           object-fit: fill;
         }

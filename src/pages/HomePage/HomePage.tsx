@@ -6,51 +6,57 @@ import { LoadButton } from "../../components/LoadButton/LoadButton";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import MyDogsPageStyled from "../MyDogsPage/MyDogsPageStyled";
-
 import {
   getAllDogsThunk,
   loadMoreAllDogsThunk,
 } from "../../redux/thunks/dogsThunks";
 import { useEffect, useState } from "react";
 import { FilterBar } from "../../components/FilterBar/FilterBar";
+import HomePageStyled from "./HomePageStyled";
+import { UserState } from "../../interfaces/UserCredential";
 
 const HomePage = (): JSX.Element => {
   let initialPage = 1;
-
+  const [filter, setFilter] = useState("");
   const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
   const currentDogs: IDog[] = useAppSelector((state) => state.dogs);
+  const currentUser: UserState = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAllDogsThunk(0));
-  }, [dispatch]);
+    dispatch(getAllDogsThunk(0, ""));
+  }, [dispatch, currentUser]);
 
   const loadMoreAllDogs = () => {
     setPage(page + 1);
-    dispatch(loadMoreAllDogsThunk(page));
+    dispatch(loadMoreAllDogsThunk(page, filter));
+  };
+
+  const chooseFilter = (filterToSet: string): void => {
+    setFilter(filterToSet);
+    dispatch(getAllDogsThunk(0, filterToSet));
   };
 
   const scrollToTop = () => {
     setPage(1);
     window.scrollTo(0, 0);
   };
-
   return (
     <>
       {loading && <LoadingBarLinear />}
-      <MyDogsPageStyled>
+      <HomePageStyled>
         <Stack
           direction="column"
           justifyContent="center"
           alignItems="center"
           spacing={1}
         >
-          <Header text="My dogs" />
-          <FilterBar />
-
+          <Header text="All dogs" />
+          <div className="filter-bar">
+            <FilterBar filterAction={chooseFilter} />
+          </div>
           <DogList dogs={currentDogs}></DogList>
         </Stack>
         <div className="load-more-container" onClick={loadMoreAllDogs}>
@@ -59,7 +65,7 @@ const HomePage = (): JSX.Element => {
         <div onClick={() => scrollToTop()}>
           <NavBar />
         </div>
-      </MyDogsPageStyled>
+      </HomePageStyled>
     </>
   );
 };

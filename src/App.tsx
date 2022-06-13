@@ -36,7 +36,14 @@ function App(): JSX.Element {
       <Routes>
         <Route path="*" element={<Navigate to="/login" />} />
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route
+          path="/home"
+          element={
+            <CredentialsValidation>
+              <HomePage />
+            </CredentialsValidation>
+          }
+        />
         <Route
           path="/register"
           element={

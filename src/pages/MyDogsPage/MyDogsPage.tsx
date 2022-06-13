@@ -17,7 +17,6 @@ import { NavBar } from "../../components/NavBar/Navbar";
 
 const MyDogsPage = (): JSX.Element => {
   let initialPage = 1;
-
   const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
   const currentFavDogs: IDog[] = useAppSelector((state) => state.dogs);
@@ -51,13 +50,12 @@ const MyDogsPage = (): JSX.Element => {
         >
           <Header text="My dogs" />
           <ProfileBar />
-
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
         <div className="load-more-container" onClick={loadMoreFavDogs}>
           <LoadButton />
         </div>
-        <div onClick={() => scrollToTop()}>
+        <div onClick={scrollToTop}>
           <NavBar />
         </div>
       </MyDogsPageStyled>
