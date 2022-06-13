@@ -26,7 +26,9 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
-                alt="Ball filter icon"
+                alt={`Ball filter icon ${
+                  activeFilter !== "ball" ? "inactive" : "active"
+                }`}
                 src={
                   activeFilter === "ball"
                     ? `../../images/icons/mobile/personalities/active/ball-active.png`
@@ -39,7 +41,9 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
-                alt="Beach filter icon"
+                alt={`Beach filter icon ${
+                  activeFilter !== "beach" ? "inactive" : "active"
+                }`}
                 src={
                   activeFilter === "beach"
                     ? `../../images/icons/mobile/personalities/active/beach-active.png`
@@ -52,7 +56,9 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
-                alt="Nature filter icon"
+                alt={`Nature filter icon ${
+                  activeFilter !== "nature" ? "inactive" : "active"
+                }`}
                 src={
                   activeFilter === "nature"
                     ? `../../images/icons/mobile/personalities/active/nature-active.png`
@@ -65,7 +71,9 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
-                alt="Frisbee filter icon"
+                alt={`Frisbee filter icon ${
+                  activeFilter !== "frisbee" ? "inactive" : "active"
+                }`}
                 src={
                   activeFilter === "frisbee"
                     ? `../../images/icons/mobile/personalities/active/frisbee-active.png`
@@ -78,7 +86,9 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
-                alt="Walker filter icon"
+                alt={`Walker filter icon ${
+                  activeFilter !== "walker" ? "inactive" : "active"
+                }`}
                 src={
                   activeFilter === "walker"
                     ? `../../images/icons/mobile/personalities/active/walker-active.png`
