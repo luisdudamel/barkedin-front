@@ -21,6 +21,13 @@ const dogSlice = createSlice({
       ...favDogs,
       ...action.payload,
     ],
+    loadAllDogs: (favDogs, action: PayloadAction<IDog[]>) => [
+      ...action.payload,
+    ],
+    loadMoreAllDogs: (favDogs, action: PayloadAction<IDog[]>) => [
+      ...favDogs,
+      ...action.payload,
+    ],
   },
 });
 
@@ -29,6 +36,8 @@ export const {
   deleteFavDog: deleteFavDogActionCreator,
   createFavDog: createFavDogActionCreator,
   loadMoreFavDogs: loadMoreFavDogsActionCreator,
+  loadMoreAllDogs: loadMoreAllDogsActionCreator,
+  loadAllDogs: loadAllDogsActionCreator,
 } = dogSlice.actions;
 
 export default dogSlice.reducer;

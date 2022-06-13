@@ -27,7 +27,7 @@ describe("Given a getFavDogsThunk", () => {
       });
 
       loadFavDogsActionCreator(mockFavDogs);
-      const thunk = getFavDogsThunk(mockUser);
+      const thunk = getFavDogsThunk(mockUser, 0);
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
