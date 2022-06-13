@@ -51,7 +51,6 @@ const MyDogsPage = (): JSX.Element => {
         >
           <Header text="My dogs" />
           <ProfileBar />
-
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
         <div className="load-more-container" onClick={loadMoreFavDogs}>

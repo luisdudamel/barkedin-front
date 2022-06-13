@@ -20,15 +20,24 @@ export const StyledFilterBar = styled.nav`
   }
   .toolbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
-  .profile-button {
-    background: #2a9d8f;
+  .filter-button {
+    width: 30px;
+    margin-left: 10px;
+    background: white;
     border-radius: 15px;
     font-style: italic;
     font-weight: 600;
     font-size: 24px;
     line-height: 141.93%;
     letter-spacing: -0.05em;
+  }
+  @media (max-width: 380px) {
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 `;

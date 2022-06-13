@@ -6,14 +6,13 @@ import { LoadButton } from "../../components/LoadButton/LoadButton";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import MyDogsPageStyled from "../MyDogsPage/MyDogsPageStyled";
-
 import {
   getAllDogsThunk,
   loadMoreAllDogsThunk,
 } from "../../redux/thunks/dogsThunks";
 import { useEffect, useState } from "react";
 import { FilterBar } from "../../components/FilterBar/FilterBar";
+import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): JSX.Element => {
   let initialPage = 1;
@@ -41,16 +40,18 @@ const HomePage = (): JSX.Element => {
   return (
     <>
       {loading && <LoadingBarLinear />}
-      <MyDogsPageStyled>
+
+      <HomePageStyled>
         <Stack
           direction="column"
           justifyContent="center"
           alignItems="center"
           spacing={1}
         >
-          <Header text="My dogs" />
-          <FilterBar />
-
+          <Header text="All dogs" />
+          <div className="filter-bar">
+            <FilterBar />
+          </div>
           <DogList dogs={currentDogs}></DogList>
         </Stack>
         <div className="load-more-container" onClick={loadMoreAllDogs}>
@@ -59,7 +60,7 @@ const HomePage = (): JSX.Element => {
         <div onClick={() => scrollToTop()}>
           <NavBar />
         </div>
-      </MyDogsPageStyled>
+      </HomePageStyled>
     </>
   );
 };
