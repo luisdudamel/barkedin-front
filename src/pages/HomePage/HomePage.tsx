@@ -24,7 +24,7 @@ const HomePage = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAllDogsThunk(0));
+    dispatch(getAllDogsThunk(0, ""));
   }, [dispatch]);
 
   const loadMoreAllDogs = () => {
@@ -35,6 +35,10 @@ const HomePage = (): JSX.Element => {
   const scrollToTop = () => {
     setPage(1);
     window.scrollTo(0, 0);
+  };
+
+  const filter = () => {
+    dispatch(getAllDogsThunk(0, "?personality=beach"));
   };
 
   return (
@@ -50,7 +54,7 @@ const HomePage = (): JSX.Element => {
         >
           <Header text="All dogs" />
           <div className="filter-bar">
-            <FilterBar />
+            <FilterBar action={filter} />{" "}
           </div>
           <DogList dogs={currentDogs}></DogList>
         </Stack>

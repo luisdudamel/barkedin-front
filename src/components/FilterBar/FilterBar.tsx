@@ -5,7 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import { Button } from "@mui/material";
 import { StyledFilterBar } from "./StyledFilterBarr";
 
-export const FilterBar = (): JSX.Element => {
+interface Props {
+  action: React.MouseEventHandler;
+}
+
+export const FilterBar = ({ action }: Props): JSX.Element => {
   return (
     <StyledFilterBar>
       <Box className="filter-bar-container" sx={{ flexGrow: 1 }}>
@@ -13,15 +17,16 @@ export const FilterBar = (): JSX.Element => {
           <Toolbar className="toolbar">
             <Button className="logout filter-button" variant="contained">
               <img
-                className="filter-button__image"
+                className="filter-button__image--inactive"
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/ball-inactive.png`}
+                onClick={action}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
               <img
-                className="filter-button__image"
+                className="filter-button__image--inactive"
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/beach-inactive.png`}
@@ -29,7 +34,7 @@ export const FilterBar = (): JSX.Element => {
             </Button>
             <Button className="logout filter-button" variant="contained">
               <img
-                className="filter-button__image"
+                className="filter-button__image--inactive"
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/nature-inactive.png`}
@@ -37,7 +42,7 @@ export const FilterBar = (): JSX.Element => {
             </Button>
             <Button className="logout filter-button" variant="contained">
               <img
-                className="filter-button__image"
+                className="filter-button__image--inactive"
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/frisbee-inactive.png`}
@@ -45,7 +50,7 @@ export const FilterBar = (): JSX.Element => {
             </Button>
             <Button className="logout filter-button" variant="contained">
               <img
-                className="filter-button__image"
+                className="filter-button__image--inactive"
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/walker-inactive.png`}
