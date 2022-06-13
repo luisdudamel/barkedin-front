@@ -215,7 +215,7 @@ exports[`Given a RegisterPage component page When it's invoked Then it should al
           </div>
         </div>
         <button
-          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled register-input css-duzj3y-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-fullWidth MuiButtonBase-root Mui-disabled register-input css-u6udi5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={true}
           id=":r3:"
           onBlur={[Function]}
