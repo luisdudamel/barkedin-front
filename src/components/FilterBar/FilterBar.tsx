@@ -5,11 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import { Button } from "@mui/material";
 import { StyledFilterBar } from "./StyledFilterBarr";
 
-interface Props {
-  action: React.MouseEventHandler;
+interface FuncProps {
+  filterAction: (personality: string) => void;
 }
 
-export const FilterBar = ({ action }: Props): JSX.Element => {
+export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
   return (
     <StyledFilterBar>
       <Box className="filter-bar-container" sx={{ flexGrow: 1 }}>
@@ -21,7 +21,7 @@ export const FilterBar = ({ action }: Props): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/ball-inactive.png`}
-                onClick={action}
+                onClick={() => filterAction("Me clickearon")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">

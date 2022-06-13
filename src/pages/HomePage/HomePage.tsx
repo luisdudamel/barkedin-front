@@ -16,7 +16,7 @@ import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): JSX.Element => {
   let initialPage = 1;
-
+  const [filter, setFilter] = useState("");
   const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
   const currentDogs: IDog[] = useAppSelector((state) => state.dogs);
@@ -29,7 +29,7 @@ const HomePage = (): JSX.Element => {
 
   const loadMoreAllDogs = () => {
     setPage(page + 1);
-    dispatch(loadMoreAllDogsThunk(page));
+    dispatch(loadMoreAllDogsThunk(page, filter));
   };
 
   const scrollToTop = () => {
@@ -37,8 +37,10 @@ const HomePage = (): JSX.Element => {
     window.scrollTo(0, 0);
   };
 
-  const filter = () => {
-    dispatch(getAllDogsThunk(0, "?personality=beach"));
+  const chooseFilter = (filterToSet: string): void => {
+    console.log(filterToSet);
+    setFilter(filterToSet);
+    dispatch(getAllDogsThunk(0, filterToSet));
   };
 
   return (
@@ -54,7 +56,7 @@ const HomePage = (): JSX.Element => {
         >
           <Header text="All dogs" />
           <div className="filter-bar">
-            <FilterBar action={filter} />{" "}
+            <FilterBar filterAction={chooseFilter} />
           </div>
           <DogList dogs={currentDogs}></DogList>
         </Stack>
