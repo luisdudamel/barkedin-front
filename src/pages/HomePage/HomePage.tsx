@@ -7,7 +7,7 @@ import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLi
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import MyDogsPageStyled from "../MyDogsPage/MyDogsPageStyled";
-import { UserState } from "../../interfaces/UserCredential";
+
 import {
   getAllDogsThunk,
   loadMoreAllDogsThunk,
