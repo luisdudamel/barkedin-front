@@ -5,7 +5,7 @@ import { CardActionArea } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
 import StyledDog from "./StyledDog";
 import { deleteFavDogThunk } from "../../redux/thunks/dogsThunks";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 
 export const Dog = ({ dog }: Props): JSX.Element => {
   const dispatch = useAppDispatch();
+  const currentUserId = useAppSelector((state) => state.user.id);
 
   const deleteFavDog = () => {
     dispatch(deleteFavDogThunk(dog.id));
@@ -68,13 +69,17 @@ export const Dog = ({ dog }: Props): JSX.Element => {
                 {dog.title}
               </Typography>
             </div>
-            <img
-              className="dog-card-bottom__delete"
-              width={20}
-              alt={"Red trash can icon"}
-              onClick={() => deleteFavDog()}
-              src="../../images/icons/mobile/trash.png"
-            />
+            {currentUserId === dog.owner ? (
+              <img
+                className="dog-card-bottom__delete"
+                width={20}
+                alt={"Red trash can icon"}
+                onClick={() => deleteFavDog()}
+                src="../../images/icons/mobile/trash.png"
+              />
+            ) : (
+              ""
+            )}
           </div>
         </CardContent>
       </CardActionArea>

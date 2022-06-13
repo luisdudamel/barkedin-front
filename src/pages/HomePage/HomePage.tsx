@@ -38,7 +38,6 @@ const HomePage = (): JSX.Element => {
   };
 
   const chooseFilter = (filterToSet: string): void => {
-    console.log(filterToSet);
     setFilter(filterToSet);
     dispatch(getAllDogsThunk(0, filterToSet));
   };

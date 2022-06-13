@@ -21,7 +21,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/ball-inactive.png`}
-                onClick={() => filterAction("Me clickearon")}
+                onClick={() => filterAction("?personality=ball")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -30,6 +30,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/beach-inactive.png`}
+                onClick={() => filterAction("?personality=beach")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -38,6 +39,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/nature-inactive.png`}
+                onClick={() => filterAction("?personality=nature")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -46,6 +48,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/frisbee-inactive.png`}
+                onClick={() => filterAction("?personality=frisbee")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -54,6 +57,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 width={40}
                 alt="Ball filter icon"
                 src={`../../images/icons/mobile/personalities/inactive/walker-inactive.png`}
+                onClick={() => filterAction("?personality=walker")}
               ></img>
             </Button>
           </Toolbar>
