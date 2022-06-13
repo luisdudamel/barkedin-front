@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import { mockAllDogs } from "./dogs";
 
 export const handlers = [
   rest.post(
@@ -53,6 +54,20 @@ export const handlers = [
     `${process.env.REACT_APP_API_URL_DEV}dogs/edit/:1234`,
     (req, res, ctx) => {
       return res(ctx.status(200));
+    }
+  ),
+
+  rest.get(
+    `${process.env.REACT_APP_API_URL_DEV}dogs/all/0/`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          data: {
+            dogs: mockAllDogs,
+          },
+        })
+      );
     }
   ),
 ];
