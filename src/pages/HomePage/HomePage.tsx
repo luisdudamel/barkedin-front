@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import { FilterBar } from "../../components/FilterBar/FilterBar";
 import HomePageStyled from "./HomePageStyled";
+import { UserState } from "../../interfaces/UserCredential";
 
 const HomePage = (): JSX.Element => {
   let initialPage = 1;
@@ -20,21 +21,17 @@ const HomePage = (): JSX.Element => {
   const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
   const currentDogs: IDog[] = useAppSelector((state) => state.dogs);
+  const currentUser: UserState = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getAllDogsThunk(0, ""));
-  }, [dispatch]);
+  }, [dispatch, currentUser]);
 
   const loadMoreAllDogs = () => {
     setPage(page + 1);
     dispatch(loadMoreAllDogsThunk(page, filter));
-  };
-
-  const scrollToTop = () => {
-    setPage(1);
-    window.scrollTo(0, 0);
   };
 
   const chooseFilter = (filterToSet: string): void => {
@@ -42,10 +39,13 @@ const HomePage = (): JSX.Element => {
     dispatch(getAllDogsThunk(0, filterToSet));
   };
 
+  const scrollToTop = () => {
+    setPage(1);
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       {loading && <LoadingBarLinear />}
-
       <HomePageStyled>
         <Stack
           direction="column"
