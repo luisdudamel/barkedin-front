@@ -50,6 +50,7 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
       weight: "",
       bio: "",
       owner: "",
+      picturebackup: "",
     };
   }, []);
 

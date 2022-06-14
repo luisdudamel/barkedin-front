@@ -62,6 +62,7 @@ describe("Given a createFavDog slice", () => {
         weight: "23kg",
         bio: "Good dog",
         owner: "123",
+        picturebackup: "perrritobackup.jpg",
       };
       const expectedDogsOneAdded: IDog[] = mockFavDogsOneAdded;
 
@@ -104,6 +105,7 @@ describe("Given a loadMoreAllDogs slice", () => {
           weight: "23kg",
           bio: "Good dog",
           owner: "123",
+          picturebackup: "perrritobackup.jpg",
         },
 
         {
@@ -118,6 +120,7 @@ describe("Given a loadMoreAllDogs slice", () => {
           weight: "23kg",
           bio: "Good dog",
           owner: "123",
+          picturebackup: "perrritobackup.jpg",
         },
       ];
       const expectedDogsTwoAdded: IDog[] = mockAllDogsTwoAdded;
@@ -147,6 +150,7 @@ describe("Given a loadMoreFavDogs slice", () => {
           weight: "23kg",
           bio: "Good dog",
           owner: "123",
+          picturebackup: "perrritobackup.jpg",
         },
 
         {
@@ -161,6 +165,7 @@ describe("Given a loadMoreFavDogs slice", () => {
           weight: "23kg",
           bio: "Good dog",
           owner: "123",
+          picturebackup: "perrritobackup.jpg",
         },
       ];
       const expectedFavDogsTwoAdded: IDog[] = mockAllFavDogsTwoAdded;
