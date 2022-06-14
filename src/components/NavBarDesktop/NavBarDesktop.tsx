@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { StyledNavBarDesktop } from "./StyledNavBarDesktop";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export const NavBarDesktop = () => {
+export const NavBarDesktop = (): JSX.Element => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
