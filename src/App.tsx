@@ -1,6 +1,6 @@
 import jwtDecode from "jwt-decode";
 import React from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
@@ -9,6 +9,7 @@ import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { loginUserActionCreator } from "./redux/feature/usersSlice";
 import { useAppDispatch } from "./redux/hooks";
@@ -34,8 +35,22 @@ function App(): JSX.Element {
   return (
     <>
       <Routes>
-        <Route path="*" element={<Navigate to="/login" />} />
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route
+          path="*"
+          element={
+            <CredentialsValidation>
+              <NotFoundPage />
+            </CredentialsValidation>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <CredentialsValidation>
+              <NotFoundPage />
+            </CredentialsValidation>
+          }
+        />
         <Route
           path="/home"
           element={
