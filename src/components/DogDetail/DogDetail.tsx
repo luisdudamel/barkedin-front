@@ -27,12 +27,11 @@ export const DogDetail = ({ dogToShow, isOwnDog }: Props): JSX.Element => {
               <img
                 width={"100%"}
                 className="dog-card-top__avatar"
-                crossOrigin=""
                 alt={`${dogToShow.name} avatar `}
                 src={
                   dogToShow.picture === ""
                     ? "/images/dog-placeholder.webp"
-                    : `${process.env.REACT_APP_API_URL_DEV}uploads/images/${dogToShow.picture}`
+                    : `${dogToShow.picturebackup}`
                 }
               />
             </div>

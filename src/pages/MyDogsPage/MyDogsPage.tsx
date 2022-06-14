@@ -49,6 +49,7 @@ const MyDogsPage = (): JSX.Element => {
           spacing={1}
         >
           <Header text="My dogs" />
+
           <ProfileBar />
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
