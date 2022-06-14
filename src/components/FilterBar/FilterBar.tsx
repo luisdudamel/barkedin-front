@@ -34,7 +34,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                     ? `../../images/icons/mobile/personalities/active/ball-active.png`
                     : `../../images/icons/mobile/personalities/inactive/ball-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("ball")}
+                onClick={() => filterAndChangeColor("Ball")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -49,7 +49,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                     ? `../../images/icons/mobile/personalities/active/beach-active.png`
                     : `../../images/icons/mobile/personalities/inactive/beach-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("beach")}
+                onClick={() => filterAndChangeColor("Beach")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -64,7 +64,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                     ? `../../images/icons/mobile/personalities/active/nature-active.png`
                     : `../../images/icons/mobile/personalities/inactive/nature-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("nature")}
+                onClick={() => filterAndChangeColor("Nature")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -79,7 +79,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                     ? `../../images/icons/mobile/personalities/active/frisbee-active.png`
                     : `../../images/icons/mobile/personalities/inactive/frisbee-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("frisbee")}
+                onClick={() => filterAndChangeColor("Frisbee")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -94,7 +94,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                     ? `../../images/icons/mobile/personalities/active/walker-active.png`
                     : `../../images/icons/mobile/personalities/inactive/walker-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("walker")}
+                onClick={() => filterAndChangeColor("Walker")}
               ></img>
             </Button>
           </Toolbar>
