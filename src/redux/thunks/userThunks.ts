@@ -40,6 +40,7 @@ export const loginUserThunk =
       dispatch(loadingActionCreator({ loading: false }));
       dispatch(loginUserActionCreator(userInfo));
     } catch (error) {
+      dispatch(loadingActionCreator({ loading: false }));
       return "Username or password is wrong";
     }
     dispatch(loadingActionCreator({ loading: false }));

@@ -67,10 +67,11 @@ const LoginForm = (): JSX.Element => {
     event.preventDefault();
 
     const message = await dispatch(loginUserThunk(formData));
-    console.log(message);
+
     resetData();
     if (message) {
       handleClick();
+      return;
     }
     setTimeout(() => navigate("/home"), 3000);
   };
