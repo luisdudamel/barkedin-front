@@ -14,6 +14,7 @@ import { ProfileBar } from "../../components/ProfileBar/ProfileBar";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
 import { LoadButton } from "../../components/LoadButton/LoadButton";
 import { NavBar } from "../../components/NavBar/Navbar";
+import { NavBarDesktop } from "../../components/NavBarDesktop/NavBarDesktop";
 
 const MyDogsPage = (): JSX.Element => {
   let initialPage = 1;
@@ -41,12 +42,16 @@ const MyDogsPage = (): JSX.Element => {
   return (
     <>
       {loading && <LoadingBarLinear />}
+      <div onClick={scrollToTop}>
+        <NavBarDesktop />
+      </div>
       <MyDogsPageStyled>
         <Stack
           direction="column"
           justifyContent="center"
           alignItems="center"
           spacing={1}
+          mt={7}
         >
           <Header text="My dogs" />
 

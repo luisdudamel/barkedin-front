@@ -17,6 +17,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        colorPrimary: {
+          backgroundColor: "white",
+          color: "#264653",
+        },
+      },
+    },
   },
   palette: {
     background: {
