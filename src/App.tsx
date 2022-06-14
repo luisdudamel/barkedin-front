@@ -36,7 +36,7 @@ function App(): JSX.Element {
     <>
       <Routes>
         <Route
-          path="*"
+          path="/*"
           element={
             <CredentialsValidation>
               <NotFoundPage />
@@ -47,7 +47,7 @@ function App(): JSX.Element {
           path="/"
           element={
             <CredentialsValidation>
-              <NotFoundPage />
+              <HomePage />
             </CredentialsValidation>
           }
         />
