@@ -53,7 +53,7 @@ const HomePage = (): JSX.Element => {
       </div>
       <HomePageStyled>
         <Stack
-          mt={7}
+          className="header-text"
           direction="column"
           justifyContent="center"
           alignItems="center"
@@ -65,9 +65,12 @@ const HomePage = (): JSX.Element => {
           </div>
           <DogList dogs={currentDogs}></DogList>
         </Stack>
-        <div className="load-more-container" onClick={loadMoreAllDogs}>
-          <LoadButton />
-        </div>
+
+        {currentDogs.length > 5 && (
+          <div className="load-more-container" onClick={loadMoreAllDogs}>
+            <LoadButton />
+          </div>
+        )}
         <div onClick={scrollTop}>
           <NavBar />
         </div>

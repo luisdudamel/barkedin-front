@@ -47,20 +47,22 @@ const MyDogsPage = (): JSX.Element => {
       </div>
       <MyDogsPageStyled>
         <Stack
+          className="header-text"
           direction="column"
           justifyContent="center"
           alignItems="center"
           spacing={1}
-          mt={7}
         >
           <Header text="My dogs" />
 
           <ProfileBar />
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
-        <div className="load-more-container" onClick={loadMoreFavDogs}>
-          <LoadButton />
-        </div>
+        {currentFavDogs.length > 5 && (
+          <div className="load-more-container" onClick={loadMoreFavDogs}>
+            <LoadButton />
+          </div>
+        )}
         <div onClick={scrollToTop}>
           <NavBar />
         </div>
