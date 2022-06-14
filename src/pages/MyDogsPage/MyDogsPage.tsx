@@ -58,9 +58,11 @@ const MyDogsPage = (): JSX.Element => {
           <ProfileBar />
           <DogList dogs={currentFavDogs}></DogList>
         </Stack>
-        <div className="load-more-container" onClick={loadMoreFavDogs}>
-          <LoadButton />
-        </div>
+        {currentFavDogs.length > 5 && (
+          <div className="load-more-container" onClick={loadMoreFavDogs}>
+            <LoadButton />
+          </div>
+        )}
         <div onClick={scrollToTop}>
           <NavBar />
         </div>

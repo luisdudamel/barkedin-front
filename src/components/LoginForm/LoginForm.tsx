@@ -73,7 +73,7 @@ const LoginForm = (): JSX.Element => {
       handleClick();
       return;
     }
-    setTimeout(() => navigate("/home"), 3000);
+    navigate("/home");
   };
 
   return (
