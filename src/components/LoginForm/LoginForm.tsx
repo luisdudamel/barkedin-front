@@ -49,7 +49,7 @@ const LoginForm = (): JSX.Element => {
     await dispatch(loginUserThunk(formData));
 
     resetData();
-    navigate("/profile");
+    navigate("/home");
   };
 
   return (

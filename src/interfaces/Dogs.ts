@@ -10,4 +10,5 @@ export interface IDog {
   id: string | undefined;
   bio: string;
   owner: string;
+  picturebackup: string;
 }

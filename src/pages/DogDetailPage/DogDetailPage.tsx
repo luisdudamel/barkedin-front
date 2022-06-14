@@ -22,6 +22,7 @@ export const DogDetailPage = (): JSX.Element => {
     toy: "",
     weight: "",
     owner: "",
+    picturebackup: "",
   };
   const [actualDog, setActualDog] = useState(initialDogDetail);
   const userId = useAppSelector((state) => state.user.id);

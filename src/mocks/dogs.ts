@@ -13,6 +13,7 @@ export const mockFavDogs: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -26,6 +27,7 @@ export const mockFavDogs: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -39,6 +41,7 @@ export const mockFavDogs: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -52,6 +55,7 @@ export const mockFavDogs: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -65,6 +69,7 @@ export const mockFavDogs: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -78,6 +83,7 @@ export const mockFavDogs: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -94,6 +100,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -107,6 +114,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -120,6 +128,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -133,6 +142,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -146,6 +156,7 @@ export const mockFavDogsFirstDeleted: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -162,6 +173,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -175,6 +187,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -188,6 +201,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -201,6 +215,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -214,6 +229,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -227,6 +243,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     name: "Hachiko",
@@ -240,6 +257,7 @@ export const mockFavDogsOneAdded: IDog[] = [
     weight: "23kg",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -255,6 +273,7 @@ export const mockFavDog: IDog = {
   id: "123",
   bio: "Good dog",
   owner: "123",
+  picturebackup: "perrritobackup.jpg",
 };
 
 export const mockAllDogs: IDog[] = [
@@ -270,6 +289,7 @@ export const mockAllDogs: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -283,6 +303,7 @@ export const mockAllDogs: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -296,6 +317,7 @@ export const mockAllDogs: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -309,6 +331,7 @@ export const mockAllDogs: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -322,6 +345,7 @@ export const mockAllDogs: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -335,6 +359,7 @@ export const mockAllDogs: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -351,6 +376,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -364,6 +390,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -377,6 +404,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -390,6 +418,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -403,6 +432,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -416,6 +446,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     name: "Hachiko",
@@ -429,6 +460,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     weight: "23kg",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 
   {
@@ -443,6 +475,7 @@ export const mockAllDogsTwoAdded: IDog[] = [
     weight: "23kg",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -459,6 +492,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -472,6 +506,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -485,6 +520,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -498,6 +534,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -511,6 +548,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -524,6 +562,7 @@ export const mockAllFavDogs: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];
 
@@ -540,6 +579,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "213123123",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 2,
@@ -553,6 +593,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "2131231234",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -566,6 +607,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "2131231235",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 4,
@@ -579,6 +621,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "2131231236",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -592,6 +635,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "2131231237",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     age: 9,
@@ -605,6 +649,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     id: "2131231238",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
   {
     name: "Hachiko",
@@ -618,6 +663,7 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     weight: "23kg",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 
   {
@@ -632,5 +678,6 @@ export const mockAllFavDogsTwoAdded: IDog[] = [
     weight: "23kg",
     bio: "Good dog",
     owner: "123",
+    picturebackup: "perrritobackup.jpg",
   },
 ];

@@ -79,7 +79,7 @@ export const getFavDogsThunk =
         },
         status,
       } = await axios.get(
-        `${process.env.REACT_APP_API_URL_DEV}dogs/favdogs/0`,
+        `${process.env.REACT_APP_API_URL_DEV}dogs/favdogs/${page}`,
         {
           headers: {
             Authorization: `Bearer ${currentToken}`,

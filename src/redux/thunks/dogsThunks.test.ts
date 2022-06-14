@@ -2,9 +2,7 @@ import axios from "axios";
 import { mockAllDogs, mockFavDog, mockFavDogs } from "../../mocks/dogs";
 import {
   deleteFavDogActionCreator,
-  loadAllDogsActionCreator,
   loadFavDogsActionCreator,
-  loadMoreFavDogsActionCreator,
 } from "../feature/dogsSlice";
 import { loadingActionCreator } from "../feature/uiSlice";
 import {

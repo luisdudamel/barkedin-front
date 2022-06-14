@@ -31,12 +31,11 @@ export const Dog = ({ dog }: Props): JSX.Element => {
               <img
                 width={"100%"}
                 className="dog-card-top__avatar"
-                crossOrigin=""
                 alt={`${dog.name} avatar`}
                 src={
                   dog.picture === ""
                     ? "/images/dog-placeholder.webp"
-                    : `${process.env.REACT_APP_API_URL_DEV}uploads/images/${dog.picture}`
+                    : `${dog.picturebackup}`
                 }
                 onClick={() => navigate(`/detail/${dog.id}`)}
               />
