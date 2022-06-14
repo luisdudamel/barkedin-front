@@ -1,9 +1,11 @@
 import { LoadingButton } from "@mui/lab";
 import {
+  Alert,
   Avatar,
   Box,
   Container,
   Grid,
+  Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
@@ -37,6 +39,24 @@ const LoginForm = (): JSX.Element => {
     setButtonDisabled(true);
   }, [formData.username, formData.password]);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+    navigate("/home");
+  };
+
   const resetData = (): void => {
     setFormData(formInitialState);
   };
@@ -46,10 +66,13 @@ const LoginForm = (): JSX.Element => {
   ): Promise<void> => {
     event.preventDefault();
 
-    await dispatch(loginUserThunk(formData));
-
+    const message = await dispatch(loginUserThunk(formData));
+    console.log(message);
     resetData();
-    navigate("/home");
+    if (message) {
+      handleClick();
+    }
+    setTimeout(() => navigate("/home"), 3000);
   };
 
   return (
@@ -173,6 +196,15 @@ const LoginForm = (): JSX.Element => {
           </Box>
         </Box>
       </Container>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="error"
+          sx={{ width: "100%", backgroundColor: "#F4A261", color: "white" }}
+        >
+          Username/password is wrong
+        </Alert>
+      </Snackbar>
     </>
   );
 };
