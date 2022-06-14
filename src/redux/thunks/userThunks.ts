@@ -16,12 +16,19 @@ import { AppDispatch } from "../store";
 export const registerUserThunk =
   (formData: UserCredential) => async (dispatch: AppDispatch) => {
     dispatch(loadingActionCreator({ loading: true }));
-    await axios.post(
-      `${process.env.REACT_APP_API_URL_DEV}users/register`,
-      formData
-    );
-    dispatch(registerUserActionCreator());
-    dispatch(loadingActionCreator({ loading: false }));
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_API_URL_DEV}users/register`,
+        formData
+      );
+
+      dispatch(registerUserActionCreator());
+      dispatch(loadingActionCreator({ loading: false }));
+      return "Username created succesfuly";
+    } catch (error) {
+      dispatch(loadingActionCreator({ loading: false }));
+      return "Username already exists";
+    }
   };
 
 export const loginUserThunk =

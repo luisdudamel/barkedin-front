@@ -1,10 +1,12 @@
 import { LoadingButton } from "@mui/lab";
 import {
+  Alert,
   Avatar,
   Box,
   Container,
   CssBaseline,
   Grid,
+  Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
@@ -29,6 +31,8 @@ const RegisterForm = (): JSX.Element => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
+  const [snackMessage, setSnackMessage] = useState("");
+
   useEffect(() => {
     if (
       formData.username !== "" &&
@@ -42,6 +46,24 @@ const RegisterForm = (): JSX.Element => {
     setButtonDisabled(true);
   }, [formData.name, formData.password, formData.username]);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+    navigate("/home");
+  };
+
   const resetData = (): void => {
     setFormData(formInitialState);
   };
@@ -50,9 +72,15 @@ const RegisterForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    dispatch(registerUserThunk(formData));
+    const message = await dispatch(registerUserThunk(formData));
     resetData();
-    navigate("/login");
+    if (message) {
+      console.log(message);
+      setSnackMessage(message);
+      handleClick();
+      return;
+    }
+    setTimeout(() => navigate("/home"), 3000);
   };
 
   return (
@@ -182,6 +210,16 @@ const RegisterForm = (): JSX.Element => {
           </Box>
         </Box>
       </Container>
+
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="error"
+          sx={{ width: "100%", backgroundColor: "#F4A261", color: "white" }}
+        >
+          {snackMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 };
