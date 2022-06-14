@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { FilterBar } from "../../components/FilterBar/FilterBar";
 import HomePageStyled from "./HomePageStyled";
 import { UserState } from "../../interfaces/UserCredential";
+import { NavBarDesktop } from "../../components/NavBarDesktop/NavBarDesktop";
 
 const HomePage = (): JSX.Element => {
   let initialPage = 1;
@@ -43,11 +44,16 @@ const HomePage = (): JSX.Element => {
     setPage(1);
     window.scrollTo(0, 0);
   };
+
   return (
     <>
       {loading && <LoadingBarLinear />}
+      <div onClick={scrollTop}>
+        <NavBarDesktop />
+      </div>
       <HomePageStyled>
         <Stack
+          mt={7}
           direction="column"
           justifyContent="center"
           alignItems="center"

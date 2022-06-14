@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const StyledProfileBar = styled.nav`
   width: 100%;
   box-shadow: none;
+  color: black;
 
   .appbar {
-    background-color: transparent;
     box-shadow: none;
   }
   .filter-title {

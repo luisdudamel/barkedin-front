@@ -31,7 +31,11 @@ export const ProfileBar = (): JSX.Element => {
   return (
     <StyledProfileBar>
       <Box className="profile-bar-container" sx={{ flexGrow: 1 }}>
-        <AppBar className="appbar" position="static">
+        <AppBar
+          sx={{ background: "transparent" }}
+          className="appbar"
+          position="static"
+        >
           <Toolbar className="toolbar">
             <Button
               className="logout profile-button"
