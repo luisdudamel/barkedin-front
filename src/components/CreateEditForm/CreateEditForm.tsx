@@ -285,6 +285,7 @@ const CreateEditForm = ({ id }: Props): JSX.Element => {
                   id="bio"
                   label="Bio"
                   multiline
+                  required
                   rows={4}
                   value={formData.bio}
                   onChange={changeData}

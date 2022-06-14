@@ -95,6 +95,7 @@ function App(): JSX.Element {
       </Routes>
       {pathname !== "/login" &&
         pathname !== "/register" &&
+        pathname !== "/home" &&
         pathname !== "/profile" && <NavBar />}
     </>
   );

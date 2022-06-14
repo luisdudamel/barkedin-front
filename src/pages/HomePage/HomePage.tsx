@@ -39,7 +39,7 @@ const HomePage = (): JSX.Element => {
     dispatch(getAllDogsThunk(0, filterToSet));
   };
 
-  const scrollToTop = () => {
+  const scrollTop = () => {
     setPage(1);
     window.scrollTo(0, 0);
   };
@@ -62,7 +62,7 @@ const HomePage = (): JSX.Element => {
         <div className="load-more-container" onClick={loadMoreAllDogs}>
           <LoadButton />
         </div>
-        <div onClick={() => scrollToTop()}>
+        <div onClick={scrollTop}>
           <NavBar />
         </div>
       </HomePageStyled>
