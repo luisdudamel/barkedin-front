@@ -27,7 +27,7 @@ export const registerUserThunk =
       return "Username created succesfuly";
     } catch (error) {
       dispatch(loadingActionCreator({ loading: false }));
-      return "Username already exists";
+      return "Error creating new user";
     }
   };
 

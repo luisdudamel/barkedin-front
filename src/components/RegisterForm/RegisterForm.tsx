@@ -75,7 +75,6 @@ const RegisterForm = (): JSX.Element => {
     const message = await dispatch(registerUserThunk(formData));
     resetData();
     if (message) {
-      console.log(message);
       setSnackMessage(message);
       handleClick();
       return;
@@ -214,8 +213,8 @@ const RegisterForm = (): JSX.Element => {
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert
           onClose={handleClose}
-          severity="error"
-          sx={{ width: "100%", backgroundColor: "#F4A261", color: "white" }}
+          severity="success"
+          sx={{ width: "100%", backgroundColor: "#2A9D8F", color: "white" }}
         >
           {snackMessage}
         </Alert>
