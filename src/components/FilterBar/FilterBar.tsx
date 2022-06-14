@@ -27,14 +27,14 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 className="filter-button__image--inactive"
                 width={40}
                 alt={`Ball filter icon ${
-                  activeFilter !== "ball" ? "inactive" : "active"
+                  activeFilter !== "Ball" ? "inactive" : "active"
                 }`}
                 src={
-                  activeFilter === "ball"
+                  activeFilter === "Ball"
                     ? `../../images/icons/mobile/personalities/active/ball-active.png`
                     : `../../images/icons/mobile/personalities/inactive/ball-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("ball")}
+                onClick={() => filterAndChangeColor("Ball")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -42,14 +42,14 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 className="filter-button__image--inactive"
                 width={40}
                 alt={`Beach filter icon ${
-                  activeFilter !== "beach" ? "inactive" : "active"
+                  activeFilter !== "Beach" ? "inactive" : "active"
                 }`}
                 src={
-                  activeFilter === "beach"
+                  activeFilter === "Beach"
                     ? `../../images/icons/mobile/personalities/active/beach-active.png`
                     : `../../images/icons/mobile/personalities/inactive/beach-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("beach")}
+                onClick={() => filterAndChangeColor("Beach")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -57,14 +57,14 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 className="filter-button__image--inactive"
                 width={40}
                 alt={`Nature filter icon ${
-                  activeFilter !== "nature" ? "inactive" : "active"
+                  activeFilter !== "Nature" ? "inactive" : "active"
                 }`}
                 src={
-                  activeFilter === "nature"
+                  activeFilter === "Nature"
                     ? `../../images/icons/mobile/personalities/active/nature-active.png`
                     : `../../images/icons/mobile/personalities/inactive/nature-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("nature")}
+                onClick={() => filterAndChangeColor("Nature")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -72,14 +72,14 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 className="filter-button__image--inactive"
                 width={40}
                 alt={`Frisbee filter icon ${
-                  activeFilter !== "frisbee" ? "inactive" : "active"
+                  activeFilter !== "Frisbee" ? "inactive" : "active"
                 }`}
                 src={
-                  activeFilter === "frisbee"
+                  activeFilter === "Frisbee"
                     ? `../../images/icons/mobile/personalities/active/frisbee-active.png`
                     : `../../images/icons/mobile/personalities/inactive/frisbee-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("frisbee")}
+                onClick={() => filterAndChangeColor("Frisbee")}
               ></img>
             </Button>
             <Button className="logout filter-button" variant="contained">
@@ -87,14 +87,14 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
                 className="filter-button__image--inactive"
                 width={40}
                 alt={`Walker filter icon ${
-                  activeFilter !== "walker" ? "inactive" : "active"
+                  activeFilter !== "Walker" ? "inactive" : "active"
                 }`}
                 src={
-                  activeFilter === "walker"
+                  activeFilter === "Walker"
                     ? `../../images/icons/mobile/personalities/active/walker-active.png`
                     : `../../images/icons/mobile/personalities/inactive/walker-inactive.png`
                 }
-                onClick={() => filterAndChangeColor("walker")}
+                onClick={() => filterAndChangeColor("Walker")}
               ></img>
             </Button>
           </Toolbar>
