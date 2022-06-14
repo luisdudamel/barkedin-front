@@ -20,5 +20,13 @@ const HomePageStyled = styled.div`
     justify-content: flex-end;
     width: 100%;
   }
+  .header-text {
+    margin-top: 45px;
+  }
+  @media (max-width: 599px) {
+    .header-text {
+      margin-top: 0px;
+    }
+  }
 `;
 export default HomePageStyled;

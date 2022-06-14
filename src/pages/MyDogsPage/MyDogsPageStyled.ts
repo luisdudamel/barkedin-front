@@ -15,5 +15,13 @@ const MyDogsPageStyled = styled.div`
     margin-left: 15px;
     margin-bottom: 15px;
   }
+  .header-text {
+    margin-top: 45px;
+  }
+  @media (max-width: 599px) {
+    .header-text {
+      margin-top: 0px;
+    }
+  }
 `;
 export default MyDogsPageStyled;

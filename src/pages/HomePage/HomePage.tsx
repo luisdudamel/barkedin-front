@@ -53,7 +53,7 @@ const HomePage = (): JSX.Element => {
       </div>
       <HomePageStyled>
         <Stack
-          mt={7}
+          className="header-text"
           direction="column"
           justifyContent="center"
           alignItems="center"

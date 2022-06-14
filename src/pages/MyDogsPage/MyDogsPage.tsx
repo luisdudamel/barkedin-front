@@ -47,11 +47,11 @@ const MyDogsPage = (): JSX.Element => {
       </div>
       <MyDogsPageStyled>
         <Stack
+          className="header-text"
           direction="column"
           justifyContent="center"
           alignItems="center"
           spacing={1}
-          mt={7}
         >
           <Header text="My dogs" />
 
