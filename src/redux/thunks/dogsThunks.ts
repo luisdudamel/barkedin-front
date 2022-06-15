@@ -57,7 +57,6 @@ export const loadMoreAllDogsThunk =
           },
         }
       );
-
       if (status === 200) {
         dispatch(loadMoreAllDogsActionCreator(allDogs));
         dispatch(loadingActionCreator({ loading: false }));

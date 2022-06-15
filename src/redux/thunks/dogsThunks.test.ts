@@ -140,12 +140,12 @@ describe("Given a loadMoreAllDogsThunk", () => {
       const mockFilter = "";
       axios.get = jest.fn().mockResolvedValue({
         data: {
-          favdogs: mockAllDogs,
+          dogs: mockAllDogs,
         },
         status: 200,
       });
 
-      const thunk = loadMoreAllDogsThunk(mockPage, mockFilter);
+      const thunk = await loadMoreAllDogsThunk(mockPage, mockFilter);
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();

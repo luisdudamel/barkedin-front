@@ -26,7 +26,6 @@ const userSlice = createSlice({
       id: action.payload.id,
       logged: false,
     }),
-    registerUser: (): void => {},
   },
 });
 
@@ -34,6 +33,5 @@ export default userSlice.reducer;
 
 export const {
   loginUser: loginUserActionCreator,
-  registerUser: registerUserActionCreator,
   logoutUser: logoutUserActionCreator,
 } = userSlice.actions;

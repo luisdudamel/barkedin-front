@@ -7,10 +7,7 @@ import {
   Token,
 } from "../../interfaces/UserCredential";
 import { loadingActionCreator } from "../feature/uiSlice";
-import {
-  loginUserActionCreator,
-  registerUserActionCreator,
-} from "../feature/usersSlice";
+import { loginUserActionCreator } from "../feature/usersSlice";
 import { AppDispatch } from "../store";
 
 export const registerUserThunk =
@@ -21,10 +18,7 @@ export const registerUserThunk =
         `${process.env.REACT_APP_API_URL_DEV}users/register`,
         formData
       );
-
-      dispatch(registerUserActionCreator());
       dispatch(loadingActionCreator({ loading: false }));
-      return "User created succesfuly";
     } catch (error) {
       dispatch(loadingActionCreator({ loading: false }));
       return "Error creating new user";

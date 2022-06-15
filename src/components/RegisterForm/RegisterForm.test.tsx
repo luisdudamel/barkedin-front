@@ -13,6 +13,13 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
+const mockNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
+
 describe("Given a RegisterForm component", () => {
   describe("When invoked", () => {
     test("Then it should render a form with a button with the text 'Register'", () => {
@@ -62,7 +69,7 @@ describe("Given a RegisterForm component", () => {
   });
 
   describe("When invoked and an user enters username, name, and password and clicks on register button", () => {
-    test("Then it should call the dispatch action with the same username, name, and password'", () => {
+    test("Then it should call the dispatch function'", () => {
       const formData: UserCredential = {
         name: "Luis",
         username: "luis1",
