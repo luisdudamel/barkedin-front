@@ -7,6 +7,7 @@ import { IDog } from "../../interfaces/Dogs";
 import StyledDogDetailPage from "./StyledDogDetailPage";
 import { getDogByIdThunk } from "../../redux/thunks/dogsThunks";
 import { useEffect, useState } from "react";
+import { NavBarDesktop } from "../../components/NavBarDesktop/NavBarDesktop";
 
 export const DogDetailPage = (): JSX.Element => {
   const { id } = useParams();
@@ -41,6 +42,7 @@ export const DogDetailPage = (): JSX.Element => {
 
   return (
     <>
+      <NavBarDesktop />
       <StyledDogDetailPage>
         <Header text={`${actualDog?.name}'s profile!`} />
         <DogDetail dogToShow={actualDog || initialDogDetail} isOwnDog={isOwn} />
