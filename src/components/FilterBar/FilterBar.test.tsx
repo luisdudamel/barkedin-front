@@ -129,4 +129,28 @@ describe("Given a Filterbar function", () => {
       expect(expectedWalkerButtonActive).toBeInTheDocument();
     });
   });
+
+  describe("When the user clicks on the image with the alt text 'Walker filter icon inactive and  clicks on the image with the alt text 'Walker filter icon active'", () => {
+    test("Then it should render an image with the alt text 'Walker filter icon inactive'", () => {
+      const expectedAltText = "Walker filter icon inactive";
+
+      render(<FilterBar filterAction={mockFilterAction} />);
+
+      const expectedWalkerButtonTextInactive = screen.getByAltText(
+        "Walker filter icon inactive"
+      );
+
+      userEvent.click(expectedWalkerButtonTextInactive);
+
+      const expectedWalkerButtonTextActive = screen.getByAltText(
+        "Walker filter icon active"
+      );
+
+      userEvent.click(expectedWalkerButtonTextActive);
+
+      const expectedWalkerButtonInactive = screen.getByAltText(expectedAltText);
+
+      expect(expectedWalkerButtonInactive).toBeInTheDocument();
+    });
+  });
 });

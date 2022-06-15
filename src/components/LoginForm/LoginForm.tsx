@@ -73,9 +73,9 @@ const LoginForm = (): JSX.Element => {
       handleClick();
       return;
     }
+
     navigate("/home");
   };
-
   return (
     <>
       <Container className="form-container" component="main" maxWidth="lg">

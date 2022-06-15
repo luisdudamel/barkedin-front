@@ -24,11 +24,11 @@ import {
 } from "../../redux/thunks/dogsThunks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
-interface Props {
+interface CreateEditFormProps {
   id?: string;
 }
 
-const CreateEditForm = ({ id }: Props): JSX.Element => {
+const CreateEditForm = ({ id }: CreateEditFormProps): JSX.Element => {
   const navigate = useNavigate();
 
   const username = useAppSelector((state) => state.user.username);

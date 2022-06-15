@@ -2,11 +2,11 @@ import { Grid } from "@mui/material";
 import { IDog } from "../../interfaces/Dogs";
 import { Dog } from "../Dog/Dog";
 
-interface Props {
+interface DogListProps {
   dogs: IDog[];
 }
 
-export const DogList = ({ dogs }: Props): JSX.Element => {
+export const DogList = ({ dogs }: DogListProps): JSX.Element => {
   return (
     <>
       <Grid

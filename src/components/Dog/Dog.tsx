@@ -8,11 +8,11 @@ import { deleteFavDogThunk } from "../../redux/thunks/dogsThunks";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 
-interface Props {
+interface DogProps {
   dog: IDog;
 }
 
-export const Dog = ({ dog }: Props): JSX.Element => {
+export const Dog = ({ dog }: DogProps): JSX.Element => {
   const dispatch = useAppDispatch();
   const currentUserId = useAppSelector((state) => state.user.id);
 

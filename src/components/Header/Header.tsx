@@ -5,11 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { StyledHeader } from "./StyledHeader";
 
-interface Props {
+interface HeaderProps {
   text: string | undefined;
 }
 
-export const Header = ({ text }: Props): JSX.Element => {
+export const Header = ({ text }: HeaderProps): JSX.Element => {
   return (
     <StyledHeader>
       <Box className="header-container" sx={{ flexGrow: 1 }}>

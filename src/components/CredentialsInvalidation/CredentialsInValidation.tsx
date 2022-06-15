@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
-interface Props {
+
+interface CredentialsInvalidationProps {
   children: JSX.Element;
 }
 
-const CredentialsInValidation = ({ children }: Props) => {
+const CredentialsInValidation = ({
+  children,
+}: CredentialsInvalidationProps) => {
   const logged = useAppSelector((state) => state.user.logged);
   const navigate = useNavigate();
 

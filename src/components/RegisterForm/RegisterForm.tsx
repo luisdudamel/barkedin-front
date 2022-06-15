@@ -61,7 +61,9 @@ const RegisterForm = (): JSX.Element => {
     }
 
     setOpen(false);
-    navigate("/home");
+    navigate(
+      `${snackMessage === "User created succesfully" ? "/login" : "/register"}`
+    );
   };
 
   const resetData = (): void => {
@@ -74,12 +76,16 @@ const RegisterForm = (): JSX.Element => {
     event.preventDefault();
     const message = await dispatch(registerUserThunk(formData));
     resetData();
+
     if (message) {
       setSnackMessage(message);
       handleClick();
       return;
+    } else {
+      setSnackMessage("User created succesfully");
+      handleClick();
+      setTimeout(() => navigate("/home"), 3000);
     }
-    setTimeout(() => navigate("/home"), 3000);
   };
 
   return (

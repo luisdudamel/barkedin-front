@@ -8,12 +8,15 @@ import { IDog } from "../../interfaces/Dogs";
 import { useAppSelector } from "../../redux/hooks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 
-interface Props {
+interface DogDetailProps {
   dogToShow: IDog;
   isOwnDog: boolean;
 }
 
-export const DogDetail = ({ dogToShow, isOwnDog }: Props): JSX.Element => {
+export const DogDetail = ({
+  dogToShow,
+  isOwnDog,
+}: DogDetailProps): JSX.Element => {
   const navigate = useNavigate();
   const loading = useAppSelector((state) => state.ui.loading);
 

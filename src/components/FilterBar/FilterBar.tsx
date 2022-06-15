@@ -5,11 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import { Button } from "@mui/material";
 import { StyledFilterBar } from "./StyledFilterBarr";
 
-interface FuncProps {
+interface FilterBarProps {
   filterAction: (personality: string) => void;
 }
 
-export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
+export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
   const [activeFilter, setActiveFilter] = React.useState("");
   const [isFiltered, setIsFiltered] = React.useState(false);
 
