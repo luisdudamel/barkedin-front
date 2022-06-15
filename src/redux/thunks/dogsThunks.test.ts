@@ -2,6 +2,7 @@ import axios from "axios";
 import { mockAllDogs, mockFavDog, mockFavDogs } from "../../mocks/dogs";
 import {
   deleteFavDogActionCreator,
+  loadAllDogsActionCreator,
   loadFavDogsActionCreator,
 } from "../feature/dogsSlice";
 import { loadingActionCreator } from "../feature/uiSlice";
@@ -10,6 +11,7 @@ import {
   deleteFavDogThunk,
   editFavDogThunk,
   getAllDogsThunk,
+  getDogByIdThunk,
   getFavDogsThunk,
   loadMoreAllDogsThunk,
   loadMoreFavDogsThunk,
@@ -112,22 +114,22 @@ describe("Given a loadMoreFavDogsThunk", () => {
 
 describe("Given a getAllDogsThunk", () => {
   describe("When invoked with a page 0 and an empty filter", () => {
-    test("Then it should call the dispatch function", async () => {
+    test("Then it should call the dispatch function with a list of dogs", async () => {
       const dispatch = jest.fn();
       const mockPage = 0;
       const mockFilter = "";
 
       axios.get = jest.fn().mockResolvedValue({
         data: {
-          dogs: mockAllDogs,
+          dogs: { dogs: mockAllDogs },
         },
         status: 200,
       });
-
+      const dogAction = loadAllDogsActionCreator(mockAllDogs);
       const thunk = getAllDogsThunk(mockPage, mockFilter);
       await thunk(dispatch);
 
-      expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenNthCalledWith(2, dogAction);
     });
   });
 });
@@ -146,6 +148,46 @@ describe("Given a loadMoreAllDogsThunk", () => {
       });
 
       const thunk = await loadMoreAllDogsThunk(mockPage, mockFilter);
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+
+describe("Given a getDogByIdThunk", () => {
+  describe("When invoked with a valid dog id", () => {
+    test("Then it should call the dispatch", async () => {
+      const dispatch = jest.fn();
+
+      const mockId = "1234";
+
+      axios.get = jest.fn().mockResolvedValue({
+        data: {
+          dog: mockFavDog,
+        },
+        status: 200,
+      });
+
+      const thunk = getDogByIdThunk(mockId);
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When invoked with an invalid dog id", () => {
+    test("Then it should call the dispatch", async () => {
+      const dispatch = jest.fn();
+
+      const mockId = "";
+
+      axios.get = jest.fn().mockRejectedValue({
+        data: {},
+        status: 400,
+      });
+
+      const thunk = getDogByIdThunk(mockId);
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
