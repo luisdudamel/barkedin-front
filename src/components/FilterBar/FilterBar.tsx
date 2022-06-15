@@ -11,10 +11,18 @@ interface FuncProps {
 
 export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
   const [activeFilter, setActiveFilter] = React.useState("");
+  const [isFiltered, setIsFiltered] = React.useState(false);
 
   const filterAndChangeColor = (personality: string) => {
-    filterAction(`?personality=${personality}`);
-    setActiveFilter(personality);
+    if (!isFiltered) {
+      filterAction(`?personality=${personality}`);
+      setActiveFilter(personality);
+      setIsFiltered(!isFiltered);
+      return;
+    }
+    filterAction("");
+    setActiveFilter("");
+    setIsFiltered(!isFiltered);
   };
 
   return (
