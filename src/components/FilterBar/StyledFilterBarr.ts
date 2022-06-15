@@ -39,5 +39,8 @@ export const StyledFilterBar = styled.nav`
       flex-wrap: wrap;
       justify-content: center;
     }
+    .filter-button {
+      margin-bottom: 10px;
+    }
   }
 `;

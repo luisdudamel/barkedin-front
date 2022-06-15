@@ -24,7 +24,7 @@ export const registerUserThunk =
 
       dispatch(registerUserActionCreator());
       dispatch(loadingActionCreator({ loading: false }));
-      return "Username created succesfuly";
+      return "User created succesfuly";
     } catch (error) {
       dispatch(loadingActionCreator({ loading: false }));
       return "Error creating new user";

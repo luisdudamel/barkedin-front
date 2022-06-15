@@ -11,6 +11,9 @@ const StyledDogDetailPage = styled.div`
   h1 {
     padding-top: 30px;
   }
+  .appbar {
+    margin-top: 45px;
+  }
   .dog-card-bottom__title {
     margin-top: 10px;
   }
@@ -44,6 +47,15 @@ const StyledDogDetailPage = styled.div`
     font-size: 24px;
     line-height: 141.93%;
     letter-spacing: -0.05em;
+  }
+  @media (max-width: 599px) {
+    .appbar {
+      margin-top: 0px;
+    }
+  }
+  @media (min-width: 600px) {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 `;
 export default StyledDogDetailPage;
