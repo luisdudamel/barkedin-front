@@ -26,6 +26,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
+                height={40}
                 alt={`Ball filter icon ${
                   activeFilter !== "Ball" ? "inactive" : "active"
                 }`}
@@ -41,6 +42,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
+                height={40}
                 alt={`Beach filter icon ${
                   activeFilter !== "Beach" ? "inactive" : "active"
                 }`}
@@ -56,6 +58,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
+                height={40}
                 alt={`Nature filter icon ${
                   activeFilter !== "Nature" ? "inactive" : "active"
                 }`}
@@ -71,6 +74,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
+                height={40}
                 alt={`Frisbee filter icon ${
                   activeFilter !== "Frisbee" ? "inactive" : "active"
                 }`}
@@ -86,6 +90,7 @@ export const FilterBar = ({ filterAction }: FuncProps): JSX.Element => {
               <img
                 className="filter-button__image--inactive"
                 width={40}
+                height={40}
                 alt={`Walker filter icon ${
                   activeFilter !== "Walker" ? "inactive" : "active"
                 }`}

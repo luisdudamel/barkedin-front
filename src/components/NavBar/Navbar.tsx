@@ -28,6 +28,7 @@ export const NavBar = () => {
                 pathname === "/home" ? "active" : "inactive"
               } icon`}
               height={"30px"}
+              width={"30px"}
               src={`../../images/icons/mobile/navbar/${
                 pathname === "/home" ? "active" : "inactive"
               }/home.png`}
@@ -40,6 +41,7 @@ export const NavBar = () => {
                 pathname === "/dates" ? "active" : "inactive"
               } icon`}
               height={"30px"}
+              width={"30px"}
               src={`../../images/icons/mobile/navbar/${
                 pathname === "/dates" ? "active" : "inactive"
               }/dates.png`}
@@ -52,6 +54,7 @@ export const NavBar = () => {
                 pathname === "/friends" ? "active" : "inactive"
               } icon`}
               height={"30px"}
+              width={"30px"}
               src={`../../images/icons/mobile/navbar/${
                 pathname === "/friends" ? "active" : "inactive"
               }/friends.png`}
@@ -64,6 +67,7 @@ export const NavBar = () => {
                 pathname === "/profile" ? "active" : "inactive"
               } icon`}
               height={"30px"}
+              width={"30px"}
               src={`../../images/icons/mobile/navbar/${
                 pathname === "/profile" ? "active" : "inactive"
               }/profile.png`}
