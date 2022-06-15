@@ -42,7 +42,8 @@ export const Dog = ({ dog }: Props): JSX.Element => {
             </div>
             <img
               className="dog-card-top__personality"
-              width={20}
+              width={70}
+              height={70}
               alt={`${dog.name} personality`}
               src={`../../images/icons/mobile/personalities/inactive/${dog.personality}-inactive.png`}
               onClick={() => navigate(`/detail/${dog.id}`)}
