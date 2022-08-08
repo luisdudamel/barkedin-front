@@ -129,7 +129,7 @@ export const DogDetail = ({
       </StyledDogDetail>
       {isOwnDog && (
         <Button
-          onClick={() => navigate(`/edit/${dogToShow.id}`)}
+          onClick={() => navigate(`/barkedin/edit/${dogToShow.id}`)}
           className="logout edit-button"
           variant="contained"
         >

@@ -54,7 +54,7 @@ const LoginForm = (): JSX.Element => {
     }
 
     setOpen(false);
-    navigate("/home");
+    navigate("/barkedin/home");
   };
 
   const resetData = (): void => {
@@ -74,7 +74,7 @@ const LoginForm = (): JSX.Element => {
       return;
     }
 
-    navigate("/home");
+    navigate("/barkedin/home");
   };
   return (
     <>

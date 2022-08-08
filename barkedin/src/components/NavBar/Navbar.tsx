@@ -32,7 +32,7 @@ export const NavBar = () => {
               src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/home" ? "active" : "inactive"
               }/home.png`}
-              onClick={() => navigate("/home")}
+              onClick={() => navigate("/barkedin/home")}
             />
           </button>
           <button className="navbar-button-container">
@@ -45,7 +45,7 @@ export const NavBar = () => {
               src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/dates" ? "active" : "inactive"
               }/dates.png`}
-              onClick={() => navigate("/dates")}
+              onClick={() => navigate("/barkedin/dates")}
             />
           </button>
           <button className="navbar-button-container">
@@ -58,7 +58,7 @@ export const NavBar = () => {
               src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/friends" ? "active" : "inactive"
               }/friends.png`}
-              onClick={() => navigate("/friends")}
+              onClick={() => navigate("/barkedin/friends")}
             />
           </button>
           <button className="navbar-button-container">
@@ -71,7 +71,7 @@ export const NavBar = () => {
               src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/profile" ? "active" : "inactive"
               }/profile.png`}
-              onClick={() => navigate("/profile")}
+              onClick={() => navigate("/barkedin/profile")}
             />
           </button>
         </Paper>

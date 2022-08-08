@@ -25,7 +25,7 @@ export const ProfileBar = (): JSX.Element => {
       })
     );
 
-    navigate("/login");
+    navigate("/barkedin/login");
   };
 
   return (
@@ -49,7 +49,7 @@ export const ProfileBar = (): JSX.Element => {
               className="profile-button"
               variant="contained"
               endIcon={<AddCircle />}
-              onClick={() => navigate("/create")}
+              onClick={() => navigate("/barkedin/create")}
             >
               New dog
             </Button>

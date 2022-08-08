@@ -37,7 +37,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
                     ? "/barkedin/images/dog-placeholder.webp"
                     : `${dog.picturebackup}`
                 }
-                onClick={() => navigate(`/detail/${dog.id}`)}
+                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               />
             </div>
             <img
@@ -46,7 +46,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
               height={70}
               alt={`${dog.name} personality`}
               src={`../../barkedin/images/icons/mobile/personalities/inactive/${dog.personality}-inactive.png`}
-              onClick={() => navigate(`/detail/${dog.id}`)}
+              onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
             />
           </div>
           <div className="dog-card-bottom">
@@ -56,7 +56,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
                 variant="h5"
                 className="dog-card-bottom__name"
                 component="div"
-                onClick={() => navigate(`/detail/${dog.id}`)}
+                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
                 {dog.name}
               </Typography>
@@ -64,7 +64,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
                 variant="body1"
                 className="dog-card-bottom__title"
                 color="text.secondary"
-                onClick={() => navigate(`/detail/${dog.id}`)}
+                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
                 {dog.title}
               </Typography>

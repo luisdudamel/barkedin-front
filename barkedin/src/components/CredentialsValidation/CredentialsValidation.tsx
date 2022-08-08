@@ -11,7 +11,7 @@ const CredentialsValidation = ({ children }: CredentialsValidationProps) => {
 
   useEffect(() => {
     if (!logged) {
-      navigate("/login");
+      navigate("/barkedin/login");
     }
   }, [logged, navigate]);
 
