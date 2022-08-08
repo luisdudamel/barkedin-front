@@ -38,7 +38,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test-coverage": "npm run test -- --coverage --watchAll=false",
-    "prepare": "cd barkedin && husky install"
+    "prepare": "cd.. && husky install"
   },
   "eslintConfig": {
     "extends": [
