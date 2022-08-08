@@ -19,7 +19,7 @@ export const NotFoundPage = (): JSX.Element => {
         alt="A dog didnt found the page"
       />
       <Header text="Oops.. something went wrong" />
-      <NavLink to="/home" style={{ textDecoration: "none" }}>
+      <NavLink to="/barkedin/home" style={{ textDecoration: "none" }}>
         Back to home
       </NavLink>
     </StyledNotFoundPage>

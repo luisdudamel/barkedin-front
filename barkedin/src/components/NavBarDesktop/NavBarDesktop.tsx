@@ -15,7 +15,7 @@ export const NavBarDesktop = (): JSX.Element => {
       <Box sx={{ flexGrow: 1 }} className={"top"}>
         <AppBar position="static">
           <Toolbar className="header-toolbar" variant="dense">
-            <div onClick={() => navigate("/home")}>
+            <div onClick={() => navigate("/barkedin/home")}>
               <Typography
                 className={`header-title${
                   pathname === "/home" ? "__active" : ""
@@ -24,13 +24,13 @@ export const NavBarDesktop = (): JSX.Element => {
                 HOME
               </Typography>
             </div>
-            <div onClick={() => navigate("/home")}>
+            <div onClick={() => navigate("/barkedin/home")}>
               <Typography className="header-title">MEETINGS</Typography>
             </div>
-            <div onClick={() => navigate("/home")}>
+            <div onClick={() => navigate("/barkedin/home")}>
               <Typography className="header-title">FRIENDS</Typography>
             </div>
-            <div onClick={() => navigate("/profile")}>
+            <div onClick={() => navigate("/barkedin/profile")}>
               <Typography
                 className={`header-title${
                   pathname === "/profile" ? "__active" : ""

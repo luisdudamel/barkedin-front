@@ -44,7 +44,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/"
+          path="/barkedin"
           element={
             <CredentialsValidation>
               <HomePage />
@@ -52,7 +52,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/home"
+          path="/barkedin/home"
           element={
             <CredentialsValidation>
               <HomePage />
@@ -60,7 +60,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/register"
+          path="/barkedin/register"
           element={
             <CredentialsInValidation>
               <RegisterPage />
@@ -68,7 +68,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/detail/:id"
+          path="/barkedin/detail/:id"
           element={
             <CredentialsValidation>
               <DogDetailPage />
@@ -76,7 +76,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/login"
+          path="/barkedin/login"
           element={
             <CredentialsInValidation>
               <LoginPage />
@@ -84,7 +84,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/create"
+          path="/barkedin/create"
           element={
             <CredentialsValidation>
               <CreateEditPage />
@@ -92,7 +92,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/edit/:id"
+          path="/barkedin/edit/:id"
           element={
             <CredentialsValidation>
               <CreateEditPage />
@@ -100,7 +100,7 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/profile"
+          path="/barkedin/profile"
           element={
             <CredentialsValidation>
               <MyDogsPage />
@@ -108,10 +108,10 @@ function App(): JSX.Element {
           }
         />
       </Routes>
-      {pathname !== "/login" &&
-        pathname !== "/register" &&
-        pathname !== "/home" &&
-        pathname !== "/profile" && <NavBar />}
+      {pathname !== "/barkedin/login" &&
+        pathname !== "/barkedin/register" &&
+        pathname !== "/barkedin/home" &&
+        pathname !== "/barkedin/profile" && <NavBar />}
     </>
   );
 }

@@ -14,7 +14,7 @@ const CredentialsInValidation = ({
 
   useEffect(() => {
     if (logged) {
-      navigate("/profile");
+      navigate("/barkedin/profile");
     }
   }, [logged, navigate]);
 

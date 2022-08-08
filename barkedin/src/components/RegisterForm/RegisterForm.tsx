@@ -62,7 +62,11 @@ const RegisterForm = (): JSX.Element => {
 
     setOpen(false);
     navigate(
-      `${snackMessage === "User created succesfully" ? "/login" : "/register"}`
+      `${
+        snackMessage === "User created succesfully"
+          ? "/barkedin/login"
+          : "/barkedin/register"
+      }`
     );
   };
 
@@ -84,7 +88,7 @@ const RegisterForm = (): JSX.Element => {
     } else {
       setSnackMessage("User created succesfully");
       handleClick();
-      setTimeout(() => navigate("/home"), 3000);
+      setTimeout(() => navigate("/barkedin/home"), 3000);
     }
   };
 

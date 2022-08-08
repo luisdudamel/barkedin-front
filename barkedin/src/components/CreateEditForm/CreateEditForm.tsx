@@ -151,7 +151,7 @@ const CreateEditForm = ({ id }: CreateEditFormProps): JSX.Element => {
     }
     resetData();
     handleClick();
-    setTimeout(() => navigate("/profile"), 3000);
+    setTimeout(() => navigate("/barkedin/profile"), 3000);
   };
 
   return (
