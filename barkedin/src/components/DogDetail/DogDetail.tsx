@@ -33,7 +33,7 @@ export const DogDetail = ({
                 alt={`${dogToShow.name} avatar `}
                 src={
                   dogToShow.picture === ""
-                    ? "/images/dog-placeholder.webp"
+                    ? "/barkedin/images/dog-placeholder.webp"
                     : `${dogToShow.picturebackup}`
                 }
               />
@@ -42,7 +42,7 @@ export const DogDetail = ({
               className="dog-card-top__personality"
               width={20}
               alt={`${dogToShow.name} personality`}
-              src={`../../images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
+              src={`../../barkedin/images/icons/mobile/personalities/inactive/${dogToShow.personality}-inactive.png`}
             />
           </div>
           <div className="dog-card-bottom">

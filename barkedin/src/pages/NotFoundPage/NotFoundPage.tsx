@@ -15,7 +15,7 @@ export const NotFoundPage = (): JSX.Element => {
     <StyledNotFoundPage>
       <img
         width={300}
-        src="../../images/notfound.webp"
+        src="../../barkedin/images/notfound.webp"
         alt="A dog didnt found the page"
       />
       <Header text="Oops.. something went wrong" />

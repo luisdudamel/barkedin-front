@@ -19,7 +19,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
           <img
             alt="Doberman avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/doberman.webp"
+            src="../../barkedin/images/doberman.webp"
           />
         </div>
         <div
@@ -28,7 +28,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
           <img
             alt="Husky avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/dog.webp"
+            src="../../barkedin/images/dog.webp"
           />
         </div>
         <div
@@ -37,7 +37,7 @@ exports[`Given a LoginPage component page When it's invoked Then it should alway
           <img
             alt="Greyhound avatar icon"
             className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="../../images/greyhound.webp"
+            src="../../barkedin/images/greyhound.webp"
           />
         </div>
       </div>

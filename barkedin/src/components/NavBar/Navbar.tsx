@@ -29,7 +29,7 @@ export const NavBar = () => {
               } icon`}
               height={"30px"}
               width={"30px"}
-              src={`../../images/icons/mobile/navbar/${
+              src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/home" ? "active" : "inactive"
               }/home.png`}
               onClick={() => navigate("/home")}
@@ -42,7 +42,7 @@ export const NavBar = () => {
               } icon`}
               height={"30px"}
               width={"30px"}
-              src={`../../images/icons/mobile/navbar/${
+              src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/dates" ? "active" : "inactive"
               }/dates.png`}
               onClick={() => navigate("/dates")}
@@ -55,7 +55,7 @@ export const NavBar = () => {
               } icon`}
               height={"30px"}
               width={"30px"}
-              src={`../../images/icons/mobile/navbar/${
+              src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/friends" ? "active" : "inactive"
               }/friends.png`}
               onClick={() => navigate("/friends")}
@@ -68,7 +68,7 @@ export const NavBar = () => {
               } icon`}
               height={"30px"}
               width={"30px"}
-              src={`../../images/icons/mobile/navbar/${
+              src={`../../barkedin/images/icons/mobile/navbar/${
                 pathname === "/profile" ? "active" : "inactive"
               }/profile.png`}
               onClick={() => navigate("/profile")}

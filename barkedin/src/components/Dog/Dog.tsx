@@ -34,7 +34,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
                 alt={`${dog.name} avatar`}
                 src={
                   dog.picture === ""
-                    ? "/images/dog-placeholder.webp"
+                    ? "/barkedin/images/dog-placeholder.webp"
                     : `${dog.picturebackup}`
                 }
                 onClick={() => navigate(`/detail/${dog.id}`)}
@@ -45,7 +45,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
               width={70}
               height={70}
               alt={`${dog.name} personality`}
-              src={`../../images/icons/mobile/personalities/inactive/${dog.personality}-inactive.png`}
+              src={`../../barkedin/images/icons/mobile/personalities/inactive/${dog.personality}-inactive.png`}
               onClick={() => navigate(`/detail/${dog.id}`)}
             />
           </div>
@@ -75,7 +75,7 @@ export const Dog = ({ dog }: DogProps): JSX.Element => {
                 width={20}
                 alt={"Red trash can icon"}
                 onClick={() => deleteFavDog()}
-                src="../../images/icons/mobile/trash.png"
+                src="../../barkedin/images/icons/mobile/trash.png"
               />
             ) : (
               ""
