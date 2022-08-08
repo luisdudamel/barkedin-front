@@ -40,8 +40,8 @@ export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
                 }`}
                 src={
                   activeFilter === "Ball"
-                    ? `../../images/icons/mobile/personalities/active/ball-active.png`
-                    : `../../images/icons/mobile/personalities/inactive/ball-inactive.png`
+                    ? `../../barkedin/images/icons/mobile/personalities/active/ball-active.png`
+                    : `../../barkedin/images/icons/mobile/personalities/inactive/ball-inactive.png`
                 }
                 onClick={() => filterAndChangeColor("Ball")}
               ></img>
@@ -56,8 +56,8 @@ export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
                 }`}
                 src={
                   activeFilter === "Beach"
-                    ? `../../images/icons/mobile/personalities/active/beach-active.png`
-                    : `../../images/icons/mobile/personalities/inactive/beach-inactive.png`
+                    ? `../../barkedin/images/icons/mobile/personalities/active/beach-active.png`
+                    : `../../barkedin/images/icons/mobile/personalities/inactive/beach-inactive.png`
                 }
                 onClick={() => filterAndChangeColor("Beach")}
               ></img>
@@ -72,8 +72,8 @@ export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
                 }`}
                 src={
                   activeFilter === "Nature"
-                    ? `../../images/icons/mobile/personalities/active/nature-active.png`
-                    : `../../images/icons/mobile/personalities/inactive/nature-inactive.png`
+                    ? `../../barkedin/images/icons/mobile/personalities/active/nature-active.png`
+                    : `../../barkedin/images/icons/mobile/personalities/inactive/nature-inactive.png`
                 }
                 onClick={() => filterAndChangeColor("Nature")}
               ></img>
@@ -88,8 +88,8 @@ export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
                 }`}
                 src={
                   activeFilter === "Frisbee"
-                    ? `../../images/icons/mobile/personalities/active/frisbee-active.png`
-                    : `../../images/icons/mobile/personalities/inactive/frisbee-inactive.png`
+                    ? `../../barkedin/images/icons/mobile/personalities/active/frisbee-active.png`
+                    : `../../barkedin/images/icons/mobile/personalities/inactive/frisbee-inactive.png`
                 }
                 onClick={() => filterAndChangeColor("Frisbee")}
               ></img>
@@ -104,8 +104,8 @@ export const FilterBar = ({ filterAction }: FilterBarProps): JSX.Element => {
                 }`}
                 src={
                   activeFilter === "Walker"
-                    ? `../../images/icons/mobile/personalities/active/walker-active.png`
-                    : `../../images/icons/mobile/personalities/inactive/walker-inactive.png`
+                    ? `../../barkedin/images/icons/mobile/personalities/active/walker-active.png`
+                    : `../../barkedin/images/icons/mobile/personalities/inactive/walker-inactive.png`
                 }
                 onClick={() => filterAndChangeColor("Walker")}
               ></img>
