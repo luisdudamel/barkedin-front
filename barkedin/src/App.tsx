@@ -8,6 +8,7 @@ import CreateEditPage from "./pages/CreateEditPage/CreateEditPage";
 import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import MeetingsPage from "./pages/MeetingsPage/MeetingsPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -104,6 +105,14 @@ function App(): JSX.Element {
           element={
             <CredentialsValidation>
               <MyDogsPage />
+            </CredentialsValidation>
+          }
+        />
+        <Route
+          path="/barkedin/meetings"
+          element={
+            <CredentialsValidation>
+              <MeetingsPage />
             </CredentialsValidation>
           }
         />

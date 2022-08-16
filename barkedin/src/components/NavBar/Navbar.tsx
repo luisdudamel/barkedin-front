@@ -25,38 +25,38 @@ export const NavBar = () => {
           <button className="navbar-button-container">
             <img
               alt={`Home navbar ${
-                pathname === "/home" ? "active" : "inactive"
+                pathname === "/barkedin/home" ? "active" : "inactive"
               } icon`}
               height={"30px"}
               width={"30px"}
               src={`../../barkedin/images/icons/mobile/navbar/${
-                pathname === "/home" ? "active" : "inactive"
+                pathname === "/barkedin/home" ? "active" : "inactive"
               }/home.png`}
               onClick={() => navigate("/barkedin/home")}
             />
           </button>
           <button className="navbar-button-container">
             <img
-              alt={`Dates navbar ${
-                pathname === "/dates" ? "active" : "inactive"
+              alt={`Meetings navbar ${
+                pathname === "/barkedin/meetings" ? "active" : "inactive"
               } icon`}
               height={"30px"}
               width={"30px"}
               src={`../../barkedin/images/icons/mobile/navbar/${
-                pathname === "/dates" ? "active" : "inactive"
-              }/dates.png`}
-              onClick={() => navigate("/barkedin/dates")}
+                pathname === "/barkedin/meetings" ? "active" : "inactive"
+              }/meetings.png`}
+              onClick={() => navigate("/barkedin/meetings")}
             />
           </button>
           <button className="navbar-button-container">
             <img
               alt={`Favorites navbar ${
-                pathname === "/friends" ? "active" : "inactive"
+                pathname === "/barkedin/friends" ? "active" : "inactive"
               } icon`}
               height={"30px"}
               width={"30px"}
               src={`../../barkedin/images/icons/mobile/navbar/${
-                pathname === "/friends" ? "active" : "inactive"
+                pathname === "/barkedin/friends" ? "active" : "inactive"
               }/friends.png`}
               onClick={() => navigate("/barkedin/friends")}
             />
@@ -64,12 +64,12 @@ export const NavBar = () => {
           <button className="navbar-button-container">
             <img
               alt={`Profile navbar ${
-                pathname === "/profile" ? "active" : "inactive"
+                pathname === "/barkedin/profile" ? "active" : "inactive"
               } icon`}
               height={"30px"}
               width={"30px"}
               src={`../../barkedin/images/icons/mobile/navbar/${
-                pathname === "/profile" ? "active" : "inactive"
+                pathname === "/barkedin/profile" ? "active" : "inactive"
               }/profile.png`}
               onClick={() => navigate("/barkedin/profile")}
             />
