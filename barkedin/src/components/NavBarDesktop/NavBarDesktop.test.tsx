@@ -39,7 +39,7 @@ describe("Given a NavBarDesktop function", () => {
   describe("When its invoked and the user clicks on the text 'HOME'", () => {
     test("Then it should call the navigate function with the path '/home'", () => {
       const expectedHomeText = "HOME";
-      const mockPath = "/home";
+      const mockPath = "/barkedin/home";
 
       render(
         <BrowserRouter>
@@ -57,7 +57,7 @@ describe("Given a NavBarDesktop function", () => {
   describe("When its invoked and the user clicks on the text 'MEETINGS'", () => {
     test("Then it should call the navigate function with the path '/home'", () => {
       const expectedMeetingsText = "MEETINGS";
-      const mockPath = "/home";
+      const mockPath = "/barkedin/meetings";
 
       render(
         <BrowserRouter>
@@ -75,7 +75,7 @@ describe("Given a NavBarDesktop function", () => {
   describe("When its invoked and the user clicks on the text 'FRIENDS'", () => {
     test("Then it should call the navigate function with the path '/home'", () => {
       const expectedFriendsText = "FRIENDS";
-      const mockPath = "/home";
+      const mockPath = "/barkedin/friends";
 
       render(
         <BrowserRouter>
@@ -93,7 +93,7 @@ describe("Given a NavBarDesktop function", () => {
   describe("When its invoked and the user clicks on the text 'PROFILE'", () => {
     test("Then it should call the navigate function with the path '/profile'", () => {
       const expectedProfileText = "PROFILE";
-      const mockPath = "/profile";
+      const mockPath = "/barkedin/profile";
 
       render(
         <BrowserRouter>

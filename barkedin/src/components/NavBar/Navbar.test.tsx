@@ -16,7 +16,7 @@ describe("Given a Navbar function", () => {
   describe("When its invoked and the path is 'home' and the user clicks on home icon", () => {
     test("Then it should render a home image with the alt text 'Home navbar active icon' and call navigate", () => {
       const expectedHomeText = "Home navbar active icon";
-      mockPath = "/home";
+      mockPath = "/barkedin/home";
 
       render(
         <BrowserRouter>
@@ -33,8 +33,8 @@ describe("Given a Navbar function", () => {
 
   describe("When its invoked and the path is 'dates'", () => {
     test("Then it should render a dates image with the alt text 'Dates navbar active icon'", () => {
-      const expectedDatesText = "Dates navbar active icon";
-      mockPath = "/dates";
+      const expectedDatesText = "Meetings navbar active icon";
+      mockPath = "/barkedin/meetings";
 
       render(
         <BrowserRouter>
@@ -52,7 +52,7 @@ describe("Given a Navbar function", () => {
   describe("When its invoked and the path is 'profile'", () => {
     test("Then it should render a profile image with the alt text 'Favorites navbar active icon'", () => {
       const expectedProfileText = "Profile navbar active icon";
-      mockPath = "/profile";
+      mockPath = "/barkedin/profile";
 
       render(
         <BrowserRouter>
@@ -70,7 +70,7 @@ describe("Given a Navbar function", () => {
   describe("When its invoked and the path is 'favorites'", () => {
     test("Then it should render a favorites image with the alt text 'Favorites navbar active icon'", () => {
       const expectedFavoritesText = "Favorites navbar active icon";
-      mockPath = "/friends";
+      mockPath = "/barkedin/friends";
 
       render(
         <BrowserRouter>
