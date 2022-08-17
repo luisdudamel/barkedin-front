@@ -14,10 +14,10 @@ const MeetingDetailPageStyled = styled.div`
   .appbar {
     margin-top: 45px;
   }
-  .dog-card-bottom__title {
+  .meeting-card-bottom__title {
     margin-top: 10px;
   }
-  .dog-card-bottom__bio {
+  .meeting-card-bottom__bio {
     font-style: normal;
     font-weight: 600;
     font-size: 23px;
@@ -27,14 +27,14 @@ const MeetingDetailPageStyled = styled.div`
 
     color: #2a9d8f;
   }
-  .dog-card-secondary-container {
+  .meeting-card-secondary-container {
     margin-top: 40px;
     width: 50%;
   }
-  .dog-card-bottom__bio-characteristic {
+  .meeting-card-bottom__bio-characteristic {
     color: #264653;
   }
-  .dog-card-bottom__bio-property {
+  .meeting-card-bottom__bio-property {
     color: #f4a261;
   }
   .edit-button {

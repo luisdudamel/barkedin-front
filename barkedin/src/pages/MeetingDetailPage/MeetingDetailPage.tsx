@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { DogDetail } from "../../components/DogDetail/DogDetail";
 import { Header } from "../../components/Header/Header";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -26,7 +25,6 @@ export const MeetingDetailPage = (): JSX.Element => {
 
   useEffect(() => {
     (async () => {
-      console.log("Paso por aqui");
       try {
         const meetingToShow: any = await dispatch(getMeetingByIdThunk(id));
         console.log(meetingToShow);
@@ -41,7 +39,7 @@ export const MeetingDetailPage = (): JSX.Element => {
     <>
       <NavBarDesktop />
       <MeetingDetailPageStyled>
-        <Header text={`${actualMeeting?.dog.name}'s meeting!`} />
+        <Header text={`Meeting with ${actualMeeting?.dog.name}!`} />
         <MeetingDetail
           meetingToShow={actualMeeting || initialMeetingDetail}
           isOwnMeting={isOwn}

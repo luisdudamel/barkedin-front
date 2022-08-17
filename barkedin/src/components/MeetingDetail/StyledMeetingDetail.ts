@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledDogDetail = styled.div`
+const StyledMeetingDetail = styled.div`
   background-color: white;
   border-radius: 30px;
   display: flex;
@@ -13,7 +13,7 @@ const StyledDogDetail = styled.div`
   .image-container {
     width: 280px;
   }
-  .dog-card {
+  .meeting-card {
     display: flex;
     &-content {
       width: 100%;
@@ -26,13 +26,22 @@ const StyledDogDetail = styled.div`
         border-radius: 30px;
         object-fit: cover;
       }
-      &__personality {
-        height: 70px;
-        width: 70px;
-        object-fit: fill;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
+      &__date {
+        font-size: 40px;
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: -7px;
+        color: #264653;
+        letter-spacing: -2px;
+        text-align: end;
+      }
+      &__time {
+        margin-top: -10px;
+        font-size: 20px;
+        color: #f4a261;
+        font-weight: 600;
+        text-align: end;
+        padding-top: 10px;
       }
     }
     &-bottom {
@@ -62,7 +71,7 @@ const StyledDogDetail = styled.div`
     }
   }
   @media (max-width: 300px) {
-    .dog-card {
+    .meeting-card {
       display: flex;
       &-content {
         width: 100%;
@@ -75,13 +84,22 @@ const StyledDogDetail = styled.div`
           border-radius: 30px;
           object-fit: fill;
         }
-        &__personality {
-          height: 40px;
-          width: 40px;
-          object-fit: fill;
-          margin-top: 10px;
-          margin-left: 10px;
-          margin-right: 10px;
+        &__date {
+          font-size: 40px;
+          font-weight: 600;
+          font-style: italic;
+          margin-bottom: -7px;
+          color: #264653;
+          letter-spacing: -2px;
+          text-align: end;
+        }
+        &__time {
+          margin-top: -10px;
+          font-size: 20px;
+          color: #f4a261;
+          font-weight: 600;
+          text-align: end;
+          padding-top: 10px;
         }
       }
       &-bottom {
@@ -110,4 +128,4 @@ const StyledDogDetail = styled.div`
     }
   }
 `;
-export default StyledDogDetail;
+export default StyledMeetingDetail;
