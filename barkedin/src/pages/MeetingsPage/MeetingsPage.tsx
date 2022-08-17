@@ -1,5 +1,4 @@
 import { Stack } from "@mui/material";
-import { IDog } from "../../interfaces/Dogs";
 import { Header } from "../../components/Header/Header";
 import { LoadButton } from "../../components/LoadButton/LoadButton";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
@@ -11,7 +10,6 @@ import {
 } from "../../redux/thunks/dogsThunks";
 import { useEffect, useState } from "react";
 import { FilterBar } from "../../components/FilterBar/FilterBar";
-import { UserState } from "../../interfaces/UserCredential";
 import { NavBarDesktop } from "../../components/NavBarDesktop/NavBarDesktop";
 import MeetingsPageStyled from "./MeetingsPageStyled";
 import { MeetingsList } from "../../components/MeetingsList/MeetingsList";
@@ -22,8 +20,7 @@ const MeetingsPage = (): JSX.Element => {
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
-  const currentDogs: IDog[] = useAppSelector((state) => state.dogs);
-  const currentUser: UserState = useAppSelector((state) => state.user);
+  const currentMeetings = useAppSelector((state) => state.meetings);
 
   const dispatch = useAppDispatch();
 
@@ -64,10 +61,10 @@ const MeetingsPage = (): JSX.Element => {
           <div className="filter-bar">
             <FilterBar filterAction={chooseFilter} />
           </div>
-          <MeetingsList dogs={currentDogs}></MeetingsList>
+          <MeetingsList meetings={currentMeetings}></MeetingsList>
         </Stack>
 
-        {currentDogs.length > 5 && (
+        {currentMeetings.length > 5 && (
           <div className="load-more-container" onClick={loadMoreAllDogs}>
             <LoadButton />
           </div>

@@ -120,6 +120,7 @@ function App(): JSX.Element {
       {pathname !== "/barkedin/login" &&
         pathname !== "/barkedin/register" &&
         pathname !== "/barkedin/home" &&
+        pathname !== "/barkedin/meetings" &&
         pathname !== "/barkedin/profile" && <NavBar />}
     </>
   );

@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material";
-import { IDog } from "../../interfaces/Dogs";
+import { IMeeting } from "../../interfaces/Meetings";
 import { Meeting } from "../Meeting/Meeting";
 
-interface DogListProps {
-  dogs: IDog[];
+interface MeetingsProps {
+  meetings: IMeeting[];
 }
 
-export const MeetingsList = ({ dogs }: DogListProps): JSX.Element => {
+export const MeetingsList = ({ meetings }: MeetingsProps): JSX.Element => {
   return (
     <>
       <Grid
@@ -15,7 +15,7 @@ export const MeetingsList = ({ dogs }: DogListProps): JSX.Element => {
         justifyContent="center"
         alignItems="center"
       >
-        {dogs.map((dog) => {
+        {meetings.map((meeting) => {
           return (
             <Grid
               className="dogs-grid"
@@ -23,10 +23,10 @@ export const MeetingsList = ({ dogs }: DogListProps): JSX.Element => {
               md={4}
               lg={3}
               margin={3}
-              key={dog.id}
+              key={meeting.id}
               item
             >
-              <Meeting dog={dog}></Meeting>
+              <Meeting meeting={meeting}></Meeting>
             </Grid>
           );
         })}
