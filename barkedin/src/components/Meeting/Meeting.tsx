@@ -2,7 +2,6 @@ import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea, Typography } from "@mui/material";
 import StyledMeeting from "./StyledMeeting";
-import { useAppSelector } from "../../redux/hooks";
 import { IMeeting } from "../../interfaces/Meetings";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +11,6 @@ interface MeetingProps {
 
 export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
   const navigate = useNavigate();
-  const currentUserId = useAppSelector((state) => state.user.id);
   const { dog } = meeting;
   const meetingDate = new Date(meeting.day);
 
