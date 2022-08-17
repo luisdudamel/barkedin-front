@@ -46,7 +46,7 @@ describe("Given a MyDogsPage component page", () => {
 
   describe("When its invoked and the user clicks on the image with alt text 'Profile navbar active icon''", () => {
     test("Then it should scroll to the top of the page", () => {
-      mockPath = "/profile";
+      mockPath = "/barkedin/profile";
       const mockScroll = jest.fn();
       global.scrollTo = mockScroll;
 

@@ -24,10 +24,13 @@ const RegisterForm = (): JSX.Element => {
     password: "",
   };
   const [formData, setFormData] = useState<UserCredential>(formInitialState);
+
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
+
   const loading = useAppSelector((state) => state.ui.loading);
+
   const navigate = useNavigate();
-  const changeData = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 

@@ -65,7 +65,7 @@ describe("Given a Home component page", () => {
 
   describe("When its invoked and the user clicks on the image with alt text 'Home navbar active icon''", () => {
     test("Then it should scroll to the top of the page", () => {
-      mockPath = "/home";
+      mockPath = "/barkedin/home";
       const mockScroll = jest.fn();
       global.scrollTo = mockScroll;
 

@@ -39,7 +39,7 @@ describe("Given a ProfileBar function", () => {
 
   describe("When its invoked and the user clicks on the Logout button", () => {
     test("Then it should call navigate function to path '/login''", () => {
-      const expectedCalledPath = "/login";
+      const expectedCalledPath = "/barkedin/login";
 
       render(
         <Provider store={store}>
@@ -60,7 +60,7 @@ describe("Given a ProfileBar function", () => {
 
   describe("When its invoked and the user clicks on the 'New dog' button", () => {
     test("Then it should call navigate function to path '/create''", () => {
-      const expectedCalledPath = "/create";
+      const expectedCalledPath = "/barkedin/create";
 
       render(
         <Provider store={store}>
