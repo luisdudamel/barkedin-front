@@ -18,13 +18,13 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
 
   return (
     <StyledMeeting>
-      <CardActionArea className="dog-card">
-        <CardContent className="dog-card-content">
-          <div className="dog-card-top">
+      <CardActionArea className="meeting-card">
+        <CardContent className="meeting-card-content">
+          <div className="meeting-card-top">
             <div className="image-container">
               <img
                 width={"100%"}
-                className="dog-card-top__avatar"
+                className="meeting-card-top__avatar"
                 alt={`${dog.name} avatar`}
                 src={
                   dog.picture === ""
@@ -33,32 +33,30 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
                 }
               />
             </div>
-            <div>
+            <div className="meeting-card-top-right">
               <Typography
                 gutterBottom
                 variant="h5"
-                className="dog-card-bottom__name"
+                className="meeting-card-top__date"
                 component="div"
-                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
-                {meetingDate.toDateString().slice(0, -4)}
+                {meetingDate.toDateString().slice(4, -4)}
               </Typography>
               <Typography
                 variant="body1"
-                className="dog-card-bottom__title"
+                className="meeting-card-top__time"
                 color="text.secondary"
-                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
                 {meetingDate.toLocaleTimeString().slice(0, -3)}
               </Typography>
             </div>
           </div>
-          <div className="dog-card-bottom">
+          <div className="meeting-card-bottom">
             <div>
               <Typography
                 gutterBottom
                 variant="h5"
-                className="dog-card-bottom__name"
+                className="meeting-card-bottom__name"
                 component="div"
                 onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
@@ -66,12 +64,22 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
               </Typography>
               <Typography
                 variant="body1"
-                className="dog-card-bottom__title"
+                className="meeting-card-bottom__title"
                 color="text.secondary"
                 onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
               >
                 {dog.title}
               </Typography>
+            </div>
+            <div className="meeting-card-bottom-location">
+              {meeting.location}
+              <img
+                className="dog-card-top__personality"
+                width={40}
+                height={40}
+                alt={`Location logo`}
+                src={`../../barkedin/images/location.webp`}
+              />
             </div>
           </div>
         </CardContent>
