@@ -1,7 +1,9 @@
+import { IDog } from "./Dogs";
+
 export interface IMeeting {
-  dog: string;
+  dog: IDog;
   creator: string;
-  date: string;
+  day: string;
   description: string;
   location: string;
   id: string | undefined;
