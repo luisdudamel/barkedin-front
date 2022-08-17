@@ -1,37 +1,41 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
-import { CardActionArea, Typography } from "@mui/material";
-import StyledMeeting from "./StyledMeeting";
+import Typography from "@mui/material/Typography";
+import { useAppSelector } from "../../redux/hooks";
+import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 import { IMeeting } from "../../interfaces/Meetings";
-import { useNavigate } from "react-router-dom";
+import StyledMeetingDetail from "./StyledMeetingDetail";
 
-interface MeetingProps {
-  meeting: IMeeting;
+interface DogDetailProps {
+  meetingToShow: IMeeting;
+  isOwnMeting: boolean;
 }
 
-export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
-  const navigate = useNavigate();
-  const { dog } = meeting;
-  const meetingDate = new Date(meeting.day);
-
+export const MeetingDetail = ({
+  meetingToShow,
+  isOwnMeting,
+}: DogDetailProps): JSX.Element => {
+  const loading = useAppSelector((state) => state.ui.loading);
+  const meetingDate = new Date(meetingToShow.day);
   return (
-    <StyledMeeting>
-      <CardActionArea className="meeting-card">
+    <>
+      {loading && <LoadingBarLinear />}
+      <StyledMeetingDetail>
         <CardContent className="meeting-card-content">
           <div className="meeting-card-top">
             <div className="image-container">
               <img
                 width={"100%"}
                 className="meeting-card-top__avatar"
-                alt={`${dog.name} avatar`}
+                alt={`${meetingToShow.dog.name} avatar `}
                 src={
-                  dog.picture === ""
+                  meetingToShow.dog.picture === ""
                     ? "/barkedin/images/dog-placeholder.webp"
-                    : `${dog.picturebackup}`
+                    : `${meetingToShow.dog.picturebackup}`
                 }
               />
             </div>
-            <div className="meeting-card-top-right">
+            <div>
               <Typography
                 gutterBottom
                 variant="h5"
@@ -52,36 +56,40 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
           <div className="meeting-card-bottom">
             <div>
               <Typography
-                gutterBottom
-                variant="h5"
+                variant="body1"
                 className="meeting-card-bottom__name"
-                component="div"
-                onClick={() => navigate(`/barkedin/meetings/${meeting.id}`)}
+                color="text.secondary"
               >
-                {dog.name}
+                {meetingToShow.dog.name}
               </Typography>
               <Typography
                 variant="body1"
                 className="meeting-card-bottom__title"
                 color="text.secondary"
-                onClick={() => navigate(`/barkedin/meetings/${meeting.id}`)}
               >
-                {dog.title}
+                {meetingToShow.dog.title}
               </Typography>
-            </div>
-            <div className="meeting-card-bottom-location">
-              {meeting.location}
-              <img
-                className="dog-card-top__personality"
-                width={40}
-                height={40}
-                alt={`Location logo`}
-                src={`../../barkedin/images/location.webp`}
-              />
+              <Typography
+                variant="body1"
+                className="meeting-card-bottom__bio"
+                color="text.secondary"
+              >
+                {meetingToShow.description}
+              </Typography>
             </div>
           </div>
         </CardContent>
-      </CardActionArea>
-    </StyledMeeting>
+      </StyledMeetingDetail>
+
+      {/* {isOwnDog && (
+        <Button
+          onClick={() => navigate(`/barkedin/edit/${dogToShow.id}`)}
+          className="logout edit-button"
+          variant="contained"
+        >
+          Edit profile
+        </Button>
+      )} */}
+    </>
   );
 };

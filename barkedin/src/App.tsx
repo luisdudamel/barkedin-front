@@ -4,10 +4,12 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import CredentialsInValidation from "./components/CredentialsInvalidation/CredentialsInValidation";
 import CredentialsValidation from "./components/CredentialsValidation/CredentialsValidation";
 import { NavBar } from "./components/NavBar/Navbar";
+import { UserState } from "./interfaces/UserCredential";
 import CreateEditPage from "./pages/CreateEditPage/CreateEditPage";
 import { DogDetailPage } from "./pages/DogDetailPage/DogDetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import { MeetingDetailPage } from "./pages/MeetingDetailPage/MeetingDetailPage";
 import MeetingsPage from "./pages/MeetingsPage/MeetingsPage";
 import MyDogsPage from "./pages/MyDogsPage/MyDogsPage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
@@ -20,7 +22,7 @@ function App(): JSX.Element {
   const dispatch = useAppDispatch();
 
   try {
-    const userData = jwtDecode<any>(token as string);
+    const userData = jwtDecode<UserState>(token as string);
     dispatch(
       loginUserActionCreator({
         name: userData.name,
@@ -113,6 +115,14 @@ function App(): JSX.Element {
           element={
             <CredentialsValidation>
               <MeetingsPage />
+            </CredentialsValidation>
+          }
+        />
+        <Route
+          path="/barkedin/meetings/:id"
+          element={
+            <CredentialsValidation>
+              <MeetingDetailPage />
             </CredentialsValidation>
           }
         />
