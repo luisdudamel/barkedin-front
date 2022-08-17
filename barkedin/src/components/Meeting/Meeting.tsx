@@ -56,7 +56,7 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
                 variant="h5"
                 className="meeting-card-bottom__name"
                 component="div"
-                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
+                onClick={() => navigate(`/barkedin/meetings/${meeting.id}`)}
               >
                 {dog.name}
               </Typography>
@@ -64,7 +64,7 @@ export const Meeting = ({ meeting }: MeetingProps): JSX.Element => {
                 variant="body1"
                 className="meeting-card-bottom__title"
                 color="text.secondary"
-                onClick={() => navigate(`/barkedin/detail/${dog.id}`)}
+                onClick={() => navigate(`/barkedin/meetings/${meeting.id}`)}
               >
                 {dog.title}
               </Typography>

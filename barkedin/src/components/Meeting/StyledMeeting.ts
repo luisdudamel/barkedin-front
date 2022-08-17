@@ -49,6 +49,7 @@ const StyledMeeting = styled.div`
         color: #f4a261;
         font-weight: 600;
         text-align: end;
+        padding-top: 10px;
       }
       &-right {
         display: flex;
@@ -128,6 +129,7 @@ const StyledMeeting = styled.div`
           color: #f4a261;
           font-weight: 600;
           text-align: end;
+          padding-top: 10px;
         }
         &-right {
           display: flex;
@@ -193,6 +195,7 @@ const StyledMeeting = styled.div`
           color: #f4a261;
           font-weight: 600;
           text-align: end;
+          padding-top: 10px;
         }
         &-right {
           display: flex;
