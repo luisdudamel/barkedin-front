@@ -5,7 +5,6 @@ import { useAppSelector } from "../../redux/hooks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 import { IMeeting } from "../../interfaces/Meetings";
 import StyledMeetingDetail from "./StyledMeetingDetail";
-
 interface DogDetailProps {
   meetingToShow: IMeeting;
   isOwnMeting: boolean;
@@ -17,6 +16,8 @@ export const MeetingDetail = ({
 }: DogDetailProps): JSX.Element => {
   const loading = useAppSelector((state) => state.ui.loading);
   const meetingDate = new Date(meetingToShow.day);
+  const gMapsKey = process.env.REACT_APP_GOOGLE_MAPS_KEY as string;
+
   return (
     <>
       {loading && <LoadingBarLinear />}
@@ -80,7 +81,17 @@ export const MeetingDetail = ({
           </div>
         </CardContent>
       </StyledMeetingDetail>
-
+      <iframe
+        title="Meeting Location"
+        width="400"
+        height="250"
+        frameBorder="2"
+        style={{ border: 1 }}
+        allowFullScreen={false}
+        aria-hidden="false"
+        tabIndex={0}
+        src={`https://www.google.com/maps/embed/v1/place?key=${gMapsKey}&q=${meetingToShow.location}`}
+      ></iframe>
       {/* {isOwnDog && (
         <Button
           onClick={() => navigate(`/barkedin/edit/${dogToShow.id}`)}
