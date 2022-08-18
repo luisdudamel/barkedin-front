@@ -1,24 +1,16 @@
 import { Stack } from "@mui/material";
 import { Header } from "../../components/Header/Header";
-import { LoadButton } from "../../components/LoadButton/LoadButton";
 import { LoadingBarLinear } from "../../components/LoadingBarLinear/LoadingBarLinear";
 import { NavBar } from "../../components/NavBar/Navbar";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import {
-  getAllDogsThunk,
-  loadMoreAllDogsThunk,
-} from "../../redux/thunks/dogsThunks";
-import { useEffect, useState } from "react";
-import { FilterBar } from "../../components/FilterBar/FilterBar";
+import { useEffect } from "react";
+
 import { NavBarDesktop } from "../../components/NavBarDesktop/NavBarDesktop";
 import MeetingsPageStyled from "./MeetingsPageStyled";
 import { MeetingsList } from "../../components/MeetingsList/MeetingsList";
 import { getAllMeetingsThunk } from "../../redux/thunks/meetingsThunks";
 
 const MeetingsPage = (): JSX.Element => {
-  let initialPage = 1;
-  const [filter, setFilter] = useState("");
-  const [page, setPage] = useState(initialPage);
   const loading = useAppSelector((state) => state.ui.loading);
   const currentMeetings = useAppSelector((state) => state.meetings);
 
@@ -29,7 +21,6 @@ const MeetingsPage = (): JSX.Element => {
   }, [dispatch]);
 
   const scrollTop = () => {
-    setPage(1);
     window.scrollTo(0, 0);
     dispatch(getAllMeetingsThunk());
   };
