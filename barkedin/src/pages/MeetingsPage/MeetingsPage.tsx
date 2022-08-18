@@ -28,19 +28,10 @@ const MeetingsPage = (): JSX.Element => {
     dispatch(getAllMeetingsThunk());
   }, [dispatch]);
 
-  const loadMoreAllDogs = () => {
-    setPage(page + 1);
-    dispatch(loadMoreAllDogsThunk(page, filter));
-  };
-
-  const chooseFilter = (filterToSet: string): void => {
-    setFilter(filterToSet);
-    dispatch(getAllDogsThunk(0, filterToSet));
-  };
-
   const scrollTop = () => {
     setPage(1);
     window.scrollTo(0, 0);
+    dispatch(getAllMeetingsThunk());
   };
 
   return (
@@ -59,16 +50,16 @@ const MeetingsPage = (): JSX.Element => {
         >
           <Header text="All meetings" />
           <div className="filter-bar">
-            <FilterBar filterAction={chooseFilter} />
+            {/* <FilterBar filterAction={chooseFilter} /> */}
           </div>
           <MeetingsList meetings={currentMeetings}></MeetingsList>
         </Stack>
 
-        {currentMeetings.length > 5 && (
+        {/* {currentMeetings.length > 5 && (
           <div className="load-more-container" onClick={loadMoreAllDogs}>
             <LoadButton />
           </div>
-        )}
+        )} */}
         <div onClick={scrollTop}>
           <NavBar />
         </div>

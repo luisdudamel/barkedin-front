@@ -7,6 +7,7 @@ import { IMeeting } from "../../interfaces/Meetings";
 import StyledMeetingDetail from "./StyledMeetingDetail";
 import { Button } from "@mui/material";
 import { deleteMeetingThunk } from "../../redux/thunks/meetingsThunks";
+import { useNavigate } from "react-router-dom";
 interface DogDetailProps {
   meetingToShow: IMeeting;
   isOwnMeting: boolean;
@@ -20,9 +21,11 @@ export const MeetingDetail = ({
   const meetingDate = new Date(meetingToShow.day);
   const gMapsKey = process.env.REACT_APP_GOOGLE_MAPS_KEY as string;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const deleteMeeting = () => {
     dispatch(deleteMeetingThunk(meetingToShow.id));
+    navigate("/barkedin/meetings");
   };
 
   return (
