@@ -10,10 +10,15 @@ const meetingsSlice = createSlice({
     loadAllMeetings: (meetings, action: PayloadAction<IMeeting[]>) => [
       ...action.payload,
     ],
+    deleteMeeting: (meetings, action: PayloadAction<IMeeting["id"]>) => [
+      ...meetings.filter((meeting) => meeting.id !== action.payload),
+    ],
   },
 });
 
-export const { loadAllMeetings: loadAllMeetingsActionCreator } =
-  meetingsSlice.actions;
+export const {
+  loadAllMeetings: loadAllMeetingsActionCreator,
+  deleteMeeting: deleteMeetingActionCreator,
+} = meetingsSlice.actions;
 
 export default meetingsSlice.reducer;

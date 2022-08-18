@@ -17,7 +17,7 @@ export const MeetingDetailPage = (): JSX.Element => {
     description: "",
     dog: { name: "" },
     id: "",
-    location: "",
+    location: "Spain",
   };
   const [actualMeeting, setActualMeeting] = useState(initialMeetingDetail);
   const userId = useAppSelector((state) => state.user.id);
@@ -27,7 +27,7 @@ export const MeetingDetailPage = (): JSX.Element => {
     (async () => {
       try {
         const meetingToShow: any = await dispatch(getMeetingByIdThunk(id));
-        console.log(meetingToShow);
+
         setActualMeeting(meetingToShow);
       } catch {}
     })();

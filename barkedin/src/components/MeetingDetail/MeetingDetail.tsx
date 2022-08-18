@@ -1,11 +1,13 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 import { IMeeting } from "../../interfaces/Meetings";
 import StyledMeetingDetail from "./StyledMeetingDetail";
-
+import { Button } from "@mui/material";
+import { deleteMeetingThunk } from "../../redux/thunks/meetingsThunks";
+import { useNavigate } from "react-router-dom";
 interface DogDetailProps {
   meetingToShow: IMeeting;
   isOwnMeting: boolean;
@@ -17,6 +19,15 @@ export const MeetingDetail = ({
 }: DogDetailProps): JSX.Element => {
   const loading = useAppSelector((state) => state.ui.loading);
   const meetingDate = new Date(meetingToShow.day);
+  const gMapsKey = process.env.REACT_APP_GOOGLE_MAPS_KEY as string;
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const deleteMeeting = () => {
+    dispatch(deleteMeetingThunk(meetingToShow.id));
+    navigate("/barkedin/meetings");
+  };
+
   return (
     <>
       {loading && <LoadingBarLinear />}
@@ -80,16 +91,39 @@ export const MeetingDetail = ({
           </div>
         </CardContent>
       </StyledMeetingDetail>
-
-      {/* {isOwnDog && (
+      <div className="map-container">
+        <div className="map-container-heading">
+          <h3 className="map-container-heading__title">Location</h3>
+          <div className="map-container-heading__location">
+            <h3>{meetingToShow.location}</h3>
+            <img
+              width={30}
+              height={30}
+              src="../../barkedin/images/location.webp"
+              alt="Location icon"
+            />
+          </div>
+        </div>
+        <iframe
+          className="map-container-frame"
+          title="Meeting Location"
+          frameBorder="2"
+          style={{ border: 1 }}
+          allowFullScreen={false}
+          aria-hidden="false"
+          tabIndex={0}
+          src={`https://www.google.com/maps/embed/v1/place?key=${gMapsKey}&q=${meetingToShow.location}`}
+        ></iframe>
+      </div>
+      {isOwnMeting && (
         <Button
-          onClick={() => navigate(`/barkedin/edit/${dogToShow.id}`)}
-          className="logout edit-button"
+          onClick={deleteMeeting}
+          className="logout delete-button"
           variant="contained"
         >
-          Edit profile
+          Delete meeting
         </Button>
-      )} */}
+      )}
     </>
   );
 };
