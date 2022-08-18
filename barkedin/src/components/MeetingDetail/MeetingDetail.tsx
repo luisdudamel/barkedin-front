@@ -1,11 +1,12 @@
 import * as React from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { LoadingBarLinear } from "../LoadingBarLinear/LoadingBarLinear";
 import { IMeeting } from "../../interfaces/Meetings";
 import StyledMeetingDetail from "./StyledMeetingDetail";
 import { Button } from "@mui/material";
+import { deleteMeetingThunk } from "../../redux/thunks/meetingsThunks";
 interface DogDetailProps {
   meetingToShow: IMeeting;
   isOwnMeting: boolean;
@@ -18,6 +19,11 @@ export const MeetingDetail = ({
   const loading = useAppSelector((state) => state.ui.loading);
   const meetingDate = new Date(meetingToShow.day);
   const gMapsKey = process.env.REACT_APP_GOOGLE_MAPS_KEY as string;
+  const dispatch = useAppDispatch();
+
+  const deleteMeeting = () => {
+    dispatch(deleteMeetingThunk(meetingToShow.id));
+  };
 
   return (
     <>
@@ -84,8 +90,16 @@ export const MeetingDetail = ({
       </StyledMeetingDetail>
       <div className="map-container">
         <div className="map-container-heading">
-          <h3>Location</h3>
-          <h3>{meetingToShow.location}</h3>
+          <h3 className="map-container-heading__title">Location</h3>
+          <div className="map-container-heading__location">
+            <h3>{meetingToShow.location}</h3>
+            <img
+              width={30}
+              height={30}
+              src="../../barkedin/images/location.webp"
+              alt="Location icon"
+            />
+          </div>
         </div>
         <iframe
           className="map-container-frame"
@@ -99,7 +113,11 @@ export const MeetingDetail = ({
         ></iframe>
       </div>
       {isOwnMeting && (
-        <Button className="logout delete-button" variant="contained">
+        <Button
+          onClick={deleteMeeting}
+          className="logout delete-button"
+          variant="contained"
+        >
           Delete meeting
         </Button>
       )}

@@ -88,6 +88,19 @@ const MeetingDetailPageStyled = styled.div`
       padding: 0 40px;
       display: flex;
       justify-content: space-between;
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 600;
+      &__title {
+        color: #264653;
+        display: flex;
+        align-items: center;
+      }
+      &__location {
+        color: #d9441e;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 `;
