@@ -187,7 +187,7 @@ const LoginForm = (): JSX.Element => {
               <Grid item>
                 <NavLink
                   className={"form-link"}
-                  to="/register"
+                  to="/barkedin/register"
                   style={{ textDecoration: "none" }}
                 >
                   Not a member? Register here
